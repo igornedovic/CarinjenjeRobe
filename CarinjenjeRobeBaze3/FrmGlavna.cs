@@ -29,5 +29,10 @@ namespace CarinjenjeRobeBaze3
         {
             OsveziPanel(new UCProizvod());
         }
+
+        private void btnStanje_Click(object sender, EventArgs e)
+        {
+            OsveziPanel(new UCStanjaProizvoda());
+        }
     }
 }

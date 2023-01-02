@@ -38,5 +38,10 @@ namespace CarinjenjeRobeBaze3.Model
 
             return p;
         }
+
+        public override string ToString()
+        {
+            return $"{SifraProizvoda} - {NazivProizvoda}";
+        }
     }
 }

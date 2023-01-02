@@ -57,9 +57,10 @@ namespace CarinjenjeRobeBaze3
             this.btnStanje.Name = "btnStanje";
             this.btnStanje.Size = new System.Drawing.Size(197, 38);
             this.btnStanje.TabIndex = 8;
-            this.btnStanje.Text = "Stanje";
+            this.btnStanje.Text = "Stanja proizvoda";
             this.btnStanje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStanje.UseVisualStyleBackColor = false;
+            this.btnStanje.Click += new System.EventHandler(this.btnStanje_Click);
             // 
             // btnProizvodi
             // 

@@ -58,6 +58,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             cbVrsta.SelectedItem = null;
             proizvodi = new BindingList<Proizvod>(KontrolerStn.Instanca.UcitajProizvode());
             dgvProizvodi.DataSource = proizvodi;
+            btnSacuvaj.Enabled = true;
         }
 
         private void dgvProizvodi_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -70,6 +71,8 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 {
                     txtNaziv.Text = izabraniProizvod.NazivProizvoda;
                     cbVrsta.SelectedItem = vrsteProizvoda.Where(vp => vp.VrstaProizvodaId == izabraniProizvod.VrstaProizvoda.VrstaProizvodaId).FirstOrDefault();
+
+                    btnSacuvaj.Enabled = false;
                 }
             }
             catch (Exception)

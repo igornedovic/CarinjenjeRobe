@@ -1,5 +1,6 @@
 ﻿using CarinjenjeRobeBaze3.DBB;
 using CarinjenjeRobeBaze3.Model;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace CarinjenjeRobeBaze3.SistemskeOperacije
                 IzvrsiUpit(obj);
                 broker.PotvrdiTransakciju();
             }
-            catch (Exception ex)
+            catch (OracleException ex)
             {
                 broker.PonistiTransakciju();
                 throw ex;

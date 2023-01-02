@@ -62,12 +62,20 @@
     <Compile Include="Model\IDomenskiObjekat.cs" />
     <Compile Include="Model\PDV.cs" />
     <Compile Include="Model\Proizvod.cs" />
+    <Compile Include="Model\Skladiste.cs" />
+    <Compile Include="Model\Stanje.cs" />
     <Compile Include="Model\VrstaProizvoda.cs" />
     <Compile Include="Pogled\KorisnickeKontrole\UCProizvod.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Pogled\KorisnickeKontrole\UCProizvod.Designer.cs">
       <DependentUpon>UCProizvod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pogled\KorisnickeKontrole\UCStanjaProizvoda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pogled\KorisnickeKontrole\UCStanjaProizvoda.Designer.cs">
+      <DependentUpon>UCStanjaProizvoda.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,12 +84,20 @@
     <Compile Include="SistemskeOperacije\ProizvodSO\ObrisiProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\SacuvajProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\UcitajProizvodeSO.cs" />
+    <Compile Include="SistemskeOperacije\SkladisteSO\UcitajSkladistaSO.cs" />
+    <Compile Include="SistemskeOperacije\StanjeSO\IzmeniStanjeSO.cs" />
+    <Compile Include="SistemskeOperacije\StanjeSO\ObrisiStanjeSO.cs" />
+    <Compile Include="SistemskeOperacije\StanjeSO\SacuvajStanjeSO.cs" />
+    <Compile Include="SistemskeOperacije\StanjeSO\UcitajStanjaSO.cs" />
     <Compile Include="SistemskeOperacije\VrstaProizvodaSO\UcitajVrsteProizvodaSO.cs" />
     <EmbeddedResource Include="FrmGlavna.resx">
       <DependentUpon>FrmGlavna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCProizvod.resx">
       <DependentUpon>UCProizvod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCStanjaProizvoda.resx">
+      <DependentUpon>UCStanjaProizvoda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
