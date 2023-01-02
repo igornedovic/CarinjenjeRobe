@@ -27,16 +27,20 @@ namespace CarinjenjeRobeBaze3.Model
         public string UpdateVrednosti { get; set; }
         public string WhereUslov { get; set; }
 
-        public IDomenskiObjekat ProcitajZapis(OracleDataReader reader)
+        public IDomenskiObjekat ProcitajZapis(OracleDataReader reader, bool join)
         {
             VrstaProizvoda vp = new VrstaProizvoda();
             vp.VrstaProizvodaId = (int)reader["VRSTAPROIZVODAID"];
             vp.NazivVrsteProizvoda = (string)reader["NAZIVVRSTEPROIZVODA"];
-            vp.PDV = new PDV
+
+            if (join)
             {
-                PDVId = (int)reader["PDVID"],
-                StopaPDV = (int)reader["STOPAPDV"]
-            };
+                vp.PDV = new PDV
+                {
+                    PDVId = (int)reader["PDVID"],
+                    StopaPDV = (int)reader["STOPAPDV"]
+                };
+            }
 
             return vp;
         }

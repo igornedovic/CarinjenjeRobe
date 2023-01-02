@@ -17,6 +17,6 @@ namespace CarinjenjeRobeBaze3.Model
         string InsertVrednosti { get; }
         string UpdateVrednosti { get; set; }
         string WhereUslov { get; set; }
-        IDomenskiObjekat ProcitajZapis(OracleDataReader reader);
+        IDomenskiObjekat ProcitajZapis(OracleDataReader reader, bool join);
     }
 }

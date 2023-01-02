@@ -32,7 +32,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.lblNaziv = new System.Windows.Forms.Label();
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbFirma = new System.Windows.Forms.ComboBox();
+            this.cbVrsta = new System.Windows.Forms.ComboBox();
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.btnIzmeni = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
@@ -68,14 +68,13 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.label1.TabIndex = 7;
             this.label1.Text = "Vrsta proizvoda:";
             // 
-            // cbFirma
+            // cbVrsta
             // 
-            this.cbFirma.Enabled = false;
-            this.cbFirma.FormattingEnabled = true;
-            this.cbFirma.Location = new System.Drawing.Point(477, 29);
-            this.cbFirma.Name = "cbFirma";
-            this.cbFirma.Size = new System.Drawing.Size(190, 24);
-            this.cbFirma.TabIndex = 13;
+            this.cbVrsta.FormattingEnabled = true;
+            this.cbVrsta.Location = new System.Drawing.Point(477, 29);
+            this.cbVrsta.Name = "cbVrsta";
+            this.cbVrsta.Size = new System.Drawing.Size(190, 24);
+            this.cbVrsta.TabIndex = 13;
             // 
             // btnSacuvaj
             // 
@@ -86,6 +85,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnSacuvaj.TabIndex = 14;
             this.btnSacuvaj.Text = "Sacuvaj";
             this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
             // btnIzmeni
             // 
@@ -96,6 +96,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnIzmeni.TabIndex = 15;
             this.btnIzmeni.Text = "Izmeni";
             this.btnIzmeni.UseVisualStyleBackColor = true;
+            this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
             // btnObrisi
             // 
@@ -106,6 +107,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnObrisi.TabIndex = 16;
             this.btnObrisi.Text = "Obrisi";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // dgvProizvodi
             // 
@@ -119,6 +121,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvProizvodi.RowTemplate.Height = 24;
             this.dgvProizvodi.Size = new System.Drawing.Size(639, 271);
             this.dgvProizvodi.TabIndex = 17;
+            this.dgvProizvodi.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProizvodi_RowHeaderMouseClick);
             // 
             // UCProizvod
             // 
@@ -128,7 +131,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnIzmeni);
             this.Controls.Add(this.btnSacuvaj);
-            this.Controls.Add(this.cbFirma);
+            this.Controls.Add(this.cbVrsta);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.lblNaziv);
@@ -145,7 +148,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         private System.Windows.Forms.Label lblNaziv;
         private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbFirma;
+        private System.Windows.Forms.ComboBox cbVrsta;
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.Button btnIzmeni;
         private System.Windows.Forms.Button btnObrisi;

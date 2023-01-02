@@ -13,24 +13,28 @@ namespace CarinjenjeRobeBaze3.Model
         public string NazivProizvoda { get; set; }
         public VrstaProizvoda VrstaProizvoda { get; set; }
         public string NazivTabele => "PROIZVOD";
-        public string InsertKolone => "NAZIVPROIZVODA";
+        public string InsertKolone => "NAZIVPROIZVODA, VRSTAPROIZVODAID";
         public string PrimarniKljuc => "SIFRAPROIZVODA";
         public string SpoljniKljuc => "VRSTAPROIZVODAID";
-        public string InsertVrednosti => $"'{NazivProizvoda}'";
+        public string InsertVrednosti => $"'{NazivProizvoda}', {VrstaProizvoda.VrstaProizvodaId}";
         public string UslovSpajanja { get; set; }
         public string UpdateVrednosti { get; set; }
         public string WhereUslov { get; set; }
 
-        public IDomenskiObjekat ProcitajZapis(OracleDataReader reader)
+        public IDomenskiObjekat ProcitajZapis(OracleDataReader reader, bool join)
         {
             Proizvod p = new Proizvod();
             p.SifraProizvoda = (int)reader["SIFRAPROIZVODA"];
             p.NazivProizvoda = (string)reader["NAZIVPROIZVODA"];
-            p.VrstaProizvoda = new VrstaProizvoda
+
+            if (join)
             {
-                VrstaProizvodaId = (int)reader["VRSTAPROIZVODAID"],
-                NazivVrsteProizvoda = (string)reader["NAZIVVRSTEPROIZVODA"]
-            };
+                p.VrstaProizvoda = new VrstaProizvoda
+                {
+                    VrstaProizvodaId = (int)reader["VRSTAPROIZVODAID"],
+                    NazivVrsteProizvoda = (string)reader["NAZIVVRSTEPROIZVODA"]
+                };
+            }
 
             return p;
         }

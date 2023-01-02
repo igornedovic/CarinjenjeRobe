@@ -26,7 +26,7 @@ namespace CarinjenjeRobeBaze3.Model
 
         public string UslovSpajanja { get; set; }
 
-        public IDomenskiObjekat ProcitajZapis(OracleDataReader reader)
+        public IDomenskiObjekat ProcitajZapis(OracleDataReader reader, bool join)
         {
             PDV pdv = new PDV();
             pdv.PDVId = (int)reader["PDVID"];

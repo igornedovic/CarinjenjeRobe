@@ -57,7 +57,7 @@ namespace CarinjenjeRobeBaze3.DBB
             {
                 while (reader.Read())
                 {
-                    IDomenskiObjekat objekat = obj.ProcitajZapis(reader);
+                    IDomenskiObjekat objekat = obj.ProcitajZapis(reader, join: false);
                     rezultat.Add(objekat);
                 }
             }
@@ -79,7 +79,7 @@ namespace CarinjenjeRobeBaze3.DBB
             {
                 while (reader.Read())
                 {
-                    IDomenskiObjekat objekat = obj[0].ProcitajZapis(reader);
+                    IDomenskiObjekat objekat = obj[0].ProcitajZapis(reader, join: true);
                     rezultat.Add(objekat);
                 }
             }
