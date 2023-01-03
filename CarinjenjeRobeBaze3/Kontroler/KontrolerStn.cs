@@ -1,5 +1,7 @@
 ﻿using CarinjenjeRobeBaze3.Model;
 using CarinjenjeRobeBaze3.SistemskeOperacije;
+using CarinjenjeRobeBaze3.SistemskeOperacije.CarinarnicaSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.CarinikSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ProizvodSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.SkladisteSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.StanjeSO;
@@ -37,6 +39,7 @@ namespace CarinjenjeRobeBaze3.Kontroler
 
         #endregion
 
+        #region Proizvod
         public List<Proizvod> UcitajProizvode()
         {
             OpstaSO oso = new UcitajProizvodeSO();
@@ -61,6 +64,8 @@ namespace CarinjenjeRobeBaze3.Kontroler
             OpstaSO oso = new ObrisiProizvodSO();
             oso.Izvrsi(proizvod);
         }
+
+        #endregion
 
         #region Skladiste
 
@@ -98,6 +103,63 @@ namespace CarinjenjeRobeBaze3.Kontroler
         {
             OpstaSO oso = new ObrisiStanjeSO();
             oso.Izvrsi(stanje);
+        }
+
+        #endregion
+
+        #region Carinarnica
+        public List<Carinarnica> UcitajCarinarnice()
+        {
+            OpstaSO oso = new UcitajCarinarniceSO();
+            oso.Izvrsi();
+            return ((UcitajCarinarniceSO)oso).Rezultat;
+        }
+
+        public void SacuvajCarinarnicu(Carinarnica carinarnica)
+        {
+            OpstaSO oso = new SacuvajCarinarnicuSO();
+            oso.Izvrsi(carinarnica);
+        }
+
+        public void IzmeniCarinarnicu(Carinarnica carinarnica)
+        {
+            OpstaSO oso = new IzmeniCarinarnicuSO();
+            oso.Izvrsi(carinarnica);
+        }
+
+        public void ObrisiCarinarnicu(Carinarnica carinarnica)
+        {
+            OpstaSO oso = new ObrisiCarinarnicuSO();
+            oso.Izvrsi(carinarnica);
+        }
+
+        #endregion
+
+        #region Carinik
+
+        public List<Carinik> UcitajCarinike()
+        {
+            OpstaSO oso = new UcitajCarinikeSO();
+            oso.Izvrsi();
+            return ((UcitajCarinikeSO)oso).Rezultat;
+        }
+
+        public void SacuvajCarinika(Carinik carinik)
+        {
+            OpstaSO oso = new SacuvajCarinikaSO();
+            oso.Izvrsi(carinik);
+        }
+
+        public void IzmeniCarinika(Carinik carinik)
+        {
+            OpstaSO oso = new IzmeniCarinikaSO();
+            oso.Izvrsi(carinik);
+        }
+
+        public void ObrisiCarinika(Carinik carinik)
+        {
+            OpstaSO oso = new ObrisiCarinikaSO();
+            oso.Izvrsi(carinik);
         }
 
         #endregion

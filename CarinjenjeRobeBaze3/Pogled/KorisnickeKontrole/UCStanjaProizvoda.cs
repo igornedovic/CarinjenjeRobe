@@ -69,6 +69,8 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
 
             stanjaProizvoda = new BindingList<Stanje>(KontrolerStn.Instanca.UcitajStanja());
             dgvStanja.DataSource = stanjaProizvoda;
+
+            btnSacuvaj.Enabled = true;
         }
 
         private void dgvStanja_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -90,6 +92,8 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                     txtBruto.Text = izabranoStanje.BrutoMasa.ToString();
 
                     txtNeto.Text = izabranoStanje.NetoMasa.ToString();
+
+                    btnSacuvaj.Enabled = false;
                 }
             }
             catch (Exception)
@@ -177,7 +181,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             }
             catch (FormatException)
             {
-                MessageBox.Show("Nisu svi podaci uneti u dozvoljenom formatu", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nisu svi podaci uneti u odgovarajucem formatu", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

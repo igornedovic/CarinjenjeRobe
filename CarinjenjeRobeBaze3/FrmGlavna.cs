@@ -34,5 +34,10 @@ namespace CarinjenjeRobeBaze3
         {
             OsveziPanel(new UCStanjaProizvoda());
         }
+
+        private void btnCarinarnice_Click(object sender, EventArgs e)
+        {
+            OsveziPanel(new UCCarinarnica());
+        }
     }
 }
