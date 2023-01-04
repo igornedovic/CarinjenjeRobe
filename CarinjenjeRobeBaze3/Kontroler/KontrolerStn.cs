@@ -2,6 +2,7 @@
 using CarinjenjeRobeBaze3.SistemskeOperacije;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinarnicaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinikSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.ObracunSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ProizvodSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.SkladisteSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.StanjeSO;
@@ -162,6 +163,34 @@ namespace CarinjenjeRobeBaze3.Kontroler
             oso.Izvrsi(carinik);
         }
 
+        #endregion
+
+        #region Obracun
+
+        public List<Obracun> UcitajObracune()
+        {
+            OpstaSO oso = new UcitajObracuneSO();
+            oso.Izvrsi();
+            return ((UcitajObracuneSO)oso).Rezultat;
+        }
+
+        public void SacuvajObracun(Obracun obracun)
+        {
+            OpstaSO oso = new SacuvajObracunSO();
+            oso.Izvrsi(obracun);
+        }
+
+        public void IzmeniObracun(Obracun obracun)
+        {
+            OpstaSO oso = new IzmeniObracunSO();
+            oso.Izvrsi(obracun);
+        }
+
+        public void ObrisiObracun(Obracun obracun)
+        {
+            OpstaSO oso = new ObrisiObracunSO();
+            oso.Izvrsi(obracun);
+        }
         #endregion
     }
 }

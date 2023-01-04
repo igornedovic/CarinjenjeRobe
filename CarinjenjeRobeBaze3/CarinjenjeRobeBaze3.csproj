@@ -62,6 +62,7 @@
     <Compile Include="Model\Carinarnica.cs" />
     <Compile Include="Model\Carinik.cs" />
     <Compile Include="Model\IDomenskiObjekat.cs" />
+    <Compile Include="Model\Obracun.cs" />
     <Compile Include="Model\PDV.cs" />
     <Compile Include="Model\Proizvod.cs" />
     <Compile Include="Model\Skladiste.cs" />
@@ -78,6 +79,12 @@
     </Compile>
     <Compile Include="Pogled\KorisnickeKontrole\UCCarinarnica.Designer.cs">
       <DependentUpon>UCCarinarnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pogled\KorisnickeKontrole\UCObracun.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pogled\KorisnickeKontrole\UCObracun.Designer.cs">
+      <DependentUpon>UCObracun.cs</DependentUpon>
     </Compile>
     <Compile Include="Pogled\KorisnickeKontrole\UCProizvod.cs">
       <SubType>UserControl</SubType>
@@ -101,6 +108,10 @@
     <Compile Include="SistemskeOperacije\CarinikSO\ObrisiCarinikaSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\SacuvajCarinikaSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\UcitajCarinikeSO.cs" />
+    <Compile Include="SistemskeOperacije\ObracunSO\IzmeniObracunSO.cs" />
+    <Compile Include="SistemskeOperacije\ObracunSO\ObrisiObracunSO.cs" />
+    <Compile Include="SistemskeOperacije\ObracunSO\SacuvajObracunSO.cs" />
+    <Compile Include="SistemskeOperacije\ObracunSO\UcitajObracuneSO.cs" />
     <Compile Include="SistemskeOperacije\OpstaSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\IzmeniProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\ObrisiProizvodSO.cs" />
@@ -120,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCCarinarnica.resx">
       <DependentUpon>UCCarinarnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCObracun.resx">
+      <DependentUpon>UCObracun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCProizvod.resx">
       <DependentUpon>UCProizvod.cs</DependentUpon>

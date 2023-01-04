@@ -39,5 +39,10 @@ namespace CarinjenjeRobeBaze3
         {
             OsveziPanel(new UCCarinarnica());
         }
+
+        private void btnObracun_Click(object sender, EventArgs e)
+        {
+            OsveziPanel(new UCObracun());
+        }
     }
 }

@@ -35,5 +35,10 @@ namespace CarinjenjeRobeBaze3.Model
             c.SifraCarinarnice = (int)reader["SIFRACARINARNICE"];
             return c;
         }
+
+        public override string ToString()
+        {
+            return $"{CarinikId} - {ImePrezime}";
+        }
     }
 }

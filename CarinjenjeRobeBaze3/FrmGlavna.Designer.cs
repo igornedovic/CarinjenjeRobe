@@ -34,6 +34,7 @@ namespace CarinjenjeRobeBaze3
             this.btnStanje = new System.Windows.Forms.Button();
             this.btnProizvodi = new System.Windows.Forms.Button();
             this.pnlGlavni = new System.Windows.Forms.Panel();
+            this.btnObracun = new System.Windows.Forms.Button();
             this.pnlMeni.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,7 @@ namespace CarinjenjeRobeBaze3
             // 
             this.pnlMeni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
+            this.pnlMeni.Controls.Add(this.btnObracun);
             this.pnlMeni.Controls.Add(this.btnCarinarnice);
             this.pnlMeni.Controls.Add(this.btnStanje);
             this.pnlMeni.Controls.Add(this.btnProizvodi);
@@ -105,6 +107,22 @@ namespace CarinjenjeRobeBaze3
             this.pnlGlavni.Size = new System.Drawing.Size(699, 449);
             this.pnlGlavni.TabIndex = 1;
             // 
+            // btnObracun
+            // 
+            this.btnObracun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
+            this.btnObracun.FlatAppearance.BorderSize = 0;
+            this.btnObracun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnObracun.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
+            this.btnObracun.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnObracun.Location = new System.Drawing.Point(3, 104);
+            this.btnObracun.Name = "btnObracun";
+            this.btnObracun.Size = new System.Drawing.Size(194, 38);
+            this.btnObracun.TabIndex = 10;
+            this.btnObracun.Text = "Obracun";
+            this.btnObracun.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnObracun.UseVisualStyleBackColor = false;
+            this.btnObracun.Click += new System.EventHandler(this.btnObracun_Click);
+            // 
             // FrmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -126,6 +144,7 @@ namespace CarinjenjeRobeBaze3
         private System.Windows.Forms.Button btnStanje;
         private System.Windows.Forms.Button btnProizvodi;
         private System.Windows.Forms.Button btnCarinarnice;
+        private System.Windows.Forms.Button btnObracun;
     }
 }
 
