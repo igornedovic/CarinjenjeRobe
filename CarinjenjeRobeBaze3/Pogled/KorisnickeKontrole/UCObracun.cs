@@ -210,11 +210,14 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
 
 
                 KontrolerStn.Instanca.SacuvajObracun(izabraniObracun);
-                Osvezi();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Osvezi();
             }
 
         }
@@ -239,15 +242,19 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 izabraniObracun.CarinskaTarifa = 1131;
 
                 KontrolerStn.Instanca.IzmeniObracun(izabraniObracun);
-                Osvezi();
             }
             catch (OracleException oracleEx)
             {
+                
                 MessageBox.Show(oracleEx.Message, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Osvezi();
             }
         }
 
@@ -262,11 +269,15 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             try
             {
                 KontrolerStn.Instanca.ObrisiObracun(izabraniObracun);
-                Osvezi();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Osvezi();
             }
         }
 

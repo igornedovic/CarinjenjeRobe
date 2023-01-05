@@ -44,5 +44,15 @@ namespace CarinjenjeRobeBaze3
         {
             OsveziPanel(new UCObracun());
         }
+
+        private void btnSazetaDeklaracija_Click(object sender, EventArgs e)
+        {
+            OsveziPanel(new UCSazetaDeklaracija());
+        }
+
+        private void btnSazete_Click(object sender, EventArgs e)
+        {
+            OsveziPanel(new UCPretragaSazetihDeklaracija());
+        }
     }
 }

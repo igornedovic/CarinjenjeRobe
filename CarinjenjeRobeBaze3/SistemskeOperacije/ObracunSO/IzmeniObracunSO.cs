@@ -13,7 +13,14 @@ namespace CarinjenjeRobeBaze3.SistemskeOperacije.ObracunSO
         {
             Obracun o = (Obracun)obj;
 
-            o.UpdateVrednosti = $"DATUMOBRACUNA=TO_DATE('{o.DatumObracuna.Value.ToString("dd-MM-yyyy")}', 'dd-MM-yyyy'), DATUMOBAVESTENJA=TO_DATE('{o.DatumObavestenja.Value.ToString("dd-MM-yyyy")}', 'dd-MM-yyyy'), NAPOMENA='{o.Napomena}', CARINIKID={o.CarinikId}, BROJJCI={o.BrojJCI}, PRIMALACID={o.PrimalacId}, CARINSKATARIFA={o.CarinskaTarifa}";
+            var updateVrednosti = new StringBuilder($"DATUMOBRACUNA=TO_DATE('{o.DatumObracuna.Value.ToString("dd-MM-yyyy")}', 'dd-MM-yyyy'), DATUMOBAVESTENJA=TO_DATE('{o.DatumObavestenja.Value.ToString("dd-MM-yyyy")}', 'dd-MM-yyyy'), NAPOMENA='{o.Napomena}', CARINIKID={o.CarinikId}, BROJJCI={o.BrojJCI}, PRIMALACID={o.PrimalacId}, CARINSKATARIFA={o.CarinskaTarifa}");
+
+            if (o.SifraCarinarnice != o.OriginalnaSifraCarinarnice)
+            {
+                updateVrednosti.Append($", SIFRACARINARNICE={o.SifraCarinarnice}");
+            }
+
+            o.UpdateVrednosti = updateVrednosti.ToString();
 
             o.WhereUslov = $"BROJOBRACUNA={o.BrojObracuna}";
 

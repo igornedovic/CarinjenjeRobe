@@ -18,6 +18,7 @@ namespace CarinjenjeRobeBaze3.Model
         public int BrojJCI { get; set; }
         public int PrimalacId { get; set; }
         public int CarinskaTarifa { get; set; }
+        public int? OriginalnaSifraCarinarnice { get; private set; }
         public string NazivTabele => "OBRACUN";
 
         public string InsertKolone => "DATUMOBRACUNA, DATUMOBAVESTENJA, NAPOMENA, CARINIKID, SIFRACARINARNICE, BROJJCI, PRIMALACID, CARINSKATARIFA";
@@ -42,6 +43,7 @@ namespace CarinjenjeRobeBaze3.Model
             o.Napomena = (reader["NAPOMENA"] == DBNull.Value) ? null : (string)reader["NAPOMENA"];
             o.CarinikId = (int)reader["CARINIKID"];
             o.SifraCarinarnice = (int?)reader["SIFRACARINARNICE"];
+            o.OriginalnaSifraCarinarnice = o.SifraCarinarnice;
             o.BrojJCI = (int)reader["BROJJCI"];
             o.PrimalacId = (int)reader["PRIMALACID"];
             o.CarinskaTarifa = (int)reader["CARINSKATARIFA"];

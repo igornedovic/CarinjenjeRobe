@@ -51,7 +51,14 @@ namespace CarinjenjeRobeBaze3.DBB
         {
             List<IDomenskiObjekat> rezultat = new List<IDomenskiObjekat>();
             OracleCommand cmd = connection.CreateCommand();
-            cmd.CommandText = $"SELECT * FROM {obj.NazivTabele}";
+            var query = new StringBuilder($"SELECT * FROM {obj.NazivTabele}");
+
+            if (obj is SazetaDeklaracija sd && sd.Particionisanje != null)
+            {
+                query.Append($" {sd.Particionisanje}");
+            }
+
+            cmd.CommandText = query.ToString();
 
             using (OracleDataReader reader = cmd.ExecuteReader())
             {

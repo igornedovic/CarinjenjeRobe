@@ -4,6 +4,7 @@ using CarinjenjeRobeBaze3.SistemskeOperacije.CarinarnicaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinikSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ObracunSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ProizvodSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.SazetaDeklaracijaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.SkladisteSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.StanjeSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.VrstaProizvodaSO;
@@ -191,6 +192,17 @@ namespace CarinjenjeRobeBaze3.Kontroler
             OpstaSO oso = new ObrisiObracunSO();
             oso.Izvrsi(obracun);
         }
+        #endregion
+
+        #region SazetaDeklaracija
+
+        public List<SazetaDeklaracija> UcitajSazete(SazetaDeklaracija sazeta)
+        {
+            OpstaSO oso = new UcitajSazeteSO();
+            oso.Izvrsi(sazeta);
+            return ((UcitajSazeteSO)oso).Rezultat;
+        }
+
         #endregion
     }
 }
