@@ -68,12 +68,19 @@
     <Compile Include="Model\SazetaDeklaracija.cs" />
     <Compile Include="Model\Skladiste.cs" />
     <Compile Include="Model\Stanje.cs" />
+    <Compile Include="Model\StavkaSazDeklaracije.cs" />
     <Compile Include="Model\VrstaProizvoda.cs" />
     <Compile Include="Pogled\Forme\FrmCarinik.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pogled\Forme\FrmCarinik.Designer.cs">
       <DependentUpon>FrmCarinik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pogled\Forme\FrmSazetaDeklaracija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pogled\Forme\FrmSazetaDeklaracija.Designer.cs">
+      <DependentUpon>FrmSazetaDeklaracija.cs</DependentUpon>
     </Compile>
     <Compile Include="Pogled\KorisnickeKontrole\UCCarinarnica.cs">
       <SubType>UserControl</SubType>
@@ -98,12 +105,6 @@
     </Compile>
     <Compile Include="Pogled\KorisnickeKontrole\UCProizvod.Designer.cs">
       <DependentUpon>UCProizvod.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pogled\KorisnickeKontrole\UCSazetaDeklaracija.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Pogled\KorisnickeKontrole\UCSazetaDeklaracija.Designer.cs">
-      <DependentUpon>UCSazetaDeklaracija.cs</DependentUpon>
     </Compile>
     <Compile Include="Pogled\KorisnickeKontrole\UCStanjaProizvoda.cs">
       <SubType>UserControl</SubType>
@@ -130,6 +131,7 @@
     <Compile Include="SistemskeOperacije\ProizvodSO\ObrisiProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\SacuvajProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\UcitajProizvodeSO.cs" />
+    <Compile Include="SistemskeOperacije\SazetaDeklaracijaSO\SacuvajSazetuSO.cs" />
     <Compile Include="SistemskeOperacije\SazetaDeklaracijaSO\UcitajSazeteSO.cs" />
     <Compile Include="SistemskeOperacije\SkladisteSO\UcitajSkladistaSO.cs" />
     <Compile Include="SistemskeOperacije\StanjeSO\IzmeniStanjeSO.cs" />
@@ -143,6 +145,9 @@
     <EmbeddedResource Include="Pogled\Forme\FrmCarinik.resx">
       <DependentUpon>FrmCarinik.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pogled\Forme\FrmSazetaDeklaracija.resx">
+      <DependentUpon>FrmSazetaDeklaracija.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCCarinarnica.resx">
       <DependentUpon>UCCarinarnica.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,9 +159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCProizvod.resx">
       <DependentUpon>UCProizvod.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCSazetaDeklaracija.resx">
-      <DependentUpon>UCSazetaDeklaracija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCStanjaProizvoda.resx">
       <DependentUpon>UCStanjaProizvoda.cs</DependentUpon>

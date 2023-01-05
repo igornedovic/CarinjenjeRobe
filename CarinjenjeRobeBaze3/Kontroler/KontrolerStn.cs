@@ -203,6 +203,12 @@ namespace CarinjenjeRobeBaze3.Kontroler
             return ((UcitajSazeteSO)oso).Rezultat;
         }
 
+        public void SacuvajSazetu(SazetaDeklaracija sazeta)
+        {
+            OpstaSO oso = new SacuvajSazetuSO();
+            oso.Izvrsi(sazeta);
+        }
+
         #endregion
     }
 }

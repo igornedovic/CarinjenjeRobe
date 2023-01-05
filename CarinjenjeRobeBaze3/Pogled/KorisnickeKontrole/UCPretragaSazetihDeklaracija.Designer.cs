@@ -30,12 +30,15 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         private void InitializeComponent()
         {
             this.gbParticije = new System.Windows.Forms.GroupBox();
+            this.rbSve = new System.Windows.Forms.RadioButton();
+            this.rb2022 = new System.Windows.Forms.RadioButton();
+            this.rb2021 = new System.Windows.Forms.RadioButton();
+            this.rb2020 = new System.Windows.Forms.RadioButton();
             this.btnPretrazi = new System.Windows.Forms.Button();
             this.dgvSazete = new System.Windows.Forms.DataGridView();
-            this.rb2020 = new System.Windows.Forms.RadioButton();
-            this.rb2021 = new System.Windows.Forms.RadioButton();
-            this.rb2022 = new System.Windows.Forms.RadioButton();
-            this.rbSve = new System.Windows.Forms.RadioButton();
+            this.btnDodaj = new System.Windows.Forms.Button();
+            this.btnIzmeni = new System.Windows.Forms.Button();
+            this.btnObrisi = new System.Windows.Forms.Button();
             this.gbParticije.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSazete)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +55,54 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.gbParticije.TabIndex = 2;
             this.gbParticije.TabStop = false;
             this.gbParticije.Text = "Particije";
+            // 
+            // rbSve
+            // 
+            this.rbSve.AutoSize = true;
+            this.rbSve.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
+            this.rbSve.Location = new System.Drawing.Point(16, 29);
+            this.rbSve.Name = "rbSve";
+            this.rbSve.Size = new System.Drawing.Size(56, 24);
+            this.rbSve.TabIndex = 31;
+            this.rbSve.TabStop = true;
+            this.rbSve.Text = "Sve";
+            this.rbSve.UseVisualStyleBackColor = true;
+            // 
+            // rb2022
+            // 
+            this.rb2022.AutoSize = true;
+            this.rb2022.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
+            this.rb2022.Location = new System.Drawing.Point(259, 29);
+            this.rb2022.Name = "rb2022";
+            this.rb2022.Size = new System.Drawing.Size(66, 24);
+            this.rb2022.TabIndex = 30;
+            this.rb2022.TabStop = true;
+            this.rb2022.Text = "2022";
+            this.rb2022.UseVisualStyleBackColor = true;
+            // 
+            // rb2021
+            // 
+            this.rb2021.AutoSize = true;
+            this.rb2021.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
+            this.rb2021.Location = new System.Drawing.Point(172, 30);
+            this.rb2021.Name = "rb2021";
+            this.rb2021.Size = new System.Drawing.Size(64, 24);
+            this.rb2021.TabIndex = 30;
+            this.rb2021.TabStop = true;
+            this.rb2021.Text = "2021";
+            this.rb2021.UseVisualStyleBackColor = true;
+            // 
+            // rb2020
+            // 
+            this.rb2020.AutoSize = true;
+            this.rb2020.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
+            this.rb2020.Location = new System.Drawing.Point(87, 29);
+            this.rb2020.Name = "rb2020";
+            this.rb2020.Size = new System.Drawing.Size(66, 24);
+            this.rb2020.TabIndex = 29;
+            this.rb2020.TabStop = true;
+            this.rb2020.Text = "2020";
+            this.rb2020.UseVisualStyleBackColor = true;
             // 
             // btnPretrazi
             // 
@@ -74,61 +125,47 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvSazete.Name = "dgvSazete";
             this.dgvSazete.RowHeadersWidth = 51;
             this.dgvSazete.RowTemplate.Height = 24;
-            this.dgvSazete.Size = new System.Drawing.Size(651, 333);
+            this.dgvSazete.Size = new System.Drawing.Size(522, 333);
             this.dgvSazete.TabIndex = 28;
             // 
-            // rb2020
+            // btnDodaj
             // 
-            this.rb2020.AutoSize = true;
-            this.rb2020.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.rb2020.Location = new System.Drawing.Point(87, 29);
-            this.rb2020.Name = "rb2020";
-            this.rb2020.Size = new System.Drawing.Size(66, 24);
-            this.rb2020.TabIndex = 29;
-            this.rb2020.TabStop = true;
-            this.rb2020.Text = "2020";
-            this.rb2020.UseVisualStyleBackColor = true;
+            this.btnDodaj.Location = new System.Drawing.Point(578, 154);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnDodaj.Size = new System.Drawing.Size(95, 46);
+            this.btnDodaj.TabIndex = 29;
+            this.btnDodaj.Text = "Dodaj";
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // rb2021
+            // btnIzmeni
             // 
-            this.rb2021.AutoSize = true;
-            this.rb2021.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.rb2021.Location = new System.Drawing.Point(172, 30);
-            this.rb2021.Name = "rb2021";
-            this.rb2021.Size = new System.Drawing.Size(64, 24);
-            this.rb2021.TabIndex = 30;
-            this.rb2021.TabStop = true;
-            this.rb2021.Text = "2021";
-            this.rb2021.UseVisualStyleBackColor = true;
+            this.btnIzmeni.Location = new System.Drawing.Point(578, 243);
+            this.btnIzmeni.Name = "btnIzmeni";
+            this.btnIzmeni.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnIzmeni.Size = new System.Drawing.Size(95, 46);
+            this.btnIzmeni.TabIndex = 30;
+            this.btnIzmeni.Text = "Izmeni";
+            this.btnIzmeni.UseVisualStyleBackColor = true;
             // 
-            // rb2022
+            // btnObrisi
             // 
-            this.rb2022.AutoSize = true;
-            this.rb2022.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.rb2022.Location = new System.Drawing.Point(259, 29);
-            this.rb2022.Name = "rb2022";
-            this.rb2022.Size = new System.Drawing.Size(66, 24);
-            this.rb2022.TabIndex = 30;
-            this.rb2022.TabStop = true;
-            this.rb2022.Text = "2022";
-            this.rb2022.UseVisualStyleBackColor = true;
-            // 
-            // rbSve
-            // 
-            this.rbSve.AutoSize = true;
-            this.rbSve.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.rbSve.Location = new System.Drawing.Point(16, 29);
-            this.rbSve.Name = "rbSve";
-            this.rbSve.Size = new System.Drawing.Size(56, 24);
-            this.rbSve.TabIndex = 31;
-            this.rbSve.TabStop = true;
-            this.rbSve.Text = "Sve";
-            this.rbSve.UseVisualStyleBackColor = true;
+            this.btnObrisi.Location = new System.Drawing.Point(578, 339);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnObrisi.Size = new System.Drawing.Size(95, 46);
+            this.btnObrisi.TabIndex = 31;
+            this.btnObrisi.Text = "Obrisi";
+            this.btnObrisi.UseVisualStyleBackColor = true;
             // 
             // UCPretragaSazetihDeklaracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnObrisi);
+            this.Controls.Add(this.btnIzmeni);
+            this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.dgvSazete);
             this.Controls.Add(this.btnPretrazi);
             this.Controls.Add(this.gbParticije);
@@ -149,5 +186,8 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         private System.Windows.Forms.RadioButton rb2022;
         private System.Windows.Forms.RadioButton rb2021;
         private System.Windows.Forms.RadioButton rbSve;
+        private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.Button btnIzmeni;
+        private System.Windows.Forms.Button btnObrisi;
     }
 }

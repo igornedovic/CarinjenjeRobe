@@ -1,5 +1,6 @@
 ﻿using CarinjenjeRobeBaze3.Kontroler;
 using CarinjenjeRobeBaze3.Model;
+using CarinjenjeRobeBaze3.Pogled.Forme;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             dgvSazete.Columns["UpdateVrednosti"].Visible = false;
             dgvSazete.Columns["WhereUslov"].Visible = false;
             dgvSazete.Columns["Particionisanje"].Visible = false;
+            //dgvSazete.Columns["StavkeSazDeklaracije"].Visible = false;
 
             dgvSazete.Columns["DatumSmestaja"].DefaultCellStyle.Format = "dd-MM-yyyy";
             dgvSazete.Columns["RokPodnosenja"].DefaultCellStyle.Format = "dd-MM-yyyy";
@@ -70,6 +72,16 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            FrmSazetaDeklaracija frmSazeta = new FrmSazetaDeklaracija();
+
+            if (frmSazeta.ShowDialog() == DialogResult.OK)
+            {
+                frmSazeta.Dispose();
             }
         }
     }

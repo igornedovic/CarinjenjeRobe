@@ -18,6 +18,7 @@ namespace CarinjenjeRobeBaze3.DBB
 
         List<T> VratiSve(T obj);
         List<T> VratiSveSaSpajanjem(params T[] obj);
+        int SacuvajIVratiId(T obj);
         void Sacuvaj(T obj);
         void Izmeni(T obj);
         void Obrisi(T obj);

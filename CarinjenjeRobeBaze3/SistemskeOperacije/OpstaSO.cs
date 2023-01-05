@@ -22,7 +22,12 @@ namespace CarinjenjeRobeBaze3.SistemskeOperacije
                 IzvrsiUpit(obj);
                 broker.PotvrdiTransakciju();
             }
-            catch (OracleException ex)
+            catch (OracleException oracleEx)
+            {
+                broker.PonistiTransakciju();
+                throw oracleEx;
+            }
+            catch (Exception ex)
             {
                 broker.PonistiTransakciju();
                 throw ex;

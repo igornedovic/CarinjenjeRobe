@@ -3,6 +3,7 @@ using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,6 +93,18 @@ namespace CarinjenjeRobeBaze3.DBB
             }
 
             return rezultat;
+        }
+
+        public int SacuvajIVratiId(IDomenskiObjekat obj)
+        {
+            OracleCommand cmd = connection.CreateCommand();
+            cmd.CommandText = $"INSERT INTO {obj.NazivTabele} ({obj.InsertKolone}) VALUES ({obj.InsertVrednosti}) RETURNING BROJSAZDEKLARACIJE INTO :id_param";
+            OracleParameter parameter = new OracleParameter("id_param", OracleDbType.Int32);
+            parameter.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(parameter);
+            cmd.Parameters["id_param"].DbType = DbType.Int32;
+            cmd.ExecuteNonQuery();
+            return (int)parameter.Value;
         }
 
         public void Sacuvaj(IDomenskiObjekat obj)
