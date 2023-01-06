@@ -36,7 +36,7 @@ namespace CarinjenjeRobeBaze3.Model
 
         public override string ToString()
         {
-            return $"{StopaPDV}";
+            return $"{StopaPDV}%";
         }
     }
 }

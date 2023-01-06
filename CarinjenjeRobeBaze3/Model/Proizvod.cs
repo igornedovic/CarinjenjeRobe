@@ -12,6 +12,7 @@ namespace CarinjenjeRobeBaze3.Model
         public int SifraProizvoda { get; set; }
         public string NazivProizvoda { get; set; }
         public VrstaProizvoda VrstaProizvoda { get; set; }
+        public PDV PDV { get; set; }
         public string NazivTabele => "PROIZVOD";
         public string InsertKolone => "NAZIVPROIZVODA, VRSTAPROIZVODAID";
         public string PrimarniKljuc => "SIFRAPROIZVODA";
@@ -32,8 +33,15 @@ namespace CarinjenjeRobeBaze3.Model
                 p.VrstaProizvoda = new VrstaProizvoda
                 {
                     VrstaProizvodaId = (int)reader["VRSTAPROIZVODAID"],
-                    NazivVrsteProizvoda = (string)reader["NAZIVVRSTEPROIZVODA"]
+                    NazivVrsteProizvoda = (string)reader["NAZIVVRSTEPROIZVODA"],
+                    PDV = new PDV
+                    {
+                        PDVId = (int)reader["PDVID"],
+                        StopaPDV = (int)reader["STOPAPDV"]
+                    }
                 };
+
+                p.PDV = p.VrstaProizvoda.PDV;
             }
 
             return p;

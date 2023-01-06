@@ -83,10 +83,19 @@ namespace CarinjenjeRobeBaze3.DBB
             List<IDomenskiObjekat> rezultat = new List<IDomenskiObjekat>();
             OracleCommand cmd = connection.CreateCommand();
 
-            if (obj.Length == 2)
+            var query = new StringBuilder($"SELECT * FROM {obj[0].NazivTabele} t1");
+
+            if (obj.Length >= 2)
             {
-                cmd.CommandText = $"SELECT * FROM {obj[0].NazivTabele} t1 JOIN {obj[1].NazivTabele} t2 ON ({obj[0].UslovSpajanja})";
+                query.Append($" JOIN {obj[1].NazivTabele} t2 ON ({obj[0].UslovSpajanja})");
+            } 
+            
+            if (obj.Length >= 3)
+            {
+                query.Append($" JOIN {obj[2].NazivTabele} t3 ON ({obj[1].UslovSpajanja})");
             }
+
+            cmd.CommandText = query.ToString();
 
             using (OracleDataReader reader = cmd.ExecuteReader())
             {

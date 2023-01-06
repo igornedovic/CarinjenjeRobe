@@ -18,7 +18,7 @@ namespace CarinjenjeRobeBaze3.Model
 
         public string PrimarniKljuc => "VRSTAPROIZVODAID";
 
-        public string SpoljniKljuc => "";
+        public string SpoljniKljuc => "PDVID";
 
         public string UslovSpajanja { get; set; }
 

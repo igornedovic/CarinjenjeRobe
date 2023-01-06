@@ -59,12 +59,14 @@
       <DependentUpon>FrmGlavna.cs</DependentUpon>
     </Compile>
     <Compile Include="Kontroler\KontrolerStn.cs" />
+    <Compile Include="Model\Carina.cs" />
     <Compile Include="Model\Carinarnica.cs" />
     <Compile Include="Model\Carinik.cs" />
     <Compile Include="Model\IDomenskiObjekat.cs" />
     <Compile Include="Model\Obracun.cs" />
     <Compile Include="Model\PDV.cs" />
     <Compile Include="Model\Proizvod.cs" />
+    <Compile Include="Model\Radnik.cs" />
     <Compile Include="Model\SazetaDeklaracija.cs" />
     <Compile Include="Model\Skladiste.cs" />
     <Compile Include="Model\Stanje.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="SistemskeOperacije\CarinarnicaSO\ObrisiCarinarnicuSO.cs" />
     <Compile Include="SistemskeOperacije\CarinarnicaSO\SacuvajCarinarnicuSO.cs" />
     <Compile Include="SistemskeOperacije\CarinarnicaSO\UcitajCarinarniceSO.cs" />
+    <Compile Include="SistemskeOperacije\CarinaSO\UcitajCarinskeTarifeSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\IzmeniCarinikaSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\ObrisiCarinikaSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\SacuvajCarinikaSO.cs" />
@@ -131,6 +134,7 @@
     <Compile Include="SistemskeOperacije\ProizvodSO\ObrisiProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\SacuvajProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\UcitajProizvodeSO.cs" />
+    <Compile Include="SistemskeOperacije\RadnikSO\UcitajRadnikeSO.cs" />
     <Compile Include="SistemskeOperacije\SazetaDeklaracijaSO\IzmeniSazetuSO.cs" />
     <Compile Include="SistemskeOperacije\SazetaDeklaracijaSO\ObrisiSazetuSO.cs" />
     <Compile Include="SistemskeOperacije\SazetaDeklaracijaSO\SacuvajSazetuSO.cs" />

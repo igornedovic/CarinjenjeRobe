@@ -14,9 +14,11 @@ namespace CarinjenjeRobeBaze3.SistemskeOperacije.ProizvodSO
         {
             Proizvod p = new Proizvod();
             VrstaProizvoda vp = new VrstaProizvoda();
+            PDV pdv = new PDV();
             p.UslovSpajanja = $"t1.{p.SpoljniKljuc} = t2.{vp.PrimarniKljuc}";
+            vp.UslovSpajanja = $"t2.{vp.SpoljniKljuc} = t3.{pdv.PrimarniKljuc}";
 
-            Rezultat = broker.VratiSaSpajanjem(p, vp).OfType<Proizvod>().ToList();
+            Rezultat = broker.VratiSaSpajanjem(p, vp, pdv).OfType<Proizvod>().ToList();
         }
     }
 }

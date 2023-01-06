@@ -19,6 +19,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         private BindingList<Obracun> obracuni;
         private BindingList<Carinik> carinici;
         private BindingList<Carinarnica> carinarnice;
+        private BindingList<Carina> carinskeTarife;
         private Obracun izabraniObracun;
         public UCObracun()
         {
@@ -44,6 +45,10 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 carinarnice = new BindingList<Carinarnica>(KontrolerStn.Instanca.UcitajCarinarnice());
                 cbCarinarnica.DataSource = carinarnice;
                 cbCarinarnica.SelectedItem = null;
+
+                carinskeTarife = new BindingList<Carina>(KontrolerStn.Instanca.UcitajCarinskeTarife());
+                cbCarinskaTarifa.DataSource = carinskeTarife;
+                cbCarinskaTarifa.SelectedItem = null;
             }
             catch (Exception ex)
             {
@@ -101,6 +106,8 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                     cbCarinik.SelectedItem = carinici.Where(c => c.CarinikId == izabraniObracun.CarinikId).FirstOrDefault();
 
                     cbCarinarnica.SelectedItem = carinarnice.Where(c => c.SifraCarinarnice == izabraniObracun.SifraCarinarnice).FirstOrDefault();
+
+                    cbCarinskaTarifa.SelectedItem = carinskeTarife.Where(ct => ct.CarinskaTarifa == izabraniObracun.CarinskaTarifa).FirstOrDefault();
 
                     btnSacuvaj.Enabled = false;
                 }
@@ -206,7 +213,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 izabraniObracun.SifraCarinarnice = ((Carinarnica)cbCarinarnica.SelectedItem).SifraCarinarnice;
                 izabraniObracun.BrojJCI = 1;
                 izabraniObracun.PrimalacId = 1;
-                izabraniObracun.CarinskaTarifa = 1131;
+                izabraniObracun.CarinskaTarifa = ((Carina)cbCarinskaTarifa.SelectedItem).CarinskaTarifa;
 
 
                 KontrolerStn.Instanca.SacuvajObracun(izabraniObracun);
@@ -239,7 +246,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 izabraniObracun.SifraCarinarnice = ((Carinarnica)cbCarinarnica.SelectedItem).SifraCarinarnice;
                 izabraniObracun.BrojJCI = 1;
                 izabraniObracun.PrimalacId = 1;
-                izabraniObracun.CarinskaTarifa = 1131;
+                izabraniObracun.CarinskaTarifa = ((Carina)cbCarinskaTarifa.SelectedItem).CarinskaTarifa;
 
                 KontrolerStn.Instanca.IzmeniObracun(izabraniObracun);
             }

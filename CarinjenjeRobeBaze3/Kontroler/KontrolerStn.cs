@@ -1,9 +1,11 @@
 ﻿using CarinjenjeRobeBaze3.Model;
 using CarinjenjeRobeBaze3.SistemskeOperacije;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinarnicaSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.CarinaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinikSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ObracunSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ProizvodSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.RadnikSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.SazetaDeklaracijaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.SkladisteSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.StanjeSO;
@@ -162,6 +164,26 @@ namespace CarinjenjeRobeBaze3.Kontroler
         {
             OpstaSO oso = new ObrisiCarinikaSO();
             oso.Izvrsi(carinik);
+        }
+
+        #endregion
+
+        #region CarinskaTarifa
+        public List<Carina> UcitajCarinskeTarife()
+        {
+            OpstaSO oso = new UcitajCarinskeTarifeSO();
+            oso.Izvrsi();
+            return ((UcitajCarinskeTarifeSO)oso).Rezultat;
+        }
+
+        #endregion
+
+        #region Radnik
+        public List<Radnik> UcitajRadnike()
+        {
+            OpstaSO oso = new UcitajRadnikeSO();
+            oso.Izvrsi();
+            return ((UcitajRadnikeSO)oso).Rezultat;
         }
 
         #endregion
