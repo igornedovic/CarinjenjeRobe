@@ -86,6 +86,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
 
             this.izabranaSazeta.BrojSazDeklaracije = izabranaSazeta.BrojSazDeklaracije;
             this.izabranaSazeta.OriginalanUkupanBrojKoleta = izabranaSazeta.OriginalanUkupanBrojKoleta;
+            this.izabranaSazeta.OriginalneStavkeSazDeklaracije = izabranaSazeta.OriginalneStavkeSazDeklaracije;
 
             cbProizvod.SelectedItem = null;
 
@@ -108,6 +109,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             dgvStavke.Columns["InsertVrednosti"].Visible = false;
             dgvStavke.Columns["UpdateVrednosti"].Visible = false;
             dgvStavke.Columns["WhereUslov"].Visible = false;
+            dgvStavke.Columns["OriginalanBrojKoleta"].Visible = false;
         }
 
         private bool ValidacijaStavke()
@@ -185,6 +187,66 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
 
                 stavke.Add(stavka);
                 OsveziUnosZaStavku();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Nisu svi podaci uneti u odgovarajucem formatu!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvStavke_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                StavkaSazDeklaracije izabranaStavka = (StavkaSazDeklaracije)dgvStavke.SelectedRows[0].DataBoundItem;
+
+                if (izabranaStavka != null)
+                {
+                    txtBrojPI.Text = izabranaStavka.BrojPrevozneIsprave.ToString();
+                    txtBrojKoleta.Text = izabranaStavka.BrojKoleta.ToString();
+                    txtNapomena.Text = izabranaStavka.Napomena;
+                    cbProizvod.SelectedItem = proizvodi.Where(p => p.SifraProizvoda == izabranaStavka.SifraProizvoda).FirstOrDefault();
+                    cbJedinicaMere.SelectedItem = null;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Odaberite stavku iz tabele!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+        }
+
+        private void btnIzmeni_Click(object sender, EventArgs e)
+        {
+            if (dgvStavke.SelectedRows.Count == 0 || dgvStavke.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Morate izabrati jednu stavku koju zelite da izmenite iz tabele!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            StavkaSazDeklaracije izabranaStavka = (StavkaSazDeklaracije)dgvStavke.SelectedRows[0].DataBoundItem;
+
+            try
+            {
+                StavkaSazDeklaracije stavka = new StavkaSazDeklaracije();
+                stavka.BrojSazDeklaracije = izabranaStavka.BrojSazDeklaracije;
+                stavka.RbStavke = izabranaStavka.RbStavke;
+                stavka.BrojPrevozneIsprave = int.Parse(txtBrojPI.Text);
+                stavka.BrojKoleta = int.Parse(txtBrojKoleta.Text);
+                stavka.Napomena = txtNapomena.Text;
+                stavka.SifraProizvoda = ((Proizvod)cbProizvod.SelectedItem).SifraProizvoda;
+                stavka.SifraJM = 1;
+
+                bool result = stavke.Remove(izabranaStavka);
+
+                if (result)
+                {
+                    stavke.Add(stavka);
+                    OsveziUnosZaStavku();
+
+                    BindingList<StavkaSazDeklaracije> stavkeSortirano = new BindingList<StavkaSazDeklaracije>(stavke.OrderBy(s => s.RbStavke).ToList());
+                    stavke = stavkeSortirano;
+                }
             }
             catch (FormatException)
             {
@@ -353,5 +415,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
                 MessageBox.Show(ex.Message);
             }
         }
+
+
     }
 }

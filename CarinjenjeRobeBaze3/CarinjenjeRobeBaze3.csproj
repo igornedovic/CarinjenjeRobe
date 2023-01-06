@@ -132,6 +132,7 @@
     <Compile Include="SistemskeOperacije\ProizvodSO\SacuvajProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\UcitajProizvodeSO.cs" />
     <Compile Include="SistemskeOperacije\SazetaDeklaracijaSO\IzmeniSazetuSO.cs" />
+    <Compile Include="SistemskeOperacije\SazetaDeklaracijaSO\ObrisiSazetuSO.cs" />
     <Compile Include="SistemskeOperacije\SazetaDeklaracijaSO\SacuvajSazetuSO.cs" />
     <Compile Include="SistemskeOperacije\SazetaDeklaracijaSO\UcitajSazeteSO.cs" />
     <Compile Include="SistemskeOperacije\SazetaDeklaracijaSO\UcitajStavkeSO.cs" />

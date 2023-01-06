@@ -396,6 +396,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.dgvStavke.RowTemplate.Height = 24;
             this.dgvStavke.Size = new System.Drawing.Size(597, 319);
             this.dgvStavke.TabIndex = 37;
+            this.dgvStavke.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStavke_RowHeaderMouseClick);
             // 
             // btnSacuvaj
             // 
@@ -417,6 +418,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.btnIzmeni.TabIndex = 39;
             this.btnIzmeni.Text = "Izmeni stavku";
             this.btnIzmeni.UseVisualStyleBackColor = true;
+            this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
             // FrmSazetaDeklaracija
             // 

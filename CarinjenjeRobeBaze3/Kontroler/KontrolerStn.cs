@@ -222,6 +222,12 @@ namespace CarinjenjeRobeBaze3.Kontroler
             oso.Izvrsi(sazeta);
         }
 
+        public void ObrisiSazetu(SazetaDeklaracija sazeta)
+        {
+            OpstaSO oso = new ObrisiSazetuSO();
+            oso.Izvrsi(sazeta);
+        }
+
         #endregion
     }
 }

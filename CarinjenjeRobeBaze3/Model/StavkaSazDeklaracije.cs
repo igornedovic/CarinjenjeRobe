@@ -16,6 +16,7 @@ namespace CarinjenjeRobeBaze3.Model
         public string Napomena { get; set; }
         public int SifraProizvoda { get; set; }
         public int SifraJM { get; set; }
+        public int OriginalanBrojKoleta { get; set; }
         public string NazivTabele => "STAVKASAZDEKLARACIJE";
 
         public string InsertKolone => "BROJSAZDEKLARACIJE, RBSTAVKE, BROJPREVOZNEISPRAVE, BROJKOLETA, NAPOMENA, SIFRAPROIZVODA, SIFRAJM";
@@ -38,11 +39,27 @@ namespace CarinjenjeRobeBaze3.Model
             ssd.RbStavke = (int)reader["RBSTAVKE"];
             ssd.BrojPrevozneIsprave = (int)reader["BROJPREVOZNEISPRAVE"];
             ssd.BrojKoleta = (int)reader["BROJKOLETA"];
+            ssd.OriginalanBrojKoleta = ssd.BrojKoleta;
             ssd.Napomena = (reader["NAPOMENA"] == DBNull.Value) ? null : (string)reader["NAPOMENA"];
             ssd.SifraProizvoda = (int)reader["SIFRAPROIZVODA"];
             ssd.SifraJM = (int)reader["SIFRAJM"];
 
             return ssd;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is StavkaSazDeklaracije ssd)
+            {
+                return ssd.BrojSazDeklaracije == BrojSazDeklaracije && ssd.RbStavke == RbStavke && ssd.BrojPrevozneIsprave == BrojPrevozneIsprave && ssd.SifraProizvoda == SifraProizvoda && ssd.SifraJM == SifraJM;
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

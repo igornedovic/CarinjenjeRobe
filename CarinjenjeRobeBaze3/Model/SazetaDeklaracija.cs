@@ -22,6 +22,7 @@ namespace CarinjenjeRobeBaze3.Model
         public int? UkupanBrojKoleta { get; set; }
         public int? OriginalanUkupanBrojKoleta { get; set; }
         public List<StavkaSazDeklaracije> StavkeSazDeklaracije { get; set; } = new List<StavkaSazDeklaracije>();
+        public List<StavkaSazDeklaracije> OriginalneStavkeSazDeklaracije { get; set; } = new List<StavkaSazDeklaracije>();
         public string NazivTabele => "SAZETADEKLARACIJA";
 
         public string InsertKolone => "ROKPODNOSENJA, OZNAKAOBEZBEDJENJA, MESTOID, BROJTABLICE, SIFRARADNIKA, PRIMALACID, SIFRACARINARNICE, SKLADISTEID, UKUPANBROJKOLETA, DATUMSMESTAJA";

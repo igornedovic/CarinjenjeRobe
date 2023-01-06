@@ -25,6 +25,34 @@ namespace CarinjenjeRobeBaze3.SistemskeOperacije.SazetaDeklaracijaSO
             sd.WhereUslov = $"BROJSAZDEKLARACIJE={sd.BrojSazDeklaracije}";
 
             broker.Izmeni(sd);
+
+            foreach (var originalnaStavka in sd.OriginalneStavkeSazDeklaracije)
+            {
+                if (!sd.StavkeSazDeklaracije.Contains(originalnaStavka))
+                {
+                    originalnaStavka.WhereUslov = $"BROJSAZDEKLARACIJE={originalnaStavka.BrojSazDeklaracije} AND RBSTAVKE={originalnaStavka.RbStavke}";
+
+                    broker.Obrisi(originalnaStavka);
+                }
+            }
+
+            foreach (var stavka in sd.StavkeSazDeklaracije)
+            {
+                if (!sd.OriginalneStavkeSazDeklaracije.Contains(stavka) && !sd.OriginalneStavkeSazDeklaracije.Any(s => s.BrojSazDeklaracije == stavka.BrojSazDeklaracije && s.RbStavke == stavka.RbStavke && stavka.BrojKoleta == stavka.OriginalanBrojKoleta))
+                {
+                    stavka.BrojSazDeklaracije = sd.BrojSazDeklaracije;
+
+                    broker.Sacuvaj(stavka);
+                }
+                else
+                {
+                    stavka.UpdateVrednosti = $"BROJPREVOZNEISPRAVE={stavka.BrojPrevozneIsprave}, BROJKOLETA={stavka.BrojKoleta}, NAPOMENA='{stavka.Napomena}', SIFRAPROIZVODA={stavka.SifraProizvoda}, SIFRAJM={stavka.SifraJM}";
+
+                    stavka.WhereUslov = $"BROJSAZDEKLARACIJE={stavka.BrojSazDeklaracije} AND RBSTAVKE={stavka.RbStavke}";
+
+                    broker.Izmeni(stavka);
+                }
+            }
         }
     }
 }

@@ -113,6 +113,20 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             try
             {
                 izabranaSazeta.StavkeSazDeklaracije = KontrolerStn.Instanca.UcitajStavke(izabranaSazeta);
+                
+                foreach (var item in izabranaSazeta.StavkeSazDeklaracije)
+                {
+                    izabranaSazeta.OriginalneStavkeSazDeklaracije.Add(new StavkaSazDeklaracije
+                    {
+                        BrojSazDeklaracije = item.BrojSazDeklaracije,
+                        RbStavke = item.RbStavke,
+                        BrojPrevozneIsprave = item.BrojPrevozneIsprave,
+                        BrojKoleta = item.BrojKoleta,
+                        Napomena = item.Napomena,
+                        SifraProizvoda = item.SifraProizvoda,
+                        SifraJM = item.SifraJM
+                    });
+                }
 
                 FrmSazetaDeklaracija frmSazeta = new FrmSazetaDeklaracija("UPDATE", izabranaSazeta);
 
@@ -136,7 +150,22 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
+            if (dgvSazete.SelectedRows.Count == 0 || dgvSazete.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Morate izabrati sazetu deklaraciju koju zelite da obrisete iz tabele!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            try
+            {
+                KontrolerStn.Instanca.ObrisiSazetu(izabranaSazeta);
+                sazete = new BindingList<SazetaDeklaracija>(KontrolerStn.Instanca.UcitajSazete(sdZaParticionisanje));
+                dgvSazete.DataSource = sazete;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }
