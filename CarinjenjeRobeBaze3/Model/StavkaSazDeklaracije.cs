@@ -11,7 +11,7 @@ namespace CarinjenjeRobeBaze3.Model
     {
         public int BrojSazDeklaracije { get; set; }
         public int RbStavke { get; set; }
-        public double BrojPrevozneIsprave { get; set; }
+        public int BrojPrevozneIsprave { get; set; }
         public int BrojKoleta { get; set; }
         public string Napomena { get; set; }
         public int SifraProizvoda { get; set; }
@@ -36,9 +36,9 @@ namespace CarinjenjeRobeBaze3.Model
             StavkaSazDeklaracije ssd = new StavkaSazDeklaracije();
             ssd.BrojSazDeklaracije = (int)reader["BROJSAZDEKLARACIJE"];
             ssd.RbStavke = (int)reader["RBSTAVKE"];
-            ssd.BrojPrevozneIsprave = (double)reader["BROJPREVOZNEISPRAVE"];
+            ssd.BrojPrevozneIsprave = (int)reader["BROJPREVOZNEISPRAVE"];
             ssd.BrojKoleta = (int)reader["BROJKOLETA"];
-            ssd.Napomena = (string)reader["NAPOMENA"];
+            ssd.Napomena = (reader["NAPOMENA"] == DBNull.Value) ? null : (string)reader["NAPOMENA"];
             ssd.SifraProizvoda = (int)reader["SIFRAPROIZVODA"];
             ssd.SifraJM = (int)reader["SIFRAJM"];
 

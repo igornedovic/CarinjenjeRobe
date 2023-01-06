@@ -64,6 +64,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.btnObrisi = new System.Windows.Forms.Button();
             this.dgvStavke = new System.Windows.Forms.DataGridView();
             this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.btnIzmeni = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.SuspendLayout();
@@ -374,7 +375,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(289, 358);
+            this.btnObrisi.Location = new System.Drawing.Point(289, 451);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnObrisi.Size = new System.Drawing.Size(95, 46);
@@ -407,11 +408,22 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.btnSacuvaj.UseVisualStyleBackColor = true;
             this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
+            // btnIzmeni
+            // 
+            this.btnIzmeni.Location = new System.Drawing.Point(289, 369);
+            this.btnIzmeni.Name = "btnIzmeni";
+            this.btnIzmeni.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnIzmeni.Size = new System.Drawing.Size(95, 46);
+            this.btnIzmeni.TabIndex = 39;
+            this.btnIzmeni.Text = "Izmeni stavku";
+            this.btnIzmeni.UseVisualStyleBackColor = true;
+            // 
             // FrmSazetaDeklaracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 653);
+            this.Controls.Add(this.btnIzmeni);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.dgvStavke);
             this.Controls.Add(this.btnObrisi);
@@ -484,5 +496,6 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.DataGridView dgvStavke;
         private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.Button btnIzmeni;
     }
 }

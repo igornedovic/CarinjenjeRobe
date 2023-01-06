@@ -1,5 +1,6 @@
 ﻿using CarinjenjeRobeBaze3.Kontroler;
 using CarinjenjeRobeBaze3.Model;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,9 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
         private BindingList<Carinarnica> carinarnice;
         private BindingList<Skladiste> skladista;
         private BindingList<Proizvod> proizvodi;
-        public FrmSazetaDeklaracija()
+
+        private string mod = null;
+        public FrmSazetaDeklaracija(string mod = null, SazetaDeklaracija izabranaSazeta = null)
         {
             InitializeComponent();
 
@@ -30,28 +33,67 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             txtRokPodnosenja.Format = DateTimePickerFormat.Custom;
             txtRokPodnosenja.CustomFormat = "dd-MM-yyyy";
 
-            dgvStavke.DataSource = stavke;
-
-            PrilagodiTabelu();
-
             try
             {
                 carinarnice = new BindingList<Carinarnica>(KontrolerStn.Instanca.UcitajCarinarnice());
-                cbCarinarnica.DataSource = carinarnice;
-                cbCarinarnica.SelectedItem = null;
+                cbCarinarnica.DataSource = carinarnice;         
 
                 skladista = new BindingList<Skladiste>(KontrolerStn.Instanca.UcitajSkladista());
-                cbSkladiste.DataSource = skladista;
-                cbSkladiste.SelectedItem = null;
+                cbSkladiste.DataSource = skladista;       
 
                 proizvodi = new BindingList<Proizvod>(KontrolerStn.Instanca.UcitajProizvode());
                 cbProizvod.DataSource = proizvodi;
-                cbProizvod.SelectedItem = null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            if (mod == null)
+            {
+                InsertMod();
+            }
+            else
+            {
+                this.mod = mod;
+                UpdateMod(izabranaSazeta);
+            }
+        }
+
+        private void InsertMod()
+        {
+            cbCarinarnica.SelectedItem = null;
+            cbSkladiste.SelectedItem = null;
+            cbProizvod.SelectedItem = null;
+
+            dgvStavke.DataSource = stavke;
+            PrilagodiTabelu();
+        }
+
+        private void UpdateMod(SazetaDeklaracija izabranaSazeta)
+        {
+            txtDatumSmestaja.Value = izabranaSazeta.DatumSmestaja.Value;
+
+            txtRokPodnosenja.Value = izabranaSazeta.RokPodnosenja.Value;
+
+            txtOznaka.Text = izabranaSazeta.OznakaObezbedjenja.ToString();
+
+            cbCarinarnica.SelectedItem = carinarnice.Where(c => c.SifraCarinarnice == izabranaSazeta.SifraCarinarnice).FirstOrDefault();
+
+            cbSkladiste.SelectedItem = skladista.Where(s => s.SkladisteId == izabranaSazeta.SkladisteId).FirstOrDefault();
+
+            txtUkupanBrojKoleta.Text = izabranaSazeta.UkupanBrojKoleta.ToString();
+
+            this.izabranaSazeta.BrojSazDeklaracije = izabranaSazeta.BrojSazDeklaracije;
+            this.izabranaSazeta.OriginalanUkupanBrojKoleta = izabranaSazeta.OriginalanUkupanBrojKoleta;
+
+            cbProizvod.SelectedItem = null;
+
+            BindingList<StavkaSazDeklaracije> stavkeIzabraneSazete = new BindingList<StavkaSazDeklaracije>(izabranaSazeta.StavkeSazDeklaracije);
+
+            this.stavke = stavkeIzabraneSazete;
+            dgvStavke.DataSource = stavke;
+            PrilagodiTabelu();
         }
 
         private void PrilagodiTabelu()
@@ -135,7 +177,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             {
                 StavkaSazDeklaracije stavka = new StavkaSazDeklaracije();
                 stavka.RbStavke = stavke.Count + 1;
-                stavka.BrojPrevozneIsprave = double.Parse(txtBrojPI.Text);
+                stavka.BrojPrevozneIsprave = int.Parse(txtBrojPI.Text);
                 stavka.BrojKoleta = int.Parse(txtBrojKoleta.Text);
                 stavka.Napomena = txtNapomena.Text;
                 stavka.SifraProizvoda = ((Proizvod)cbProizvod.SelectedItem).SifraProizvoda;
@@ -286,12 +328,25 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
                 izabranaSazeta.StavkeSazDeklaracije = stavke.ToList();
 
 
-                KontrolerStn.Instanca.SacuvajSazetu(izabranaSazeta);
+                if (mod == null)
+                {
+                    KontrolerStn.Instanca.SacuvajSazetu(izabranaSazeta);
+                }
+                else
+                {
+                    KontrolerStn.Instanca.IzmeniSazetu(izabranaSazeta);
+                }
+                
                 this.DialogResult = DialogResult.OK;
             }
             catch (FormatException)
             {
                 MessageBox.Show("Nisu svi podaci uneti u odgovarajucem formatu!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (OracleException oracleEx)
+            {
+
+                MessageBox.Show(oracleEx.Message, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

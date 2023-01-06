@@ -203,9 +203,22 @@ namespace CarinjenjeRobeBaze3.Kontroler
             return ((UcitajSazeteSO)oso).Rezultat;
         }
 
+        public List<StavkaSazDeklaracije> UcitajStavke(SazetaDeklaracija sazeta)
+        {
+            OpstaSO oso = new UcitajStavkeSO();
+            oso.Izvrsi(sazeta);
+            return ((UcitajStavkeSO)oso).Rezultat;
+        }
+
         public void SacuvajSazetu(SazetaDeklaracija sazeta)
         {
             OpstaSO oso = new SacuvajSazetuSO();
+            oso.Izvrsi(sazeta);
+        }
+
+        public void IzmeniSazetu(SazetaDeklaracija sazeta)
+        {
+            OpstaSO oso = new IzmeniSazetuSO();
             oso.Izvrsi(sazeta);
         }
 

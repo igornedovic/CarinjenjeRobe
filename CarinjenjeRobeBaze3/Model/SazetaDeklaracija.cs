@@ -20,6 +20,7 @@ namespace CarinjenjeRobeBaze3.Model
         public int SifraCarinarnice { get; set; }
         public int SkladisteId { get; set; }
         public int? UkupanBrojKoleta { get; set; }
+        public int? OriginalanUkupanBrojKoleta { get; set; }
         public List<StavkaSazDeklaracije> StavkeSazDeklaracije { get; set; } = new List<StavkaSazDeklaracije>();
         public string NazivTabele => "SAZETADEKLARACIJA";
 
@@ -46,6 +47,7 @@ namespace CarinjenjeRobeBaze3.Model
             sd.RokPodnosenja = (reader["ROKPODNOSENJA"] == DBNull.Value) ? null : (DateTime?)reader["ROKPODNOSENJA"];
             sd.OznakaObezbedjenja = (int)reader["OZNAKAOBEZBEDJENJA"];
             sd.UkupanBrojKoleta = (reader["UKUPANBROJKOLETA"] == DBNull.Value) ? null : (int?)reader["UKUPANBROJKOLETA"];
+            sd.OriginalanUkupanBrojKoleta = sd.UkupanBrojKoleta;
             sd.MestoId = (int)reader["MESTOID"];
             sd.BrojTablice = (string)reader["BROJTABLICE"];
             sd.SifraRadnika = (int)reader["SIFRARADNIKA"];

@@ -1,6 +1,7 @@
 ﻿using CarinjenjeRobeBaze3.Kontroler;
 using CarinjenjeRobeBaze3.Model;
 using CarinjenjeRobeBaze3.Pogled.Forme;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
     public partial class UCPretragaSazetihDeklaracija : UserControl
     {
         private BindingList<SazetaDeklaracija> sazete;
+        private SazetaDeklaracija sdZaParticionisanje = new SazetaDeklaracija();
+        private SazetaDeklaracija izabranaSazeta;
         public UCPretragaSazetihDeklaracija()
         {
             InitializeComponent();
@@ -34,7 +37,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             dgvSazete.Columns["UpdateVrednosti"].Visible = false;
             dgvSazete.Columns["WhereUslov"].Visible = false;
             dgvSazete.Columns["Particionisanje"].Visible = false;
-            //dgvSazete.Columns["StavkeSazDeklaracije"].Visible = false;
+            dgvSazete.Columns["OriginalanUkupanBrojKoleta"].Visible = false;
 
             dgvSazete.Columns["DatumSmestaja"].DefaultCellStyle.Format = "dd-MM-yyyy";
             dgvSazete.Columns["RokPodnosenja"].DefaultCellStyle.Format = "dd-MM-yyyy";
@@ -48,23 +51,23 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 return;
             }
 
-            SazetaDeklaracija sd = new SazetaDeklaracija();
+            
 
             if (rb2020.Checked)
             {
-                sd.Particionisanje = $"PARTITION (SAZETEDEKLARACIJE_{rb2020.Text})";
+                sdZaParticionisanje.Particionisanje = $"PARTITION (SAZETEDEKLARACIJE_{rb2020.Text})";
             } else if (rb2021.Checked)
             {
-                sd.Particionisanje = $"PARTITION (SAZETEDEKLARACIJE_{rb2021.Text})";
+                sdZaParticionisanje.Particionisanje = $"PARTITION (SAZETEDEKLARACIJE_{rb2021.Text})";
             } else if (rb2022.Checked)
             {
-                sd.Particionisanje = $"PARTITION (SAZETEDEKLARACIJE_{rb2022.Text})";
+                sdZaParticionisanje.Particionisanje = $"PARTITION (SAZETEDEKLARACIJE_{rb2022.Text})";
             }
 
 
             try
             {
-                sazete = new BindingList<SazetaDeklaracija>(KontrolerStn.Instanca.UcitajSazete(sd));
+                sazete = new BindingList<SazetaDeklaracija>(KontrolerStn.Instanca.UcitajSazete(sdZaParticionisanje));
                 dgvSazete.DataSource = sazete;
 
                 PrilagodiTabelu();
@@ -84,5 +87,57 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 frmSazeta.Dispose();
             }
         }
+
+        private void dgvSazete_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                izabranaSazeta = (SazetaDeklaracija)dgvSazete.SelectedRows[0].DataBoundItem;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Odaberite stavku iz tabele!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+        }
+
+        private void btnIzmeni_Click(object sender, EventArgs e)
+        {
+            if (dgvSazete.SelectedRows.Count == 0 || dgvSazete.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Morate izabrati sazetu deklaraciju koju zelite da izmenite iz tabele!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                izabranaSazeta.StavkeSazDeklaracije = KontrolerStn.Instanca.UcitajStavke(izabranaSazeta);
+
+                FrmSazetaDeklaracija frmSazeta = new FrmSazetaDeklaracija("UPDATE", izabranaSazeta);
+
+                if (frmSazeta.ShowDialog() == DialogResult.OK)
+                {
+                    frmSazeta.Dispose();
+                    sazete = new BindingList<SazetaDeklaracija>(KontrolerStn.Instanca.UcitajSazete(sdZaParticionisanje));
+                    dgvSazete.DataSource = sazete;
+                }
+            }
+            catch (OracleException oracleEx)
+            {
+
+                MessageBox.Show(oracleEx.Message, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

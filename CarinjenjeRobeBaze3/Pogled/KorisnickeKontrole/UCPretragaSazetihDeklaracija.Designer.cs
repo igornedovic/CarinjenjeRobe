@@ -127,6 +127,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvSazete.RowTemplate.Height = 24;
             this.dgvSazete.Size = new System.Drawing.Size(522, 333);
             this.dgvSazete.TabIndex = 28;
+            this.dgvSazete.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSazete_RowHeaderMouseClick);
             // 
             // btnDodaj
             // 
@@ -148,6 +149,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnIzmeni.TabIndex = 30;
             this.btnIzmeni.Text = "Izmeni";
             this.btnIzmeni.UseVisualStyleBackColor = true;
+            this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
             // btnObrisi
             // 
@@ -158,6 +160,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnObrisi.TabIndex = 31;
             this.btnObrisi.Text = "Obrisi";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // UCPretragaSazetihDeklaracija
             // 

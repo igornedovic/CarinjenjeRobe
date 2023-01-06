@@ -54,6 +54,11 @@ namespace CarinjenjeRobeBaze3.DBB
             OracleCommand cmd = connection.CreateCommand();
             var query = new StringBuilder($"SELECT * FROM {obj.NazivTabele}");
 
+            if (obj.WhereUslov != null)
+            {
+                query.Append($" WHERE {obj.WhereUslov}");
+            }
+
             if (obj is SazetaDeklaracija sd && sd.Particionisanje != null)
             {
                 query.Append($" {sd.Particionisanje}");
@@ -73,7 +78,7 @@ namespace CarinjenjeRobeBaze3.DBB
             return rezultat;
         }
 
-        public List<IDomenskiObjekat> VratiSveSaSpajanjem(params IDomenskiObjekat[] obj)
+        public List<IDomenskiObjekat> VratiSaSpajanjem(params IDomenskiObjekat[] obj)
         {
             List<IDomenskiObjekat> rezultat = new List<IDomenskiObjekat>();
             OracleCommand cmd = connection.CreateCommand();
