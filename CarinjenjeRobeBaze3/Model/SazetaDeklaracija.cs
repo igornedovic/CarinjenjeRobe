@@ -58,5 +58,10 @@ namespace CarinjenjeRobeBaze3.Model
 
             return sd;
         }
+
+        public override string ToString()
+        {
+            return $"{BrojSazDeklaracije} - {DatumSmestaja.Value.ToShortDateString()}";
+        }
     }
 }

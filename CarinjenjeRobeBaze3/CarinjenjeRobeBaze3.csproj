@@ -63,6 +63,7 @@
     <Compile Include="Model\Carinarnica.cs" />
     <Compile Include="Model\Carinik.cs" />
     <Compile Include="Model\IDomenskiObjekat.cs" />
+    <Compile Include="Model\JCI.cs" />
     <Compile Include="Model\Obracun.cs" />
     <Compile Include="Model\PDV.cs" />
     <Compile Include="Model\Proizvod.cs" />
@@ -77,6 +78,12 @@
     </Compile>
     <Compile Include="Pogled\Forme\FrmCarinik.Designer.cs">
       <DependentUpon>FrmCarinik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pogled\Forme\FrmJCI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pogled\Forme\FrmJCI.Designer.cs">
+      <DependentUpon>FrmJCI.cs</DependentUpon>
     </Compile>
     <Compile Include="Pogled\Forme\FrmSazetaDeklaracija.cs">
       <SubType>Form</SubType>
@@ -95,6 +102,12 @@
     </Compile>
     <Compile Include="Pogled\KorisnickeKontrole\UCObracun.Designer.cs">
       <DependentUpon>UCObracun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pogled\KorisnickeKontrole\UCPretragaJCI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pogled\KorisnickeKontrole\UCPretragaJCI.Designer.cs">
+      <DependentUpon>UCPretragaJCI.cs</DependentUpon>
     </Compile>
     <Compile Include="Pogled\KorisnickeKontrole\UCPretragaSazetihDeklaracija.cs">
       <SubType>UserControl</SubType>
@@ -125,6 +138,8 @@
     <Compile Include="SistemskeOperacije\CarinikSO\ObrisiCarinikaSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\SacuvajCarinikaSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\UcitajCarinikeSO.cs" />
+    <Compile Include="SistemskeOperacije\JCISO\SacuvajJCISO.cs" />
+    <Compile Include="SistemskeOperacije\JCISO\UcitajJCISO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\IzmeniObracunSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\ObrisiObracunSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\SacuvajObracunSO.cs" />
@@ -152,6 +167,9 @@
     <EmbeddedResource Include="Pogled\Forme\FrmCarinik.resx">
       <DependentUpon>FrmCarinik.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pogled\Forme\FrmJCI.resx">
+      <DependentUpon>FrmJCI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pogled\Forme\FrmSazetaDeklaracija.resx">
       <DependentUpon>FrmSazetaDeklaracija.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCObracun.resx">
       <DependentUpon>UCObracun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCPretragaJCI.resx">
+      <DependentUpon>UCPretragaJCI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCPretragaSazetihDeklaracija.resx">
       <DependentUpon>UCPretragaSazetihDeklaracija.cs</DependentUpon>

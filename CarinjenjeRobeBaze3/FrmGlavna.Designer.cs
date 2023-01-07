@@ -37,12 +37,14 @@ namespace CarinjenjeRobeBaze3
             this.btnStanje = new System.Windows.Forms.Button();
             this.btnProizvodi = new System.Windows.Forms.Button();
             this.pnlGlavni = new System.Windows.Forms.Panel();
+            this.btnJCI = new System.Windows.Forms.Button();
             this.pnlMeni.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMeni
             // 
             this.pnlMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
+            this.pnlMeni.Controls.Add(this.btnJCI);
             this.pnlMeni.Controls.Add(this.btnSazete);
             this.pnlMeni.Controls.Add(this.lblProizvodi);
             this.pnlMeni.Controls.Add(this.btnObracun);
@@ -152,6 +154,22 @@ namespace CarinjenjeRobeBaze3
             this.pnlGlavni.Size = new System.Drawing.Size(699, 449);
             this.pnlGlavni.TabIndex = 1;
             // 
+            // btnJCI
+            // 
+            this.btnJCI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
+            this.btnJCI.FlatAppearance.BorderSize = 0;
+            this.btnJCI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJCI.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
+            this.btnJCI.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnJCI.Location = new System.Drawing.Point(0, 209);
+            this.btnJCI.Name = "btnJCI";
+            this.btnJCI.Size = new System.Drawing.Size(257, 38);
+            this.btnJCI.TabIndex = 14;
+            this.btnJCI.Text = "> JCI";
+            this.btnJCI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJCI.UseVisualStyleBackColor = false;
+            this.btnJCI.Click += new System.EventHandler(this.btnJCI_Click);
+            // 
             // FrmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -177,6 +195,7 @@ namespace CarinjenjeRobeBaze3
         private System.Windows.Forms.Button btnObracun;
         private System.Windows.Forms.Label lblProizvodi;
         private System.Windows.Forms.Button btnSazete;
+        private System.Windows.Forms.Button btnJCI;
     }
 }
 

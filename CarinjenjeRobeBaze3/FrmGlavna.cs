@@ -49,5 +49,10 @@ namespace CarinjenjeRobeBaze3
         {
             OsveziPanel(new UCPretragaSazetihDeklaracija());
         }
+
+        private void btnJCI_Click(object sender, EventArgs e)
+        {
+            OsveziPanel(new UCPretragaJCI());
+        }
     }
 }

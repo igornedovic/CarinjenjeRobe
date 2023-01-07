@@ -3,6 +3,7 @@ using CarinjenjeRobeBaze3.SistemskeOperacije;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinarnicaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinikSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.JCISO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ObracunSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ProizvodSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.RadnikSO;
@@ -248,6 +249,22 @@ namespace CarinjenjeRobeBaze3.Kontroler
         {
             OpstaSO oso = new ObrisiSazetuSO();
             oso.Izvrsi(sazeta);
+        }
+
+        #endregion
+
+        #region JCI
+        public List<JCI> UcitajJCI()
+        {
+            OpstaSO oso = new UcitajJCISO();
+            oso.Izvrsi();
+            return ((UcitajJCISO)oso).Rezultat;
+        }
+
+        public void SacuvajJCI(JCI jci)
+        {
+            OpstaSO oso = new SacuvajJCISO();
+            oso.Izvrsi(jci);
         }
 
         #endregion
