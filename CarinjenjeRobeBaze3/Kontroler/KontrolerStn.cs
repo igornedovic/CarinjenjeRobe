@@ -267,6 +267,18 @@ namespace CarinjenjeRobeBaze3.Kontroler
             oso.Izvrsi(jci);
         }
 
+        public void IzmeniJCI(JCI jci)
+        {
+            OpstaSO oso = new IzmeniJCISO();
+            oso.Izvrsi(jci);
+        }
+
+        public void ObrisiJCI(JCI jci)
+        {
+            OpstaSO oso = new ObrisiJCISO();
+            oso.Izvrsi(jci);
+        }
+
         #endregion
     }
 }

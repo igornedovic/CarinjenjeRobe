@@ -1,6 +1,7 @@
 ﻿using CarinjenjeRobeBaze3.Kontroler;
 using CarinjenjeRobeBaze3.Model;
 using CarinjenjeRobeBaze3.Pogled.Forme;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
     public partial class UCPretragaJCI : UserControl
     {
         private BindingList<JCI> listaJCI;
+        private JCI izabranaJCI;
    
         public UCPretragaJCI()
         {
@@ -90,17 +92,68 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
 
         private void dgvJCI_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            try
+            {
+                izabranaJCI = (JCI)dgvJCI.SelectedRows[0].DataBoundItem;
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Odaberite stavku iz tabele!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
 
         private void btnIzmeni_Click(object sender, EventArgs e)
         {
+            if (dgvJCI.SelectedRows.Count == 0 || dgvJCI.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Morate izabrati JCI koju zelite da izmenite iz prve tabele!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            try
+            {
+                FrmJCI frmJCI = new FrmJCI("UPDATE", izabranaJCI);
+
+                if (frmJCI.ShowDialog() == DialogResult.OK)
+                {
+                    frmJCI.Dispose();
+                    listaJCI = new BindingList<JCI>(KontrolerStn.Instanca.UcitajJCI());
+                    dgvJCI.DataSource = listaJCI;
+                    dgvJCIDetalji.DataSource = listaJCI;
+                }
+            }
+            catch (OracleException oracleEx)
+            {
+
+                MessageBox.Show(oracleEx.Message, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
+            if (dgvJCI.SelectedRows.Count == 0 || dgvJCI.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Morate izabrati JCI koju zelite da obrisete iz prve tabele!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            try
+            {
+                KontrolerStn.Instanca.ObrisiJCI(izabranaJCI);
+                listaJCI = new BindingList<JCI>(KontrolerStn.Instanca.UcitajJCI());
+                dgvJCI.DataSource = listaJCI;
+                dgvJCIDetalji.DataSource = listaJCI;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

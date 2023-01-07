@@ -138,6 +138,8 @@
     <Compile Include="SistemskeOperacije\CarinikSO\ObrisiCarinikaSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\SacuvajCarinikaSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\UcitajCarinikeSO.cs" />
+    <Compile Include="SistemskeOperacije\JCISO\IzmeniJCISO.cs" />
+    <Compile Include="SistemskeOperacije\JCISO\ObrisiJCISO.cs" />
     <Compile Include="SistemskeOperacije\JCISO\SacuvajJCISO.cs" />
     <Compile Include="SistemskeOperacije\JCISO\UcitajJCISO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\IzmeniObracunSO.cs" />

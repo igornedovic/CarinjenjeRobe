@@ -82,6 +82,8 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             cbCarinarnica.SelectedItem = carinarnice.Where(c => c.SifraCarinarnice == izabranaJCI.SifraCarinarnice).FirstOrDefault();
 
             cbSkladiste.SelectedItem = skladista.Where(s => s.SkladisteId == izabranaJCI.SkladisteId).FirstOrDefault();
+
+            this.izabranaJCI.BrojJCI = izabranaJCI.BrojJCI;
         }
 
         private bool ValidacijaUnosa()
@@ -251,7 +253,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
                 }
                 else
                 {
-                    //KontrolerStn.Instanca.IzmeniSazetu(izabranaSazeta);
+                    KontrolerStn.Instanca.IzmeniJCI(izabranaJCI);
                 }
 
                 this.DialogResult = DialogResult.OK;

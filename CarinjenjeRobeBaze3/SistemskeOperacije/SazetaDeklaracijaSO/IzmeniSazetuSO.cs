@@ -9,7 +9,7 @@ namespace CarinjenjeRobeBaze3.SistemskeOperacije.SazetaDeklaracijaSO
 {
     public class IzmeniSazetuSO : OpstaSO
     {
-        protected override void IzvrsiUpit(IDomenskiObjekat obj = null)
+        protected override void IzvrsiUpit(IDomenskiObjekat obj)
         {
             SazetaDeklaracija sd = (SazetaDeklaracija)obj;
 
