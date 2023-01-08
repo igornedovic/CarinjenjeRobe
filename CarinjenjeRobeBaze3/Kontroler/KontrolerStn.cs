@@ -5,6 +5,7 @@ using CarinjenjeRobeBaze3.SistemskeOperacije.CarinaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinikSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.JCISO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ObracunSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.PrimalacSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ProizvodSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.RadnikSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.SazetaDeklaracijaSO;
@@ -185,6 +186,16 @@ namespace CarinjenjeRobeBaze3.Kontroler
             OpstaSO oso = new UcitajRadnikeSO();
             oso.Izvrsi();
             return ((UcitajRadnikeSO)oso).Rezultat;
+        }
+
+        #endregion
+
+        #region Primalac
+        public List<Primalac> UcitajPrimaoce()
+        {
+            OpstaSO oso = new UcitajPrimaoceSO();
+            oso.Izvrsi();
+            return ((UcitajPrimaoceSO)oso).Rezultat;
         }
 
         #endregion

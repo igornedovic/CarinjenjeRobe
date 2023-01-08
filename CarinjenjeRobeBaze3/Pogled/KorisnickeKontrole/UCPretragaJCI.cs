@@ -18,6 +18,8 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
     {
         private BindingList<JCI> listaJCI;
         private JCI izabranaJCI;
+
+        private BindingList<Primalac> primaoci;
    
         public UCPretragaJCI()
         {
@@ -30,6 +32,10 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 dgvJCIDetalji.DataSource = listaJCI;
 
                 PrilagodiTabele();
+
+                primaoci = new BindingList<Primalac>(KontrolerStn.Instanca.UcitajPrimaoce());
+                cbPrimalac.DataSource = primaoci;
+                cbPrimalac.SelectedItem = null;
             }
             catch (Exception ex)
             {

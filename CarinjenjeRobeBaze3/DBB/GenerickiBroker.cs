@@ -14,6 +14,7 @@ namespace CarinjenjeRobeBaze3.DBB
     {
         private OracleConnection connection;
         private OracleTransaction transaction;
+        private OracleCommand cmd;
 
         public GenerickiBroker()
         {
@@ -29,13 +30,24 @@ namespace CarinjenjeRobeBaze3.DBB
         {
             if (connection != null)
             {
+                if (cmd != null)
+                {
+                    if (transaction != null)
+                    {
+                        transaction.Dispose();
+                    }
+
+                    cmd.Dispose();
+                }
+
                 connection.Close();
+                connection.Dispose();
             }
         }
 
         public void ZapocniTransakciju()
         {
-            transaction = connection.BeginTransaction();
+            transaction = connection.BeginTransaction(IsolationLevel.ReadCommitted);
         }
 
         public void PotvrdiTransakciju()
@@ -51,7 +63,7 @@ namespace CarinjenjeRobeBaze3.DBB
         public List<IDomenskiObjekat> VratiSve(IDomenskiObjekat obj)
         {
             List<IDomenskiObjekat> rezultat = new List<IDomenskiObjekat>();
-            OracleCommand cmd = connection.CreateCommand();
+            cmd = connection.CreateCommand();
             var query = new StringBuilder($"SELECT * FROM {obj.NazivTabele}");
 
             if (obj.WhereUslov != null)
@@ -81,7 +93,7 @@ namespace CarinjenjeRobeBaze3.DBB
         public List<IDomenskiObjekat> VratiSaSpajanjem(params IDomenskiObjekat[] obj)
         {
             List<IDomenskiObjekat> rezultat = new List<IDomenskiObjekat>();
-            OracleCommand cmd = connection.CreateCommand();
+            cmd = connection.CreateCommand();
 
             var query = new StringBuilder($"SELECT * FROM {obj[0].NazivTabele} t1");
 
@@ -111,7 +123,7 @@ namespace CarinjenjeRobeBaze3.DBB
 
         public int SacuvajIVratiId(IDomenskiObjekat obj)
         {
-            OracleCommand cmd = connection.CreateCommand();
+            cmd = connection.CreateCommand();
             cmd.CommandText = $"INSERT INTO {obj.NazivTabele} ({obj.InsertKolone}) VALUES ({obj.InsertVrednosti}) RETURNING BROJSAZDEKLARACIJE INTO :id_param";
             OracleParameter parameter = new OracleParameter("id_param", OracleDbType.Int32);
             parameter.Direction = ParameterDirection.Output;
@@ -123,14 +135,14 @@ namespace CarinjenjeRobeBaze3.DBB
 
         public void Sacuvaj(IDomenskiObjekat obj)
         {
-            OracleCommand cmd = connection.CreateCommand();
+            cmd = connection.CreateCommand();
             cmd.CommandText = $"INSERT INTO {obj.NazivTabele} ({obj.InsertKolone}) VALUES ({obj.InsertVrednosti})";
             cmd.ExecuteNonQuery();
         }
 
         public void Izmeni(IDomenskiObjekat obj)
         {
-            OracleCommand cmd = connection.CreateCommand();
+            cmd = connection.CreateCommand();
             cmd.CommandText = $"UPDATE {obj.NazivTabele} SET {obj.UpdateVrednosti} WHERE {obj.WhereUslov}";
             cmd.ExecuteNonQuery();
         }

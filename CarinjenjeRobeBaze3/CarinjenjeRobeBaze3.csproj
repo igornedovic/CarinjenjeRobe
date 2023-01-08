@@ -66,6 +66,7 @@
     <Compile Include="Model\JCI.cs" />
     <Compile Include="Model\Obracun.cs" />
     <Compile Include="Model\PDV.cs" />
+    <Compile Include="Model\Primalac.cs" />
     <Compile Include="Model\Proizvod.cs" />
     <Compile Include="Model\Radnik.cs" />
     <Compile Include="Model\SazetaDeklaracija.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="SistemskeOperacije\ObracunSO\SacuvajObracunSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\UcitajObracuneSO.cs" />
     <Compile Include="SistemskeOperacije\OpstaSO.cs" />
+    <Compile Include="SistemskeOperacije\PrimalacSO\UcitajPrimaoceSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\IzmeniProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\ObrisiProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\SacuvajProizvodSO.cs" />

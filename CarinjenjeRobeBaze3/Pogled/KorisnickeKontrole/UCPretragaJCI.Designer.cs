@@ -30,13 +30,13 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         private void InitializeComponent()
         {
             this.lblNazivPrimaoca = new System.Windows.Forms.Label();
-            this.txtNazivPrimaoca = new System.Windows.Forms.TextBox();
             this.btnPretrazi = new System.Windows.Forms.Button();
             this.dgvJCI = new System.Windows.Forms.DataGridView();
             this.dgvJCIDetalji = new System.Windows.Forms.DataGridView();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnIzmeni = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
+            this.cbPrimalac = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJCI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJCIDetalji)).BeginInit();
             this.SuspendLayout();
@@ -50,15 +50,6 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.lblNazivPrimaoca.Size = new System.Drawing.Size(129, 20);
             this.lblNazivPrimaoca.TabIndex = 14;
             this.lblNazivPrimaoca.Text = "Naziv primaoca:";
-            // 
-            // txtNazivPrimaoca
-            // 
-            this.txtNazivPrimaoca.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.txtNazivPrimaoca.Location = new System.Drawing.Point(168, 21);
-            this.txtNazivPrimaoca.Multiline = true;
-            this.txtNazivPrimaoca.Name = "txtNazivPrimaoca";
-            this.txtNazivPrimaoca.Size = new System.Drawing.Size(196, 22);
-            this.txtNazivPrimaoca.TabIndex = 18;
             // 
             // btnPretrazi
             // 
@@ -131,17 +122,25 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnObrisi.UseVisualStyleBackColor = true;
             this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
+            // cbPrimalac
+            // 
+            this.cbPrimalac.FormattingEnabled = true;
+            this.cbPrimalac.Location = new System.Drawing.Point(174, 21);
+            this.cbPrimalac.Name = "cbPrimalac";
+            this.cbPrimalac.Size = new System.Drawing.Size(198, 24);
+            this.cbPrimalac.TabIndex = 34;
+            // 
             // UCPretragaJCI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbPrimalac);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnIzmeni);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.dgvJCIDetalji);
             this.Controls.Add(this.dgvJCI);
             this.Controls.Add(this.btnPretrazi);
-            this.Controls.Add(this.txtNazivPrimaoca);
             this.Controls.Add(this.lblNazivPrimaoca);
             this.Name = "UCPretragaJCI";
             this.Size = new System.Drawing.Size(699, 449);
@@ -155,12 +154,12 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         #endregion
 
         private System.Windows.Forms.Label lblNazivPrimaoca;
-        private System.Windows.Forms.TextBox txtNazivPrimaoca;
         private System.Windows.Forms.Button btnPretrazi;
         private System.Windows.Forms.DataGridView dgvJCI;
         private System.Windows.Forms.DataGridView dgvJCIDetalji;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnIzmeni;
         private System.Windows.Forms.Button btnObrisi;
+        private System.Windows.Forms.ComboBox cbPrimalac;
     }
 }
