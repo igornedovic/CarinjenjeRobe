@@ -45,7 +45,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
 
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
-            if (!rbSve.Checked && !rb2020.Checked && !rb2021.Checked && !rb2022.Checked)
+            if (!rbSve.Checked && !rb2020.Checked && !rb2021.Checked && !rb2022.Checked && !rb2023.Checked)
             {
                 MessageBox.Show("Odaberite stavku iz tabele!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -62,6 +62,9 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             } else if (rb2022.Checked)
             {
                 sdZaParticionisanje.Particionisanje = $"PARTITION (SAZETEDEKLARACIJE_{rb2022.Text})";
+            } else if (rb2023.Checked)
+            {
+                sdZaParticionisanje.Particionisanje = $"PARTITION (SAZETEDEKLARACIJE_{rb2023.Text})";
             }
 
 
@@ -85,6 +88,8 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             if (frmSazeta.ShowDialog() == DialogResult.OK)
             {
                 frmSazeta.Dispose();
+                sazete = new BindingList<SazetaDeklaracija>(KontrolerStn.Instanca.UcitajSazete(sdZaParticionisanje));
+                dgvSazete.DataSource = sazete;
             }
         }
 

@@ -39,19 +39,21 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnIzmeni = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
+            this.rb2023 = new System.Windows.Forms.RadioButton();
             this.gbParticije.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSazete)).BeginInit();
             this.SuspendLayout();
             // 
             // gbParticije
             // 
+            this.gbParticije.Controls.Add(this.rb2023);
             this.gbParticije.Controls.Add(this.rbSve);
             this.gbParticije.Controls.Add(this.rb2022);
             this.gbParticije.Controls.Add(this.rb2021);
             this.gbParticije.Controls.Add(this.rb2020);
             this.gbParticije.Location = new System.Drawing.Point(24, 13);
             this.gbParticije.Name = "gbParticije";
-            this.gbParticije.Size = new System.Drawing.Size(331, 69);
+            this.gbParticije.Size = new System.Drawing.Size(427, 69);
             this.gbParticije.TabIndex = 2;
             this.gbParticije.TabStop = false;
             this.gbParticije.Text = "Particije";
@@ -106,7 +108,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnPretrazi
             // 
-            this.btnPretrazi.Location = new System.Drawing.Point(451, 32);
+            this.btnPretrazi.Location = new System.Drawing.Point(578, 32);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPretrazi.Size = new System.Drawing.Size(95, 46);
@@ -162,6 +164,18 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnObrisi.UseVisualStyleBackColor = true;
             this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
+            // rb2023
+            // 
+            this.rb2023.AutoSize = true;
+            this.rb2023.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
+            this.rb2023.Location = new System.Drawing.Point(348, 29);
+            this.rb2023.Name = "rb2023";
+            this.rb2023.Size = new System.Drawing.Size(66, 24);
+            this.rb2023.TabIndex = 32;
+            this.rb2023.TabStop = true;
+            this.rb2023.Text = "2023";
+            this.rb2023.UseVisualStyleBackColor = true;
+            // 
             // UCPretragaSazetihDeklaracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -192,5 +206,6 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnIzmeni;
         private System.Windows.Forms.Button btnObrisi;
+        private System.Windows.Forms.RadioButton rb2023;
     }
 }
