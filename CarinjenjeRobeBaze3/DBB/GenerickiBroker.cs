@@ -100,6 +100,16 @@ namespace CarinjenjeRobeBaze3.DBB
             if (obj.Length >= 2)
             {
                 query.Append($" JOIN {obj[1].NazivTabele} t2 ON ({obj[0].UslovSpajanja})");
+
+                if (obj[0].WhereUslov != null)
+                {
+                    query.Append($" WHERE {obj[0].WhereUslov}");
+                }
+
+                if (obj[1].WhereUslov != null)
+                {
+                    query.Append($" WHERE {obj[1].WhereUslov}");
+                }
             } 
             
             if (obj.Length >= 3)
@@ -131,6 +141,31 @@ namespace CarinjenjeRobeBaze3.DBB
             cmd.Parameters["id_param"].DbType = DbType.Int32;
             cmd.ExecuteNonQuery();
             return (int)parameter.Value;
+        }
+
+        public List<Primalac> VratiPrimaoce(Primalac primalac)
+        {
+            List<Primalac> rezultat = new List<Primalac>();
+            cmd = connection.CreateCommand();
+            cmd.CommandText = $"SELECT * FROM {primalac.NazivTabele}";
+            OracleParameter parameter = new OracleParameter();
+            parameter.OracleDbType = OracleDbType.Object;
+            parameter.Direction = ParameterDirection.ReturnValue;
+            parameter.UdtTypeName = "PIB";
+            cmd.Parameters.Add(parameter);
+
+            using (OracleDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Primalac p = new Primalac();
+                    p.NazivPrimaoca = (string)reader["NAZIVPRIMAOCA"];
+                    p.PIB = (PIBObjekat)cmd.Parameters[0].Value;
+                    rezultat.Add(p);
+                }
+            }
+
+            return rezultat;
         }
 
         public void Sacuvaj(IDomenskiObjekat obj)

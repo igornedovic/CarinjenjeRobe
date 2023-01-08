@@ -20,7 +20,8 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         private JCI izabranaJCI;
 
         private BindingList<Primalac> primaoci;
-   
+        private BindingList<JCI> listaJCIPoKriterijumu;
+
         public UCPretragaJCI()
         {
             InitializeComponent();
@@ -56,7 +57,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             dgvJCI.Columns["WhereUslov"].Visible = false;
             dgvJCI.Columns["BrojSazDeklaracije"].Visible = false;
             dgvJCI.Columns["PosiljalacId"].Visible = false;
-            dgvJCI.Columns["PrimalacId"].Visible = false;
+            dgvJCI.Columns["Primalac"].Visible = false;
             dgvJCI.Columns["SifraRadnika"].Visible = false;
             dgvJCI.Columns["DrzavaOtpremeId"].Visible = false;
             dgvJCI.Columns["DrzavaPoreklaId"].Visible = false;
@@ -80,7 +81,42 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         }
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
+            if (cbPrimalac.SelectedItem == null)
+            {
+                cbPrimalac.BackColor = Color.Salmon;
+                return;
+            }
 
+            Primalac primalacKriterijum = ((Primalac)cbPrimalac.SelectedItem);
+
+            listaJCIPoKriterijumu = new BindingList<JCI>(KontrolerStn.Instanca.UcitajJCI(primalacKriterijum));
+
+            dgvJCI.DataSource = null;
+            dgvJCIDetalji.DataSource = null;
+
+            if (listaJCIPoKriterijumu.Count > 0)
+            {
+                dgvJCI.DataSource = listaJCIPoKriterijumu;
+                dgvJCIDetalji.DataSource = listaJCIPoKriterijumu;
+
+                PrilagodiTabele();
+            }
+            else
+            {
+                MessageBox.Show("Ne postoje JCI po zadatom kriterijumu!", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void btnResetuj_Click(object sender, EventArgs e)
+        {
+            cbPrimalac.SelectedItem = null;
+            dgvJCI.DataSource = null;
+            dgvJCIDetalji.DataSource = null;
+            dgvJCI.DataSource = listaJCI;
+            dgvJCIDetalji.DataSource = listaJCI;
+
+            PrilagodiTabele();
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -161,6 +197,5 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

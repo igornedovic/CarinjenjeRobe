@@ -10,9 +10,18 @@ namespace CarinjenjeRobeBaze3.SistemskeOperacije.JCISO
     public class UcitajJCISO : OpstaSO
     {
         public List<JCI> Rezultat { get; private set; }
-        protected override void IzvrsiUpit(IDomenskiObjekat obj = null)
+        protected override void IzvrsiUpit(IDomenskiObjekat obj)
         {
-            Rezultat = broker.VratiSve(new JCI()).OfType<JCI>().ToList();
+            JCI jci = new JCI();
+            Primalac p = new Primalac();
+            jci.UslovSpajanja = $"t1.PRIMALACID = t2.PRIMALACID";
+
+            if (obj is Primalac primalacKriterijum)
+            {
+                p.WhereUslov = $"NAZIVPRIMAOCA='{primalacKriterijum.NazivPrimaoca}'";
+            }
+
+            Rezultat = broker.VratiSaSpajanjem(jci, p).OfType<JCI>().ToList();
         }
     }
 }

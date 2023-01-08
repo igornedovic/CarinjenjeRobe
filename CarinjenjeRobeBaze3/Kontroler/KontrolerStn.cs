@@ -265,10 +265,10 @@ namespace CarinjenjeRobeBaze3.Kontroler
         #endregion
 
         #region JCI
-        public List<JCI> UcitajJCI()
+        public List<JCI> UcitajJCI(Primalac p = null)
         {
             OpstaSO oso = new UcitajJCISO();
-            oso.Izvrsi();
+            oso.Izvrsi(p);
             return ((UcitajJCISO)oso).Rezultat;
         }
 

@@ -1,4 +1,5 @@
-﻿using CarinjenjeRobeBaze3.Model;
+﻿using CarinjenjeRobeBaze3.DBB;
+using CarinjenjeRobeBaze3.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace CarinjenjeRobeBaze3.SistemskeOperacije.PrimalacSO
         public List<Primalac> Rezultat { get; private set; }
         protected override void IzvrsiUpit(IDomenskiObjekat obj = null)
         {
-            Rezultat = broker.VratiSve(new Primalac()).OfType<Primalac>().ToList();
+            Rezultat = ((GenerickiBroker)broker).VratiPrimaoce(new Primalac());
         }
     }
 }

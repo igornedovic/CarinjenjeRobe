@@ -13,7 +13,7 @@ namespace CarinjenjeRobeBaze3.Model
         public DateTime? DatumJCI { get; set; }
         public int BrojSazDeklaracije { get; set; }
         public int PosiljalacId { get; set; }
-        public int PrimalacId { get; set; }
+        public Primalac Primalac { get; set; }
         public int SifraRadnika { get; set; }
         public int DrzavaOtpremeId { get; set; }
         public int DrzavaPoreklaId { get; set; }
@@ -32,7 +32,7 @@ namespace CarinjenjeRobeBaze3.Model
 
         public string UslovSpajanja { get; set; }
 
-        public string InsertVrednosti => $"{BrojJCI}, TO_DATE('{DatumJCI.Value.ToString("dd-MM-yyyy")}', 'dd-MM-yyyy'), {BrojSazDeklaracije}, {PosiljalacId}, {PrimalacId}, {SifraRadnika}, {DrzavaOtpremeId}, {DrzavaPoreklaId}, {MestoId}, '{BrojTablice}', {SifraCarinarnice}, {UslovId}, {SkladisteId}";
+        public string InsertVrednosti => $"{BrojJCI}, TO_DATE('{DatumJCI.Value.ToString("dd-MM-yyyy")}', 'dd-MM-yyyy'), {BrojSazDeklaracije}, {PosiljalacId}, {Primalac.PrimalacId}, {SifraRadnika}, {DrzavaOtpremeId}, {DrzavaPoreklaId}, {MestoId}, '{BrojTablice}', {SifraCarinarnice}, {UslovId}, {SkladisteId}";
 
         public string UpdateVrednosti { get; set; }
         public string WhereUslov { get; set; }
@@ -44,7 +44,16 @@ namespace CarinjenjeRobeBaze3.Model
             jci.DatumJCI = (reader["DATUMJCI"] == DBNull.Value) ? null : (DateTime?)reader["DATUMJCI"];
             jci.BrojSazDeklaracije = (int)reader["BROJSAZDEKLARACIJE"];
             jci.PosiljalacId = (int)reader["POSILJALACID"];
-            jci.PrimalacId = (int)reader["PRIMALACID"];
+
+            if (join)
+            {
+                jci.Primalac = new Primalac
+                {
+                    PrimalacId = (int)reader["PRIMALACID"],
+                    NazivPrimaoca = (string)reader["NAZIVPRIMAOCA"]
+                };
+            }
+            
             jci.SifraRadnika = (int)reader["SIFRARADNIKA"];
             jci.DrzavaOtpremeId = (int)reader["DRZAVAOTPREMEID"];
             jci.DrzavaPoreklaId = (int)reader["DRZAVAPOREKLAID"];

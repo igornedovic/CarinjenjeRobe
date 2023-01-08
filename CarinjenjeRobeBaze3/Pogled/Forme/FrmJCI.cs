@@ -236,7 +236,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
                 izabranaJCI.DatumJCI = txtDatumJCI.Value;
                 izabranaJCI.BrojSazDeklaracije = ((SazetaDeklaracija)cbSazeta.SelectedItem).BrojSazDeklaracije;
                 izabranaJCI.PosiljalacId = 1;
-                izabranaJCI.PrimalacId = 1;
+                izabranaJCI.Primalac.PrimalacId = 1;
                 izabranaJCI.SifraRadnika = ((Radnik)cbRadnik.SelectedItem).SifraRadnika;
                 izabranaJCI.DrzavaOtpremeId = 1;
                 izabranaJCI.DrzavaPoreklaId = 1;

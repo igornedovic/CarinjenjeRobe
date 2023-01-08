@@ -37,6 +37,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnIzmeni = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.cbPrimalac = new System.Windows.Forms.ComboBox();
+            this.btnResetuj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJCI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJCIDetalji)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnPretrazi
             // 
-            this.btnPretrazi.Location = new System.Drawing.Point(462, 9);
+            this.btnPretrazi.Location = new System.Drawing.Point(426, 9);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPretrazi.Size = new System.Drawing.Size(95, 46);
@@ -130,10 +131,22 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.cbPrimalac.Size = new System.Drawing.Size(198, 24);
             this.cbPrimalac.TabIndex = 34;
             // 
+            // btnResetuj
+            // 
+            this.btnResetuj.Location = new System.Drawing.Point(580, 9);
+            this.btnResetuj.Name = "btnResetuj";
+            this.btnResetuj.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnResetuj.Size = new System.Drawing.Size(95, 46);
+            this.btnResetuj.TabIndex = 35;
+            this.btnResetuj.Text = "Resetuj";
+            this.btnResetuj.UseVisualStyleBackColor = true;
+            this.btnResetuj.Click += new System.EventHandler(this.btnResetuj_Click);
+            // 
             // UCPretragaJCI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnResetuj);
             this.Controls.Add(this.cbPrimalac);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnIzmeni);
@@ -161,5 +174,6 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         private System.Windows.Forms.Button btnIzmeni;
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.ComboBox cbPrimalac;
+        private System.Windows.Forms.Button btnResetuj;
     }
 }

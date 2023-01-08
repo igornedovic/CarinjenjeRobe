@@ -13,7 +13,7 @@ namespace CarinjenjeRobeBaze3.SistemskeOperacije.JCISO
         {
             JCI jci = (JCI)obj;
 
-            jci.UpdateVrednosti = $"DATUMJCI=TO_DATE('{jci.DatumJCI.Value.ToString("dd-MM-yyyy")}', 'dd-MM-yyyy'), BROJSAZDEKLARACIJE={jci.BrojSazDeklaracije}, POSILJALACID={jci.PosiljalacId}, PRIMALACID={jci.PrimalacId}, SIFRARADNIKA={jci.SifraRadnika}, DRZAVAOTPREMEID={jci.DrzavaOtpremeId}, DRZAVAPOREKLAID={jci.DrzavaPoreklaId}, MESTOID={jci.MestoId}, BROJTABLICE='{jci.BrojTablice}', SIFRACARINARNICE={jci.SifraCarinarnice}, USLOVID={jci.UslovId}, SKLADISTEID={jci.SkladisteId}";
+            jci.UpdateVrednosti = $"DATUMJCI=TO_DATE('{jci.DatumJCI.Value.ToString("dd-MM-yyyy")}', 'dd-MM-yyyy'), BROJSAZDEKLARACIJE={jci.BrojSazDeklaracije}, POSILJALACID={jci.PosiljalacId}, PRIMALACID={jci.Primalac.PrimalacId}, SIFRARADNIKA={jci.SifraRadnika}, DRZAVAOTPREMEID={jci.DrzavaOtpremeId}, DRZAVAPOREKLAID={jci.DrzavaPoreklaId}, MESTOID={jci.MestoId}, BROJTABLICE='{jci.BrojTablice}', SIFRACARINARNICE={jci.SifraCarinarnice}, USLOVID={jci.UslovId}, SKLADISTEID={jci.SkladisteId}";
 
             jci.WhereUslov = $"BROJJCI={jci.BrojJCI}";
 
