@@ -103,6 +103,7 @@
     <Compile Include="Model\Skladiste.cs" />
     <Compile Include="Model\Stanje.cs" />
     <Compile Include="Model\StavkaSazDeklaracije.cs" />
+    <Compile Include="Model\Vozilo.cs" />
     <Compile Include="Model\VrstaProizvoda.cs" />
     <Compile Include="Pogled\Forme\FrmCarinik.cs">
       <SubType>Form</SubType>
@@ -158,6 +159,12 @@
     <Compile Include="Pogled\KorisnickeKontrole\UCStanjaProizvoda.Designer.cs">
       <DependentUpon>UCStanjaProizvoda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pogled\KorisnickeKontrole\UCVozilo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pogled\KorisnickeKontrole\UCVozilo.Designer.cs">
+      <DependentUpon>UCVozilo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SistemskeOperacije\CarinarnicaSO\IzmeniCarinarnicuSO.cs" />
@@ -194,6 +201,10 @@
     <Compile Include="SistemskeOperacije\StanjeSO\ObrisiStanjeSO.cs" />
     <Compile Include="SistemskeOperacije\StanjeSO\SacuvajStanjeSO.cs" />
     <Compile Include="SistemskeOperacije\StanjeSO\UcitajStanjaSO.cs" />
+    <Compile Include="SistemskeOperacije\VoziloSO\IzmeniVoziloSO.cs" />
+    <Compile Include="SistemskeOperacije\VoziloSO\ObrisiVoziloSO.cs" />
+    <Compile Include="SistemskeOperacije\VoziloSO\SacuvajVoziloSO.cs" />
+    <Compile Include="SistemskeOperacije\VoziloSO\UcitajVozilaSO.cs" />
     <Compile Include="SistemskeOperacije\VrstaProizvodaSO\UcitajVrsteProizvodaSO.cs" />
     <EmbeddedResource Include="FrmGlavna.resx">
       <DependentUpon>FrmGlavna.cs</DependentUpon>
@@ -224,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCStanjaProizvoda.resx">
       <DependentUpon>UCStanjaProizvoda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCVozilo.resx">
+      <DependentUpon>UCVozilo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

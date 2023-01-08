@@ -97,6 +97,7 @@ namespace CarinjenjeRobeBaze3.Model
     {
         public IOracleCustomType CreateObject()
         {
+
             return new PIBObjekat();
         }
     }

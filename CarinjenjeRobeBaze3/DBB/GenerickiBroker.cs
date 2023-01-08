@@ -161,6 +161,7 @@ namespace CarinjenjeRobeBaze3.DBB
                     Primalac p = new Primalac();
                     p.NazivPrimaoca = (string)reader["NAZIVPRIMAOCA"];
                     p.PIB = (PIBObjekat)cmd.Parameters[0].Value;
+
                     rezultat.Add(p);
                 }
             }

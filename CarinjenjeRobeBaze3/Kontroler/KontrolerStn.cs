@@ -11,6 +11,7 @@ using CarinjenjeRobeBaze3.SistemskeOperacije.RadnikSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.SazetaDeklaracijaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.SkladisteSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.StanjeSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.VoziloSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.VrstaProizvodaSO;
 using System;
 using System.Collections.Generic;
@@ -196,6 +197,33 @@ namespace CarinjenjeRobeBaze3.Kontroler
             OpstaSO oso = new UcitajPrimaoceSO();
             oso.Izvrsi();
             return ((UcitajPrimaoceSO)oso).Rezultat;
+        }
+
+        #endregion
+
+        #region Vozilo
+        public List<Vozilo> UcitajVozila()
+        {
+            OpstaSO oso = new UcitajVozilaSO();
+            oso.Izvrsi();
+            return ((UcitajVozilaSO)oso).Rezultat;
+        }
+
+        public void SacuvajVozilo(Vozilo vozilo)
+        {
+            OpstaSO oso = new SacuvajVoziloSO();
+            oso.Izvrsi(vozilo);
+        }
+
+        public void IzmeniVozilo(Vozilo vozilo)
+        {
+            OpstaSO oso = new IzmeniVoziloSO();
+            oso.Izvrsi(vozilo);
+        }
+        public void ObrisiVozilo(Vozilo vozilo)
+        {
+            OpstaSO oso = new ObrisiVoziloSO();
+            oso.Izvrsi(vozilo);
         }
 
         #endregion

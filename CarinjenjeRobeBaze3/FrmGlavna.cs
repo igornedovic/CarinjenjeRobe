@@ -54,5 +54,10 @@ namespace CarinjenjeRobeBaze3
         {
             OsveziPanel(new UCPretragaJCI());
         }
+
+        private void btnVozila_Click(object sender, EventArgs e)
+        {
+            OsveziPanel(new UCVozilo());
+        }
     }
 }
