@@ -19,6 +19,9 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
 
         private BindingList<SazetaDeklaracija> sazeteDeklaracije;
         private BindingList<Radnik> radnici;
+        private BindingList<Drzava> drzaveOtpreme;
+        private BindingList<Drzava> drzavePorekla;
+        private BindingList<Mesto> mesta;
         private BindingList<Carinarnica> carinarnice;
         private BindingList<Skladiste> skladista;
 
@@ -37,6 +40,15 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
 
                 radnici = new BindingList<Radnik>(KontrolerStn.Instanca.UcitajRadnike());
                 cbRadnik.DataSource = radnici;
+
+                drzaveOtpreme = new BindingList<Drzava>(KontrolerStn.Instanca.UcitajDrzave());
+                cbRadnik.DataSource = drzaveOtpreme;
+
+                drzavePorekla = new BindingList<Drzava>(KontrolerStn.Instanca.UcitajDrzave());
+                cbRadnik.DataSource = drzavePorekla;
+
+                mesta = new BindingList<Mesto>(KontrolerStn.Instanca.UcitajMesta());
+                cbRadnik.DataSource = mesta;
 
                 carinarnice = new BindingList<Carinarnica>(KontrolerStn.Instanca.UcitajCarinarnice());
                 cbCarinarnica.DataSource = carinarnice;
@@ -65,6 +77,9 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
         {
             cbSazeta.SelectedItem = null;
             cbRadnik.SelectedItem = null;
+            cbDrzavaOtpreme.SelectedItem = null;
+            cbDrzavaPorekla.SelectedItem = null;
+            cbMesto.SelectedItem = null;
             cbCarinarnica.SelectedItem = null;
             cbSkladiste.SelectedItem = null;
 
@@ -78,6 +93,12 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
 
             cbRadnik.SelectedItem = radnici.Where(r => r.SifraRadnika == izabranaJCI.SifraRadnika)
                                            .FirstOrDefault();
+
+            cbDrzavaOtpreme.SelectedItem = drzaveOtpreme.Where(d => d.DrzavaId == izabranaJCI.DrzavaOtpremeId).FirstOrDefault();
+
+            cbDrzavaPorekla.SelectedItem = drzavePorekla.Where(d => d.DrzavaId == izabranaJCI.DrzavaPoreklaId).FirstOrDefault();
+
+            cbMesto.SelectedItem = mesta.Where(m => m.MestoId == izabranaJCI.MestoId).FirstOrDefault();
 
             cbCarinarnica.SelectedItem = carinarnice.Where(c => c.SifraCarinarnice == izabranaJCI.SifraCarinarnice).FirstOrDefault();
 
@@ -99,6 +120,26 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             else
             {
                 cbPosiljalac.BackColor = Color.White;
+            }
+
+            if (cbDrzavaOtpreme.SelectedItem == null)
+            {
+                cbDrzavaOtpreme.BackColor = Color.Salmon;
+                uspesno = false;
+            }
+            else
+            {
+                cbDrzavaOtpreme.BackColor = Color.White;
+            }
+
+            if (cbDrzavaPorekla.SelectedItem == null)
+            {
+                cbDrzavaPorekla.BackColor = Color.Salmon;
+                uspesno = false;
+            }
+            else
+            {
+                cbDrzavaPorekla.BackColor = Color.White;
             }
 
             if (cbMesto.SelectedItem == null)
@@ -238,9 +279,9 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
                 izabranaJCI.PosiljalacId = 1;
                 izabranaJCI.Primalac.PrimalacId = 1;
                 izabranaJCI.SifraRadnika = ((Radnik)cbRadnik.SelectedItem).SifraRadnika;
-                izabranaJCI.DrzavaOtpremeId = 1;
-                izabranaJCI.DrzavaPoreklaId = 1;
-                izabranaJCI.MestoId = 1;
+                izabranaJCI.DrzavaOtpremeId = ((Drzava)cbDrzavaOtpreme.SelectedItem).DrzavaId;
+                izabranaJCI.DrzavaPoreklaId = ((Drzava)cbDrzavaPorekla.SelectedItem).DrzavaId;
+                izabranaJCI.MestoId = ((Mesto)cbMesto.SelectedItem).MestoId;
                 izabranaJCI.BrojTablice = "BG-252-UT";
                 izabranaJCI.SifraCarinarnice = ((Carinarnica)cbCarinarnica.SelectedItem).SifraCarinarnice;
                 izabranaJCI.UslovId = 1;

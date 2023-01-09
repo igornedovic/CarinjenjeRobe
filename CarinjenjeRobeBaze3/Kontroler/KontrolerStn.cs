@@ -3,7 +3,9 @@ using CarinjenjeRobeBaze3.SistemskeOperacije;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinarnicaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinikSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.DrzavaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.JCISO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.MestoSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ObracunSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.PrimalacSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ProizvodSO;
@@ -197,6 +199,26 @@ namespace CarinjenjeRobeBaze3.Kontroler
             OpstaSO oso = new UcitajPrimaoceSO();
             oso.Izvrsi();
             return ((UcitajPrimaoceSO)oso).Rezultat;
+        }
+
+        #endregion
+
+        #region Drzava
+        public List<Drzava> UcitajDrzave()
+        {
+            OpstaSO oso = new UcitajDrzaveSO();
+            oso.Izvrsi();
+            return ((UcitajDrzaveSO)oso).Rezultat;
+        }
+
+        #endregion
+
+        #region Mesto
+        public List<Mesto> UcitajMesta()
+        {
+            OpstaSO oso = new UcitajMestaSO();
+            oso.Izvrsi();
+            return ((UcitajMestaSO)oso).Rezultat;
         }
 
         #endregion

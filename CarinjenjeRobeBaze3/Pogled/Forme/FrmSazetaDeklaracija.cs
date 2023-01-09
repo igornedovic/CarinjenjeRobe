@@ -18,6 +18,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
         private BindingList<StavkaSazDeklaracije> stavke = new BindingList<StavkaSazDeklaracije>();
         private SazetaDeklaracija izabranaSazeta = new SazetaDeklaracija();
 
+        private BindingList<Mesto> mesta;
         private BindingList<Radnik> radnici;
         private BindingList<Carinarnica> carinarnice;
         private BindingList<Skladiste> skladista;
@@ -36,6 +37,9 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
 
             try
             {
+                mesta = new BindingList<Mesto>(KontrolerStn.Instanca.UcitajMesta());
+                cbMesto.DataSource = mesta;
+
                 radnici = new BindingList<Radnik>(KontrolerStn.Instanca.UcitajRadnike());
                 cbRadnik.DataSource = radnici;
 
@@ -66,6 +70,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
 
         private void InsertMod()
         {
+            cbMesto.SelectedItem = null;
             cbRadnik.SelectedItem = null;
             cbCarinarnica.SelectedItem = null;
             cbSkladiste.SelectedItem = null;
@@ -82,6 +87,8 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             txtRokPodnosenja.Value = izabranaSazeta.RokPodnosenja.Value;
 
             txtOznaka.Text = izabranaSazeta.OznakaObezbedjenja.ToString();
+
+            cbMesto.SelectedItem = mesta.Where(m => m.MestoId == izabranaSazeta.MestoId).FirstOrDefault();
 
             cbRadnik.SelectedItem = radnici.Where(r => r.SifraRadnika == izabranaSazeta.SifraRadnika)
                                            .FirstOrDefault();
@@ -389,7 +396,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
                 izabranaSazeta.RokPodnosenja = txtRokPodnosenja.Value;
                 izabranaSazeta.OznakaObezbedjenja = int.Parse(txtOznaka.Text);
                 izabranaSazeta.BrojTablice = "BG-252-UT";
-                izabranaSazeta.MestoId = 1;
+                izabranaSazeta.MestoId = ((Mesto)cbMesto.SelectedItem).MestoId;
                 izabranaSazeta.SifraRadnika = ((Radnik)cbRadnik.SelectedItem).SifraRadnika;
                 izabranaSazeta.PrimalacId = 1;
                 izabranaSazeta.SifraCarinarnice = ((Carinarnica)cbCarinarnica.SelectedItem).SifraCarinarnice;

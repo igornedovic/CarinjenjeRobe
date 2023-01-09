@@ -92,8 +92,10 @@
     <Compile Include="Model\Carina.cs" />
     <Compile Include="Model\Carinarnica.cs" />
     <Compile Include="Model\Carinik.cs" />
+    <Compile Include="Model\Drzava.cs" />
     <Compile Include="Model\IDomenskiObjekat.cs" />
     <Compile Include="Model\JCI.cs" />
+    <Compile Include="Model\Mesto.cs" />
     <Compile Include="Model\Obracun.cs" />
     <Compile Include="Model\PDV.cs" />
     <Compile Include="Model\Primalac.cs" />
@@ -176,10 +178,12 @@
     <Compile Include="SistemskeOperacije\CarinikSO\ObrisiCarinikaSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\SacuvajCarinikaSO.cs" />
     <Compile Include="SistemskeOperacije\CarinikSO\UcitajCarinikeSO.cs" />
+    <Compile Include="SistemskeOperacije\DrzavaSO\UcitajDrzaveSO.cs" />
     <Compile Include="SistemskeOperacije\JCISO\IzmeniJCISO.cs" />
     <Compile Include="SistemskeOperacije\JCISO\ObrisiJCISO.cs" />
     <Compile Include="SistemskeOperacije\JCISO\SacuvajJCISO.cs" />
     <Compile Include="SistemskeOperacije\JCISO\UcitajJCISO.cs" />
+    <Compile Include="SistemskeOperacije\MestoSO\UcitajMestaSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\IzmeniObracunSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\ObrisiObracunSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\SacuvajObracunSO.cs" />

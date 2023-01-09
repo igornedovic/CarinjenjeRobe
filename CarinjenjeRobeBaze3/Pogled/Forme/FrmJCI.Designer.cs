@@ -196,9 +196,9 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(300, 173);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 20);
+            this.label4.Size = new System.Drawing.Size(160, 20);
             this.label4.TabIndex = 35;
-            this.label4.Text = "Mesto:";
+            this.label4.Text = "Mesto izdavanja JCI:";
             // 
             // cbBrojTablice
             // 
