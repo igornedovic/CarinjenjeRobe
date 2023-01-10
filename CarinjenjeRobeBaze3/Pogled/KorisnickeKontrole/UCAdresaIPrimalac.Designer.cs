@@ -33,27 +33,27 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbMesto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNaziv = new System.Windows.Forms.TextBox();
+            this.txtUlica = new System.Windows.Forms.TextBox();
             this.lblNaziv = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBroj = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.btnSacuvajAdresu = new System.Windows.Forms.Button();
             this.dgvAdrese = new System.Windows.Forms.DataGridView();
-            this.btnIzmeni = new System.Windows.Forms.Button();
-            this.btnObrisi = new System.Windows.Forms.Button();
+            this.btnIzmeniAdresu = new System.Windows.Forms.Button();
+            this.btnObrisiAdresu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdrese)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnObrisi);
-            this.groupBox1.Controls.Add(this.btnIzmeni);
+            this.groupBox1.Controls.Add(this.btnObrisiAdresu);
+            this.groupBox1.Controls.Add(this.btnIzmeniAdresu);
             this.groupBox1.Controls.Add(this.dgvAdrese);
-            this.groupBox1.Controls.Add(this.btnSacuvaj);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnSacuvajAdresu);
+            this.groupBox1.Controls.Add(this.txtBroj);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtNaziv);
+            this.groupBox1.Controls.Add(this.txtUlica);
             this.groupBox1.Controls.Add(this.lblNaziv);
             this.groupBox1.Controls.Add(this.cbMesto);
             this.groupBox1.Controls.Add(this.label1);
@@ -91,13 +91,13 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.label1.TabIndex = 14;
             this.label1.Text = "Mesto:";
             // 
-            // txtNaziv
+            // txtUlica
             // 
-            this.txtNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.txtNaziv.Location = new System.Drawing.Point(244, 34);
-            this.txtNaziv.Name = "txtNaziv";
-            this.txtNaziv.Size = new System.Drawing.Size(145, 22);
-            this.txtNaziv.TabIndex = 17;
+            this.txtUlica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.txtUlica.Location = new System.Drawing.Point(244, 34);
+            this.txtUlica.Name = "txtUlica";
+            this.txtUlica.Size = new System.Drawing.Size(145, 22);
+            this.txtUlica.TabIndex = 17;
             // 
             // lblNaziv
             // 
@@ -109,13 +109,13 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.lblNaziv.TabIndex = 16;
             this.lblNaziv.Text = "Ulica:";
             // 
-            // textBox1
+            // txtBroj
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.textBox1.Location = new System.Drawing.Point(447, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(93, 22);
-            this.textBox1.TabIndex = 19;
+            this.txtBroj.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.txtBroj.Location = new System.Drawing.Point(447, 34);
+            this.txtBroj.Name = "txtBroj";
+            this.txtBroj.Size = new System.Drawing.Size(93, 22);
+            this.txtBroj.TabIndex = 19;
             // 
             // label2
             // 
@@ -127,15 +127,16 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.label2.TabIndex = 18;
             this.label2.Text = "Broj:";
             // 
-            // btnSacuvaj
+            // btnSacuvajAdresu
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(569, 22);
-            this.btnSacuvaj.Name = "btnSacuvaj";
-            this.btnSacuvaj.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSacuvaj.Size = new System.Drawing.Size(87, 46);
-            this.btnSacuvaj.TabIndex = 20;
-            this.btnSacuvaj.Text = "Sacuvaj";
-            this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvajAdresu.Location = new System.Drawing.Point(569, 22);
+            this.btnSacuvajAdresu.Name = "btnSacuvajAdresu";
+            this.btnSacuvajAdresu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnSacuvajAdresu.Size = new System.Drawing.Size(87, 46);
+            this.btnSacuvajAdresu.TabIndex = 20;
+            this.btnSacuvajAdresu.Text = "Sacuvaj";
+            this.btnSacuvajAdresu.UseVisualStyleBackColor = true;
+            this.btnSacuvajAdresu.Click += new System.EventHandler(this.btnSacuvajAdresu_Click);
             // 
             // dgvAdrese
             // 
@@ -149,26 +150,29 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvAdrese.RowTemplate.Height = 24;
             this.dgvAdrese.Size = new System.Drawing.Size(532, 114);
             this.dgvAdrese.TabIndex = 21;
+            this.dgvAdrese.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAdrese_RowHeaderMouseClick);
             // 
-            // btnIzmeni
+            // btnIzmeniAdresu
             // 
-            this.btnIzmeni.Location = new System.Drawing.Point(569, 95);
-            this.btnIzmeni.Name = "btnIzmeni";
-            this.btnIzmeni.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnIzmeni.Size = new System.Drawing.Size(87, 45);
-            this.btnIzmeni.TabIndex = 22;
-            this.btnIzmeni.Text = "Izmeni";
-            this.btnIzmeni.UseVisualStyleBackColor = true;
+            this.btnIzmeniAdresu.Location = new System.Drawing.Point(569, 95);
+            this.btnIzmeniAdresu.Name = "btnIzmeniAdresu";
+            this.btnIzmeniAdresu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnIzmeniAdresu.Size = new System.Drawing.Size(87, 45);
+            this.btnIzmeniAdresu.TabIndex = 22;
+            this.btnIzmeniAdresu.Text = "Izmeni";
+            this.btnIzmeniAdresu.UseVisualStyleBackColor = true;
+            this.btnIzmeniAdresu.Click += new System.EventHandler(this.btnIzmeniAdresu_Click);
             // 
-            // btnObrisi
+            // btnObrisiAdresu
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(569, 146);
-            this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnObrisi.Size = new System.Drawing.Size(87, 42);
-            this.btnObrisi.TabIndex = 23;
-            this.btnObrisi.Text = "Obrisi";
-            this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisiAdresu.Location = new System.Drawing.Point(569, 146);
+            this.btnObrisiAdresu.Name = "btnObrisiAdresu";
+            this.btnObrisiAdresu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnObrisiAdresu.Size = new System.Drawing.Size(87, 42);
+            this.btnObrisiAdresu.TabIndex = 23;
+            this.btnObrisiAdresu.Text = "Obrisi";
+            this.btnObrisiAdresu.UseVisualStyleBackColor = true;
+            this.btnObrisiAdresu.Click += new System.EventHandler(this.btnObrisiAdresu_Click);
             // 
             // UCAdresaIPrimalac
             // 
@@ -191,13 +195,13 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbMesto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBroj;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNaziv;
+        private System.Windows.Forms.TextBox txtUlica;
         private System.Windows.Forms.Label lblNaziv;
-        private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.Button btnSacuvajAdresu;
         private System.Windows.Forms.DataGridView dgvAdrese;
-        private System.Windows.Forms.Button btnIzmeni;
-        private System.Windows.Forms.Button btnObrisi;
+        private System.Windows.Forms.Button btnIzmeniAdresu;
+        private System.Windows.Forms.Button btnObrisiAdresu;
     }
 }

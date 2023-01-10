@@ -13,6 +13,7 @@ namespace CarinjenjeRobeBaze3.Model
         public int MestoId { get; set; }
         public int AdresaId { get; set; }
         public UlicaBroj UlicaBroj { get; set; }
+        public int OriginalnoMestoId { get; set; }
         public string NazivTabele => "ADRESA";
 
         public string InsertKolone => "MESTOID, ULICABROJ";
@@ -32,6 +33,7 @@ namespace CarinjenjeRobeBaze3.Model
         {
             Adresa a = new Adresa();
             a.MestoId = (int)reader["MESTOID"];
+            a.OriginalnoMestoId = a.MestoId;
             a.AdresaId = (int)reader["ADRESAID"];
             a.UlicaBroj = new UlicaBroj
             {
@@ -94,12 +96,11 @@ namespace CarinjenjeRobeBaze3.Model
         }
     }
 
-    [OracleCustomTypeMapping("ULICA_BROJ")]
+    [OracleCustomTypeMapping("ULICA BROJ")]
     public class UlicaBrojFactory : IOracleCustomTypeFactory
     {
         public IOracleCustomType CreateObject()
         {
-
             return new UlicaBroj();
         }
     }

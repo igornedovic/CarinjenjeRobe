@@ -231,6 +231,23 @@ namespace CarinjenjeRobeBaze3.Kontroler
             oso.Izvrsi();
             return ((UcitajAdreseSO)oso).Rezultat;
         }
+        public void SacuvajAdresu(Adresa adresa)
+        {
+            OpstaSO oso = new SacuvajAdresuSO();
+            oso.Izvrsi(adresa);
+        }
+
+        public void IzmeniAdresu(Adresa adresa)
+        {
+            OpstaSO oso = new IzmeniAdresuSO();
+            oso.Izvrsi(adresa);
+        }
+
+        public void ObrisiAdresu(Adresa adresa)
+        {
+            OpstaSO oso = new ObrisiAdresuSO();
+            oso.Izvrsi(adresa);
+        }
         #endregion
 
         #region Vozilo

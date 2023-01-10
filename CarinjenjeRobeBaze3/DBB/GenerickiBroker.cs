@@ -190,6 +190,7 @@ namespace CarinjenjeRobeBaze3.DBB
             return rezultat;
         }
 
+        #region Adresa
         public List<Adresa> VratiAdrese(Adresa adresa)
         {
             List<Adresa> rezultat = new List<Adresa>();
@@ -220,5 +221,7 @@ namespace CarinjenjeRobeBaze3.DBB
 
             return rezultat;
         }
+
+        #endregion
     }
 }
