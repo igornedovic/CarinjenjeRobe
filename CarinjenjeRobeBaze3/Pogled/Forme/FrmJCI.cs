@@ -42,13 +42,13 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
                 cbRadnik.DataSource = radnici;
 
                 drzaveOtpreme = new BindingList<Drzava>(KontrolerStn.Instanca.UcitajDrzave());
-                cbRadnik.DataSource = drzaveOtpreme;
+                cbDrzavaOtpreme.DataSource = drzaveOtpreme;
 
                 drzavePorekla = new BindingList<Drzava>(KontrolerStn.Instanca.UcitajDrzave());
-                cbRadnik.DataSource = drzavePorekla;
+                cbDrzavaPorekla.DataSource = drzavePorekla;
 
                 mesta = new BindingList<Mesto>(KontrolerStn.Instanca.UcitajMesta());
-                cbRadnik.DataSource = mesta;
+                cbMesto.DataSource = mesta;
 
                 carinarnice = new BindingList<Carinarnica>(KontrolerStn.Instanca.UcitajCarinarnice());
                 cbCarinarnica.DataSource = carinarnice;

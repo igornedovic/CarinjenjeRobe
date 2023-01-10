@@ -59,5 +59,10 @@ namespace CarinjenjeRobeBaze3
         {
             OsveziPanel(new UCVozilo());
         }
+
+        private void btnAdresaPrimalac_Click(object sender, EventArgs e)
+        {
+            OsveziPanel(new UCAdresaIPrimalac());
+        }
     }
 }

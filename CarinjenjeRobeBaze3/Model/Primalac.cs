@@ -38,8 +38,6 @@ namespace CarinjenjeRobeBaze3.Model
             {
                 PIB = (reader["PIB"] == DBNull.Value) ? null : (string)reader["PIB"]
             };
-            //p.MestoId = (int)reader["MESTOID"];
-            //p.AdresaId = (int)reader["ADRESAID"];
 
             return p;
         }

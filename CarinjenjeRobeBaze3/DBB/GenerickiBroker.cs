@@ -143,6 +143,27 @@ namespace CarinjenjeRobeBaze3.DBB
             return (int)parameter.Value;
         }
 
+        public void Sacuvaj(IDomenskiObjekat obj)
+        {
+            cmd = connection.CreateCommand();
+            cmd.CommandText = $"INSERT INTO {obj.NazivTabele} ({obj.InsertKolone}) VALUES ({obj.InsertVrednosti})";
+            cmd.ExecuteNonQuery();
+        }
+
+        public void Izmeni(IDomenskiObjekat obj)
+        {
+            cmd = connection.CreateCommand();
+            cmd.CommandText = $"UPDATE {obj.NazivTabele} SET {obj.UpdateVrednosti} WHERE {obj.WhereUslov}";
+            cmd.ExecuteNonQuery();
+        }
+
+        public void Obrisi(IDomenskiObjekat obj)
+        {
+            OracleCommand cmd = connection.CreateCommand();
+            cmd.CommandText = $"DELETE FROM {obj.NazivTabele} WHERE {obj.WhereUslov}";
+            cmd.ExecuteNonQuery();
+        }
+
         public List<Primalac> VratiPrimaoce(Primalac primalac)
         {
             List<Primalac> rezultat = new List<Primalac>();
@@ -169,25 +190,35 @@ namespace CarinjenjeRobeBaze3.DBB
             return rezultat;
         }
 
-        public void Sacuvaj(IDomenskiObjekat obj)
+        public List<Adresa> VratiAdrese(Adresa adresa)
         {
+            List<Adresa> rezultat = new List<Adresa>();
             cmd = connection.CreateCommand();
-            cmd.CommandText = $"INSERT INTO {obj.NazivTabele} ({obj.InsertKolone}) VALUES ({obj.InsertVrednosti})";
-            cmd.ExecuteNonQuery();
-        }
+            cmd.CommandText = $@"SELECT a.MestoID, a.AdresaID, a.UlicaBroj.get_naziv_ulice() ""NAZIVULICE"", a.UlicaBroj.get_broj() ""BROJ"" FROM {adresa.NazivTabele} a";
+            OracleParameter parameter = new OracleParameter();
+            parameter.OracleDbType = OracleDbType.Object;
+            parameter.Direction = ParameterDirection.ReturnValue;
+            parameter.UdtTypeName = "ULICABROJ";
+            cmd.Parameters.Add(parameter);
 
-        public void Izmeni(IDomenskiObjekat obj)
-        {
-            cmd = connection.CreateCommand();
-            cmd.CommandText = $"UPDATE {obj.NazivTabele} SET {obj.UpdateVrednosti} WHERE {obj.WhereUslov}";
-            cmd.ExecuteNonQuery();
-        }
+            using (OracleDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Adresa a = new Adresa();
+                    a.MestoId = (int)reader["MESTOID"];
+                    a.AdresaId = (int)reader["ADRESAID"];
+                    a.UlicaBroj = new UlicaBroj
+                    {
+                        NazivUlice = (string)reader["NAZIVULICE"],
+                        Broj = (string)reader["BROJ"]
+                    };
 
-        public void Obrisi(IDomenskiObjekat obj)
-        {
-            OracleCommand cmd = connection.CreateCommand();
-            cmd.CommandText = $"DELETE FROM {obj.NazivTabele} WHERE {obj.WhereUslov}";
-            cmd.ExecuteNonQuery();
+                    rezultat.Add(a);
+                }
+            }
+
+            return rezultat;
         }
     }
 }

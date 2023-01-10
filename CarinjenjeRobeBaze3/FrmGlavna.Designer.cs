@@ -30,6 +30,7 @@ namespace CarinjenjeRobeBaze3
         private void InitializeComponent()
         {
             this.pnlMeni = new System.Windows.Forms.Panel();
+            this.btnVozila = new System.Windows.Forms.Button();
             this.btnJCI = new System.Windows.Forms.Button();
             this.btnSazete = new System.Windows.Forms.Button();
             this.lblProizvodi = new System.Windows.Forms.Label();
@@ -38,13 +39,14 @@ namespace CarinjenjeRobeBaze3
             this.btnStanje = new System.Windows.Forms.Button();
             this.btnProizvodi = new System.Windows.Forms.Button();
             this.pnlGlavni = new System.Windows.Forms.Panel();
-            this.btnVozila = new System.Windows.Forms.Button();
+            this.btnAdresaPrimalac = new System.Windows.Forms.Button();
             this.pnlMeni.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMeni
             // 
             this.pnlMeni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
+            this.pnlMeni.Controls.Add(this.btnAdresaPrimalac);
             this.pnlMeni.Controls.Add(this.btnVozila);
             this.pnlMeni.Controls.Add(this.btnJCI);
             this.pnlMeni.Controls.Add(this.btnSazete);
@@ -58,6 +60,22 @@ namespace CarinjenjeRobeBaze3
             this.pnlMeni.Size = new System.Drawing.Size(257, 563);
             this.pnlMeni.TabIndex = 0;
             // 
+            // btnVozila
+            // 
+            this.btnVozila.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
+            this.btnVozila.FlatAppearance.BorderSize = 0;
+            this.btnVozila.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVozila.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
+            this.btnVozila.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnVozila.Location = new System.Drawing.Point(3, 104);
+            this.btnVozila.Name = "btnVozila";
+            this.btnVozila.Size = new System.Drawing.Size(254, 38);
+            this.btnVozila.TabIndex = 15;
+            this.btnVozila.Text = "Vozila";
+            this.btnVozila.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVozila.UseVisualStyleBackColor = false;
+            this.btnVozila.Click += new System.EventHandler(this.btnVozila_Click);
+            // 
             // btnJCI
             // 
             this.btnJCI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
@@ -65,7 +83,7 @@ namespace CarinjenjeRobeBaze3
             this.btnJCI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJCI.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
             this.btnJCI.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnJCI.Location = new System.Drawing.Point(0, 238);
+            this.btnJCI.Location = new System.Drawing.Point(0, 267);
             this.btnJCI.Name = "btnJCI";
             this.btnJCI.Size = new System.Drawing.Size(257, 38);
             this.btnJCI.TabIndex = 14;
@@ -81,7 +99,7 @@ namespace CarinjenjeRobeBaze3
             this.btnSazete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSazete.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
             this.btnSazete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSazete.Location = new System.Drawing.Point(0, 207);
+            this.btnSazete.Location = new System.Drawing.Point(0, 232);
             this.btnSazete.Name = "btnSazete";
             this.btnSazete.Size = new System.Drawing.Size(257, 38);
             this.btnSazete.TabIndex = 13;
@@ -95,7 +113,7 @@ namespace CarinjenjeRobeBaze3
             this.lblProizvodi.AutoSize = true;
             this.lblProizvodi.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblProizvodi.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProizvodi.Location = new System.Drawing.Point(3, 145);
+            this.lblProizvodi.Location = new System.Drawing.Point(3, 166);
             this.lblProizvodi.Name = "lblProizvodi";
             this.lblProizvodi.Size = new System.Drawing.Size(227, 28);
             this.lblProizvodi.TabIndex = 12;
@@ -108,7 +126,7 @@ namespace CarinjenjeRobeBaze3
             this.btnObracun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnObracun.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
             this.btnObracun.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnObracun.Location = new System.Drawing.Point(0, 176);
+            this.btnObracun.Location = new System.Drawing.Point(0, 197);
             this.btnObracun.Name = "btnObracun";
             this.btnObracun.Size = new System.Drawing.Size(254, 38);
             this.btnObracun.TabIndex = 10;
@@ -172,21 +190,21 @@ namespace CarinjenjeRobeBaze3
             this.pnlGlavni.Size = new System.Drawing.Size(699, 449);
             this.pnlGlavni.TabIndex = 1;
             // 
-            // btnVozila
+            // btnAdresaPrimalac
             // 
-            this.btnVozila.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
-            this.btnVozila.FlatAppearance.BorderSize = 0;
-            this.btnVozila.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVozila.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
-            this.btnVozila.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnVozila.Location = new System.Drawing.Point(3, 104);
-            this.btnVozila.Name = "btnVozila";
-            this.btnVozila.Size = new System.Drawing.Size(254, 38);
-            this.btnVozila.TabIndex = 15;
-            this.btnVozila.Text = "Vozila";
-            this.btnVozila.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVozila.UseVisualStyleBackColor = false;
-            this.btnVozila.Click += new System.EventHandler(this.btnVozila_Click);
+            this.btnAdresaPrimalac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
+            this.btnAdresaPrimalac.FlatAppearance.BorderSize = 0;
+            this.btnAdresaPrimalac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdresaPrimalac.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
+            this.btnAdresaPrimalac.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAdresaPrimalac.Location = new System.Drawing.Point(3, 135);
+            this.btnAdresaPrimalac.Name = "btnAdresaPrimalac";
+            this.btnAdresaPrimalac.Size = new System.Drawing.Size(254, 38);
+            this.btnAdresaPrimalac.TabIndex = 16;
+            this.btnAdresaPrimalac.Text = "Adrese i primaoci";
+            this.btnAdresaPrimalac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdresaPrimalac.UseVisualStyleBackColor = false;
+            this.btnAdresaPrimalac.Click += new System.EventHandler(this.btnAdresaPrimalac_Click);
             // 
             // FrmGlavna
             // 
@@ -215,6 +233,7 @@ namespace CarinjenjeRobeBaze3
         private System.Windows.Forms.Button btnSazete;
         private System.Windows.Forms.Button btnJCI;
         private System.Windows.Forms.Button btnVozila;
+        private System.Windows.Forms.Button btnAdresaPrimalac;
     }
 }
 

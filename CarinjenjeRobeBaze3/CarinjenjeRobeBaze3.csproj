@@ -89,6 +89,7 @@
       <DependentUpon>FrmGlavna.cs</DependentUpon>
     </Compile>
     <Compile Include="Kontroler\KontrolerStn.cs" />
+    <Compile Include="Model\Adresa.cs" />
     <Compile Include="Model\Carina.cs" />
     <Compile Include="Model\Carinarnica.cs" />
     <Compile Include="Model\Carinik.cs" />
@@ -124,6 +125,12 @@
     </Compile>
     <Compile Include="Pogled\Forme\FrmSazetaDeklaracija.Designer.cs">
       <DependentUpon>FrmSazetaDeklaracija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pogled\KorisnickeKontrole\UCAdresaIPrimalac.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pogled\KorisnickeKontrole\UCAdresaIPrimalac.Designer.cs">
+      <DependentUpon>UCAdresaIPrimalac.cs</DependentUpon>
     </Compile>
     <Compile Include="Pogled\KorisnickeKontrole\UCCarinarnica.cs">
       <SubType>UserControl</SubType>
@@ -169,6 +176,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SistemskeOperacije\AdresaSO\UcitajAdreseSO.cs" />
     <Compile Include="SistemskeOperacije\CarinarnicaSO\IzmeniCarinarnicuSO.cs" />
     <Compile Include="SistemskeOperacije\CarinarnicaSO\ObrisiCarinarnicuSO.cs" />
     <Compile Include="SistemskeOperacije\CarinarnicaSO\SacuvajCarinarnicuSO.cs" />
@@ -221,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pogled\Forme\FrmSazetaDeklaracija.resx">
       <DependentUpon>FrmSazetaDeklaracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCAdresaIPrimalac.resx">
+      <DependentUpon>UCAdresaIPrimalac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pogled\KorisnickeKontrole\UCCarinarnica.resx">
       <DependentUpon>UCCarinarnica.cs</DependentUpon>

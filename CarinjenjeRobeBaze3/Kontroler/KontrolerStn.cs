@@ -1,5 +1,6 @@
 ﻿using CarinjenjeRobeBaze3.Model;
 using CarinjenjeRobeBaze3.SistemskeOperacije;
+using CarinjenjeRobeBaze3.SistemskeOperacije.AdresaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinarnicaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinikSO;
@@ -221,6 +222,15 @@ namespace CarinjenjeRobeBaze3.Kontroler
             return ((UcitajMestaSO)oso).Rezultat;
         }
 
+        #endregion
+
+        #region Adresa
+        public List<Adresa> UcitajAdrese()
+        {
+            OpstaSO oso = new UcitajAdreseSO();
+            oso.Izvrsi();
+            return ((UcitajAdreseSO)oso).Rezultat;
+        }
         #endregion
 
         #region Vozilo
