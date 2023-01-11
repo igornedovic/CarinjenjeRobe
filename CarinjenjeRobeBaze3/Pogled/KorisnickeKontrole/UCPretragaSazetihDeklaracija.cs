@@ -90,6 +90,8 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 frmSazeta.Dispose();
                 sazete = new BindingList<SazetaDeklaracija>(KontrolerStn.Instanca.UcitajSazete(sdZaParticionisanje));
                 dgvSazete.DataSource = sazete;
+
+                PrilagodiTabelu();
             }
         }
 
@@ -166,6 +168,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
                 KontrolerStn.Instanca.ObrisiSazetu(izabranaSazeta);
                 sazete = new BindingList<SazetaDeklaracija>(KontrolerStn.Instanca.UcitajSazete(sdZaParticionisanje));
                 dgvSazete.DataSource = sazete;
+
             }
             catch (Exception ex)
             {

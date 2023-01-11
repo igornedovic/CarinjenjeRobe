@@ -96,9 +96,11 @@
     <Compile Include="Model\Drzava.cs" />
     <Compile Include="Model\IDomenskiObjekat.cs" />
     <Compile Include="Model\JCI.cs" />
+    <Compile Include="Model\JedinicaMere.cs" />
     <Compile Include="Model\Mesto.cs" />
     <Compile Include="Model\Obracun.cs" />
     <Compile Include="Model\PDV.cs" />
+    <Compile Include="Model\Posiljalac.cs" />
     <Compile Include="Model\Primalac.cs" />
     <Compile Include="Model\Proizvod.cs" />
     <Compile Include="Model\Radnik.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Model\Skladiste.cs" />
     <Compile Include="Model\Stanje.cs" />
     <Compile Include="Model\StavkaSazDeklaracije.cs" />
+    <Compile Include="Model\Uslov.cs" />
     <Compile Include="Model\Vozilo.cs" />
     <Compile Include="Model\VrstaProizvoda.cs" />
     <Compile Include="Pogled\Forme\FrmCarinik.cs">
@@ -194,12 +197,14 @@
     <Compile Include="SistemskeOperacije\JCISO\ObrisiJCISO.cs" />
     <Compile Include="SistemskeOperacije\JCISO\SacuvajJCISO.cs" />
     <Compile Include="SistemskeOperacije\JCISO\UcitajJCISO.cs" />
+    <Compile Include="SistemskeOperacije\JedinicaMereSO\UcitajJediniceMereSO.cs" />
     <Compile Include="SistemskeOperacije\MestoSO\UcitajMestaSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\IzmeniObracunSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\ObrisiObracunSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\SacuvajObracunSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\UcitajObracuneSO.cs" />
     <Compile Include="SistemskeOperacije\OpstaSO.cs" />
+    <Compile Include="SistemskeOperacije\PosiljalacSO\UcitajPosiljaoceSO.cs" />
     <Compile Include="SistemskeOperacije\PrimalacSO\IzmeniPrimaocaSO.cs" />
     <Compile Include="SistemskeOperacije\PrimalacSO\ObrisiPrimaocaSO.cs" />
     <Compile Include="SistemskeOperacije\PrimalacSO\SacuvajPrimaocaSO.cs" />
@@ -219,6 +224,7 @@
     <Compile Include="SistemskeOperacije\StanjeSO\ObrisiStanjeSO.cs" />
     <Compile Include="SistemskeOperacije\StanjeSO\SacuvajStanjeSO.cs" />
     <Compile Include="SistemskeOperacije\StanjeSO\UcitajStanjaSO.cs" />
+    <Compile Include="SistemskeOperacije\UslovSO\UcitajUsloveSO.cs" />
     <Compile Include="SistemskeOperacije\VoziloSO\IzmeniVoziloSO.cs" />
     <Compile Include="SistemskeOperacije\VoziloSO\ObrisiVoziloSO.cs" />
     <Compile Include="SistemskeOperacije\VoziloSO\SacuvajVoziloSO.cs" />

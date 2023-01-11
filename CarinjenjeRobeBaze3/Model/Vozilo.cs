@@ -42,7 +42,7 @@ namespace CarinjenjeRobeBaze3.Model
 
         public override string ToString()
         {
-            return $"{TipVozila} - {BrojPrikolice}";
+            return $"{TipVozila} - {BrojTablice}";
         }
     }
 }

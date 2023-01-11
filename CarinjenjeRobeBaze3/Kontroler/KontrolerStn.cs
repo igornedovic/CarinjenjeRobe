@@ -6,14 +6,17 @@ using CarinjenjeRobeBaze3.SistemskeOperacije.CarinaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.CarinikSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.DrzavaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.JCISO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.JedinicaMereSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.MestoSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ObracunSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.PosiljalacSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.PrimalacSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.ProizvodSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.RadnikSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.SazetaDeklaracijaSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.SkladisteSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.StanjeSO;
+using CarinjenjeRobeBaze3.SistemskeOperacije.UslovSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.VoziloSO;
 using CarinjenjeRobeBaze3.SistemskeOperacije.VrstaProizvodaSO;
 using System;
@@ -75,6 +78,15 @@ namespace CarinjenjeRobeBaze3.Kontroler
             oso.Izvrsi(proizvod);
         }
 
+        #endregion
+
+        #region JedinicaMere
+        public List<JedinicaMere> UcitajJediniceMere()
+        {
+            OpstaSO oso = new UcitajJediniceMereSO();
+            oso.Izvrsi();
+            return ((UcitajJediniceMereSO)oso).Rezultat;
+        }
         #endregion
 
         #region Skladiste
@@ -219,6 +231,26 @@ namespace CarinjenjeRobeBaze3.Kontroler
             OpstaSO oso = new ObrisiPrimaocaSO();
             oso.Izvrsi(primalac);
         }
+        #endregion
+
+        #region Posiljalac
+        public List<Posiljalac> UcitajPosiljaoce()
+        {
+            OpstaSO oso = new UcitajPosiljaoceSO();
+            oso.Izvrsi();
+            return ((UcitajPosiljaoceSO)oso).Rezultat;
+        }
+
+        #endregion
+
+        #region Uslov
+        public List<Uslov> UcitajUslove()
+        {
+            OpstaSO oso = new UcitajUsloveSO();
+            oso.Izvrsi();
+            return ((UcitajUsloveSO)oso).Rezultat;
+        }
+
         #endregion
 
         #region Drzava

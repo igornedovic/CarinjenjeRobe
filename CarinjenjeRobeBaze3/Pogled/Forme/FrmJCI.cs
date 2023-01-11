@@ -18,11 +18,15 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
         private JCI izabranaJCI = new JCI();
 
         private BindingList<SazetaDeklaracija> sazeteDeklaracije;
+        private BindingList<Posiljalac> posiljaoci;
+        private BindingList<Primalac> primaoci;
         private BindingList<Radnik> radnici;
         private BindingList<Drzava> drzaveOtpreme;
         private BindingList<Drzava> drzavePorekla;
         private BindingList<Mesto> mesta;
+        private BindingList<Vozilo> vozila;
         private BindingList<Carinarnica> carinarnice;
+        private BindingList<Uslov> uslovi;
         private BindingList<Skladiste> skladista;
 
         private string mod = null;
@@ -38,6 +42,12 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
                 sazeteDeklaracije = new BindingList<SazetaDeklaracija>(KontrolerStn.Instanca.UcitajSazete(new SazetaDeklaracija()));
                 cbSazeta.DataSource = sazeteDeklaracije;
 
+                posiljaoci = new BindingList<Posiljalac>(KontrolerStn.Instanca.UcitajPosiljaoce());
+                cbPosiljalac.DataSource = posiljaoci;
+
+                primaoci = new BindingList<Primalac>(KontrolerStn.Instanca.UcitajPrimaoce());
+                cbPrimalac.DataSource = primaoci;
+
                 radnici = new BindingList<Radnik>(KontrolerStn.Instanca.UcitajRadnike());
                 cbRadnik.DataSource = radnici;
 
@@ -50,12 +60,17 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
                 mesta = new BindingList<Mesto>(KontrolerStn.Instanca.UcitajMesta());
                 cbMesto.DataSource = mesta;
 
+                vozila = new BindingList<Vozilo>(KontrolerStn.Instanca.UcitajVozila());
+                cbBrojTablice.DataSource = vozila;
+
                 carinarnice = new BindingList<Carinarnica>(KontrolerStn.Instanca.UcitajCarinarnice());
                 cbCarinarnica.DataSource = carinarnice;
 
+                uslovi = new BindingList<Uslov>(KontrolerStn.Instanca.UcitajUslove());
+                cbUslov.DataSource = uslovi;
+
                 skladista = new BindingList<Skladiste>(KontrolerStn.Instanca.UcitajSkladista());
                 cbSkladiste.DataSource = skladista;
-
             }
             catch (Exception ex)
             {
@@ -77,12 +92,15 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
         {
             cbSazeta.SelectedItem = null;
             cbRadnik.SelectedItem = null;
+            cbPosiljalac.SelectedItem = null;
+            cbPrimalac.SelectedItem = null;
             cbDrzavaOtpreme.SelectedItem = null;
             cbDrzavaPorekla.SelectedItem = null;
             cbMesto.SelectedItem = null;
+            cbBrojTablice.SelectedItem = null;
             cbCarinarnica.SelectedItem = null;
+            cbUslov.SelectedItem = null;
             cbSkladiste.SelectedItem = null;
-
         }
 
         private void UpdateMod(JCI izabranaJCI)
@@ -94,13 +112,21 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             cbRadnik.SelectedItem = radnici.Where(r => r.SifraRadnika == izabranaJCI.SifraRadnika)
                                            .FirstOrDefault();
 
+            cbPosiljalac.SelectedItem = posiljaoci.Where(p => p.PosiljalacId == izabranaJCI.PosiljalacId).FirstOrDefault();
+
+            cbPrimalac.SelectedItem = primaoci.Where(p => p.PrimalacId == izabranaJCI.Primalac.PrimalacId);
+
             cbDrzavaOtpreme.SelectedItem = drzaveOtpreme.Where(d => d.DrzavaId == izabranaJCI.DrzavaOtpremeId).FirstOrDefault();
 
             cbDrzavaPorekla.SelectedItem = drzavePorekla.Where(d => d.DrzavaId == izabranaJCI.DrzavaPoreklaId).FirstOrDefault();
 
             cbMesto.SelectedItem = mesta.Where(m => m.MestoId == izabranaJCI.MestoId).FirstOrDefault();
 
+            cbBrojTablice.SelectedItem = vozila.Where(v => v.BrojTablice == izabranaJCI.BrojTablice).FirstOrDefault();
+
             cbCarinarnica.SelectedItem = carinarnice.Where(c => c.SifraCarinarnice == izabranaJCI.SifraCarinarnice).FirstOrDefault();
+
+            cbUslov.SelectedItem = uslovi.Where(u => u.UslovId == izabranaJCI.UslovId).FirstOrDefault();
 
             cbSkladiste.SelectedItem = skladista.Where(s => s.SkladisteId == izabranaJCI.SkladisteId).FirstOrDefault();
 
@@ -267,24 +293,27 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            //if (!ValidacijaUnosa())
-            //{
-            //    return;
-            //}
+            if (!ValidacijaUnosa())
+            {
+                return;
+            }
 
             try
             {
                 izabranaJCI.DatumJCI = txtDatumJCI.Value;
                 izabranaJCI.BrojSazDeklaracije = ((SazetaDeklaracija)cbSazeta.SelectedItem).BrojSazDeklaracije;
-                izabranaJCI.PosiljalacId = 1;
-                izabranaJCI.Primalac.PrimalacId = 1;
+                izabranaJCI.PosiljalacId = ((Posiljalac)cbPosiljalac.SelectedItem).PosiljalacId;
+                izabranaJCI.Primalac = new Primalac
+                {
+                    PrimalacId = ((Primalac)cbPrimalac.SelectedItem).PrimalacId
+                };
                 izabranaJCI.SifraRadnika = ((Radnik)cbRadnik.SelectedItem).SifraRadnika;
                 izabranaJCI.DrzavaOtpremeId = ((Drzava)cbDrzavaOtpreme.SelectedItem).DrzavaId;
                 izabranaJCI.DrzavaPoreklaId = ((Drzava)cbDrzavaPorekla.SelectedItem).DrzavaId;
                 izabranaJCI.MestoId = ((Mesto)cbMesto.SelectedItem).MestoId;
-                izabranaJCI.BrojTablice = "BG-252-UT";
+                izabranaJCI.BrojTablice = ((Vozilo)cbBrojTablice.SelectedItem).BrojTablice;
                 izabranaJCI.SifraCarinarnice = ((Carinarnica)cbCarinarnica.SelectedItem).SifraCarinarnice;
-                izabranaJCI.UslovId = 1;
+                izabranaJCI.UslovId = ((Uslov)cbUslov.SelectedItem).UslovId;
                 izabranaJCI.SkladisteId = ((Skladiste)cbSkladiste.SelectedItem).SkladisteId;
 
 

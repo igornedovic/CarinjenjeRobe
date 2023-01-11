@@ -51,7 +51,7 @@ namespace CarinjenjeRobeBaze3.Model
         {
             if (obj is StavkaSazDeklaracije ssd)
             {
-                return ssd.BrojSazDeklaracije == BrojSazDeklaracije && ssd.RbStavke == RbStavke && ssd.BrojPrevozneIsprave == BrojPrevozneIsprave && ssd.SifraProizvoda == SifraProizvoda && ssd.SifraJM == SifraJM;
+                return ssd.BrojSazDeklaracije == BrojSazDeklaracije && ssd.BrojPrevozneIsprave == BrojPrevozneIsprave && ssd.SifraProizvoda == SifraProizvoda && ssd.SifraJM == SifraJM;
             }
 
             return false;
