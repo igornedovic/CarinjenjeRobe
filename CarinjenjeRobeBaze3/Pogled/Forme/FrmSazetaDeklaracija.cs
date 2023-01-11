@@ -135,7 +135,6 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
 
         private void PrilagodiTabeluStavki()
         {
-            dgvStavke.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStavke.Columns["BrojSazDeklaracije"].Visible = false;
             dgvStavke.Columns["NazivTabele"].Visible = false;
             dgvStavke.Columns["InsertKolone"].Visible = false;

@@ -61,7 +61,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.cbProizvod.FormattingEnabled = true;
             this.cbProizvod.Location = new System.Drawing.Point(107, 25);
             this.cbProizvod.Name = "cbProizvod";
-            this.cbProizvod.Size = new System.Drawing.Size(190, 24);
+            this.cbProizvod.Size = new System.Drawing.Size(201, 24);
             this.cbProizvod.TabIndex = 14;
             // 
             // lblNaziv
@@ -79,14 +79,14 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.txtNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.txtNaziv.Location = new System.Drawing.Point(161, 71);
             this.txtNaziv.Name = "txtNaziv";
-            this.txtNaziv.Size = new System.Drawing.Size(145, 22);
+            this.txtNaziv.Size = new System.Drawing.Size(161, 22);
             this.txtNaziv.TabIndex = 16;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(405, 25);
+            this.label2.Location = new System.Drawing.Point(500, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 17;
@@ -95,16 +95,16 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // cbSkladiste
             // 
             this.cbSkladiste.FormattingEnabled = true;
-            this.cbSkladiste.Location = new System.Drawing.Point(492, 25);
+            this.cbSkladiste.Location = new System.Drawing.Point(587, 25);
             this.cbSkladiste.Name = "cbSkladiste";
-            this.cbSkladiste.Size = new System.Drawing.Size(190, 24);
+            this.cbSkladiste.Size = new System.Drawing.Size(200, 24);
             this.cbSkladiste.TabIndex = 18;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(333, 71);
+            this.label3.Location = new System.Drawing.Point(352, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 19;
@@ -113,24 +113,24 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // txtBruto
             // 
             this.txtBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.txtBruto.Location = new System.Drawing.Point(436, 71);
+            this.txtBruto.Location = new System.Drawing.Point(455, 71);
             this.txtBruto.Name = "txtBruto";
-            this.txtBruto.Size = new System.Drawing.Size(66, 22);
+            this.txtBruto.Size = new System.Drawing.Size(97, 22);
             this.txtBruto.TabIndex = 20;
             // 
             // txtNeto
             // 
             this.txtNeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.txtNeto.Location = new System.Drawing.Point(616, 71);
+            this.txtNeto.Location = new System.Drawing.Point(690, 71);
             this.txtNeto.Name = "txtNeto";
-            this.txtNeto.Size = new System.Drawing.Size(66, 22);
+            this.txtNeto.Size = new System.Drawing.Size(97, 22);
             this.txtNeto.TabIndex = 22;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(513, 71);
+            this.label4.Location = new System.Drawing.Point(593, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 20);
             this.label4.TabIndex = 21;
@@ -138,7 +138,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(71, 117);
+            this.btnSacuvaj.Location = new System.Drawing.Point(81, 117);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSacuvaj.Size = new System.Drawing.Size(95, 46);
@@ -149,7 +149,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnIzmeni
             // 
-            this.btnIzmeni.Location = new System.Drawing.Point(304, 117);
+            this.btnIzmeni.Location = new System.Drawing.Point(342, 117);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnIzmeni.Size = new System.Drawing.Size(95, 46);
@@ -160,7 +160,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(539, 117);
+            this.btnObrisi.Location = new System.Drawing.Point(629, 117);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnObrisi.Size = new System.Drawing.Size(95, 46);
@@ -175,11 +175,11 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvStanja.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvStanja.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
             this.dgvStanja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStanja.Location = new System.Drawing.Point(22, 193);
+            this.dgvStanja.Location = new System.Drawing.Point(22, 189);
             this.dgvStanja.Name = "dgvStanja";
             this.dgvStanja.RowHeadersWidth = 51;
             this.dgvStanja.RowTemplate.Height = 24;
-            this.dgvStanja.Size = new System.Drawing.Size(660, 238);
+            this.dgvStanja.Size = new System.Drawing.Size(765, 392);
             this.dgvStanja.TabIndex = 26;
             this.dgvStanja.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStanja_RowHeaderMouseClick);
             // 
@@ -202,7 +202,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.Controls.Add(this.cbProizvod);
             this.Controls.Add(this.label1);
             this.Name = "UCStanjaProizvoda";
-            this.Size = new System.Drawing.Size(699, 449);
+            this.Size = new System.Drawing.Size(809, 599);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStanja)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -30,6 +30,7 @@ namespace CarinjenjeRobeBaze3
         private void InitializeComponent()
         {
             this.pnlMeni = new System.Windows.Forms.Panel();
+            this.btnAdresaPrimalac = new System.Windows.Forms.Button();
             this.btnVozila = new System.Windows.Forms.Button();
             this.btnJCI = new System.Windows.Forms.Button();
             this.btnSazete = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@ namespace CarinjenjeRobeBaze3
             this.btnStanje = new System.Windows.Forms.Button();
             this.btnProizvodi = new System.Windows.Forms.Button();
             this.pnlGlavni = new System.Windows.Forms.Panel();
-            this.btnAdresaPrimalac = new System.Windows.Forms.Button();
             this.pnlMeni.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,8 +57,24 @@ namespace CarinjenjeRobeBaze3
             this.pnlMeni.Controls.Add(this.btnProizvodi);
             this.pnlMeni.Location = new System.Drawing.Point(0, 0);
             this.pnlMeni.Name = "pnlMeni";
-            this.pnlMeni.Size = new System.Drawing.Size(257, 563);
+            this.pnlMeni.Size = new System.Drawing.Size(257, 599);
             this.pnlMeni.TabIndex = 0;
+            // 
+            // btnAdresaPrimalac
+            // 
+            this.btnAdresaPrimalac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
+            this.btnAdresaPrimalac.FlatAppearance.BorderSize = 0;
+            this.btnAdresaPrimalac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdresaPrimalac.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
+            this.btnAdresaPrimalac.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAdresaPrimalac.Location = new System.Drawing.Point(3, 135);
+            this.btnAdresaPrimalac.Name = "btnAdresaPrimalac";
+            this.btnAdresaPrimalac.Size = new System.Drawing.Size(254, 38);
+            this.btnAdresaPrimalac.TabIndex = 16;
+            this.btnAdresaPrimalac.Text = "Adrese i primaoci";
+            this.btnAdresaPrimalac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdresaPrimalac.UseVisualStyleBackColor = false;
+            this.btnAdresaPrimalac.Click += new System.EventHandler(this.btnAdresaPrimalac_Click);
             // 
             // btnVozila
             // 
@@ -83,7 +99,7 @@ namespace CarinjenjeRobeBaze3
             this.btnJCI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJCI.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
             this.btnJCI.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnJCI.Location = new System.Drawing.Point(0, 267);
+            this.btnJCI.Location = new System.Drawing.Point(0, 276);
             this.btnJCI.Name = "btnJCI";
             this.btnJCI.Size = new System.Drawing.Size(257, 38);
             this.btnJCI.TabIndex = 14;
@@ -99,7 +115,7 @@ namespace CarinjenjeRobeBaze3
             this.btnSazete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSazete.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
             this.btnSazete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSazete.Location = new System.Drawing.Point(0, 232);
+            this.btnSazete.Location = new System.Drawing.Point(0, 241);
             this.btnSazete.Name = "btnSazete";
             this.btnSazete.Size = new System.Drawing.Size(257, 38);
             this.btnSazete.TabIndex = 13;
@@ -113,7 +129,7 @@ namespace CarinjenjeRobeBaze3
             this.lblProizvodi.AutoSize = true;
             this.lblProizvodi.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblProizvodi.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProizvodi.Location = new System.Drawing.Point(3, 166);
+            this.lblProizvodi.Location = new System.Drawing.Point(3, 176);
             this.lblProizvodi.Name = "lblProizvodi";
             this.lblProizvodi.Size = new System.Drawing.Size(227, 28);
             this.lblProizvodi.TabIndex = 12;
@@ -126,7 +142,7 @@ namespace CarinjenjeRobeBaze3
             this.btnObracun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnObracun.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
             this.btnObracun.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnObracun.Location = new System.Drawing.Point(0, 197);
+            this.btnObracun.Location = new System.Drawing.Point(0, 207);
             this.btnObracun.Name = "btnObracun";
             this.btnObracun.Size = new System.Drawing.Size(254, 38);
             this.btnObracun.TabIndex = 10;
@@ -185,32 +201,16 @@ namespace CarinjenjeRobeBaze3
             // 
             // pnlGlavni
             // 
-            this.pnlGlavni.Location = new System.Drawing.Point(342, 70);
+            this.pnlGlavni.Location = new System.Drawing.Point(255, 0);
             this.pnlGlavni.Name = "pnlGlavni";
-            this.pnlGlavni.Size = new System.Drawing.Size(699, 449);
+            this.pnlGlavni.Size = new System.Drawing.Size(809, 599);
             this.pnlGlavni.TabIndex = 1;
-            // 
-            // btnAdresaPrimalac
-            // 
-            this.btnAdresaPrimalac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
-            this.btnAdresaPrimalac.FlatAppearance.BorderSize = 0;
-            this.btnAdresaPrimalac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdresaPrimalac.Font = new System.Drawing.Font("Segoe UI Black", 11F, System.Drawing.FontStyle.Bold);
-            this.btnAdresaPrimalac.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAdresaPrimalac.Location = new System.Drawing.Point(3, 135);
-            this.btnAdresaPrimalac.Name = "btnAdresaPrimalac";
-            this.btnAdresaPrimalac.Size = new System.Drawing.Size(254, 38);
-            this.btnAdresaPrimalac.TabIndex = 16;
-            this.btnAdresaPrimalac.Text = "Adrese i primaoci";
-            this.btnAdresaPrimalac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdresaPrimalac.UseVisualStyleBackColor = false;
-            this.btnAdresaPrimalac.Click += new System.EventHandler(this.btnAdresaPrimalac_Click);
             // 
             // FrmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 563);
+            this.ClientSize = new System.Drawing.Size(1065, 599);
             this.Controls.Add(this.pnlGlavni);
             this.Controls.Add(this.pnlMeni);
             this.Name = "FrmGlavna";

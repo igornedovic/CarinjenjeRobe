@@ -107,7 +107,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // txtOznaka
             // 
             this.txtOznaka.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.txtOznaka.Location = new System.Drawing.Point(292, 46);
+            this.txtOznaka.Location = new System.Drawing.Point(420, 46);
             this.txtOznaka.Multiline = true;
             this.txtOznaka.Name = "txtOznaka";
             this.txtOznaka.Size = new System.Drawing.Size(196, 22);
@@ -117,7 +117,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(288, 23);
+            this.label3.Location = new System.Drawing.Point(416, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(170, 20);
             this.label3.TabIndex = 18;
@@ -126,7 +126,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // cbMesto
             // 
             this.cbMesto.FormattingEnabled = true;
-            this.cbMesto.Location = new System.Drawing.Point(292, 106);
+            this.cbMesto.Location = new System.Drawing.Point(420, 106);
             this.cbMesto.Name = "cbMesto";
             this.cbMesto.Size = new System.Drawing.Size(198, 24);
             this.cbMesto.TabIndex = 20;
@@ -135,7 +135,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(288, 83);
+            this.label4.Location = new System.Drawing.Point(416, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(158, 20);
             this.label4.TabIndex = 19;
@@ -144,7 +144,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // cbBrojTablice
             // 
             this.cbBrojTablice.FormattingEnabled = true;
-            this.cbBrojTablice.Location = new System.Drawing.Point(545, 44);
+            this.cbBrojTablice.Location = new System.Drawing.Point(800, 46);
             this.cbBrojTablice.Name = "cbBrojTablice";
             this.cbBrojTablice.Size = new System.Drawing.Size(198, 24);
             this.cbBrojTablice.TabIndex = 22;
@@ -153,7 +153,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(543, 21);
+            this.label5.Location = new System.Drawing.Point(798, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 20);
             this.label5.TabIndex = 21;
@@ -162,7 +162,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // cbRadnik
             // 
             this.cbRadnik.FormattingEnabled = true;
-            this.cbRadnik.Location = new System.Drawing.Point(545, 106);
+            this.cbRadnik.Location = new System.Drawing.Point(800, 108);
             this.cbRadnik.Name = "cbRadnik";
             this.cbRadnik.Size = new System.Drawing.Size(198, 24);
             this.cbRadnik.TabIndex = 24;
@@ -171,7 +171,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(543, 83);
+            this.label6.Location = new System.Drawing.Point(798, 85);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 23;
@@ -198,7 +198,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // cbCarinarnica
             // 
             this.cbCarinarnica.FormattingEnabled = true;
-            this.cbCarinarnica.Location = new System.Drawing.Point(292, 165);
+            this.cbCarinarnica.Location = new System.Drawing.Point(420, 165);
             this.cbCarinarnica.Name = "cbCarinarnica";
             this.cbCarinarnica.Size = new System.Drawing.Size(198, 24);
             this.cbCarinarnica.TabIndex = 28;
@@ -207,7 +207,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(288, 142);
+            this.label8.Location = new System.Drawing.Point(416, 142);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 20);
             this.label8.TabIndex = 27;
@@ -216,7 +216,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // cbSkladiste
             // 
             this.cbSkladiste.FormattingEnabled = true;
-            this.cbSkladiste.Location = new System.Drawing.Point(545, 165);
+            this.cbSkladiste.Location = new System.Drawing.Point(800, 167);
             this.cbSkladiste.Name = "cbSkladiste";
             this.cbSkladiste.Size = new System.Drawing.Size(198, 24);
             this.cbSkladiste.TabIndex = 30;
@@ -225,7 +225,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(543, 142);
+            this.label9.Location = new System.Drawing.Point(798, 144);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 20);
             this.label9.TabIndex = 29;
@@ -235,7 +235,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(33, 209);
+            this.label10.Location = new System.Drawing.Point(401, 567);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(156, 20);
             this.label10.TabIndex = 31;
@@ -244,7 +244,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // txtUkupanBrojKoleta
             // 
             this.txtUkupanBrojKoleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.txtUkupanBrojKoleta.Location = new System.Drawing.Point(195, 209);
+            this.txtUkupanBrojKoleta.Location = new System.Drawing.Point(573, 567);
             this.txtUkupanBrojKoleta.Multiline = true;
             this.txtUkupanBrojKoleta.Name = "txtUkupanBrojKoleta";
             this.txtUkupanBrojKoleta.Size = new System.Drawing.Size(196, 22);
@@ -394,13 +394,13 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.dgvStavke.Name = "dgvStavke";
             this.dgvStavke.RowHeadersWidth = 51;
             this.dgvStavke.RowTemplate.Height = 24;
-            this.dgvStavke.Size = new System.Drawing.Size(597, 319);
+            this.dgvStavke.Size = new System.Drawing.Size(597, 270);
             this.dgvStavke.TabIndex = 37;
             this.dgvStavke.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStavke_RowHeaderMouseClick);
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(867, 596);
+            this.btnSacuvaj.Location = new System.Drawing.Point(867, 556);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSacuvaj.Size = new System.Drawing.Size(131, 45);

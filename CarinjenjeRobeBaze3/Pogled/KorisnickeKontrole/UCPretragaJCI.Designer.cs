@@ -54,7 +54,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnPretrazi
             // 
-            this.btnPretrazi.Location = new System.Drawing.Point(426, 9);
+            this.btnPretrazi.Location = new System.Drawing.Point(485, 9);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPretrazi.Size = new System.Drawing.Size(95, 46);
@@ -69,11 +69,11 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvJCI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvJCI.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
             this.dgvJCI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJCI.Location = new System.Drawing.Point(26, 71);
+            this.dgvJCI.Location = new System.Drawing.Point(26, 82);
             this.dgvJCI.Name = "dgvJCI";
             this.dgvJCI.RowHeadersWidth = 51;
             this.dgvJCI.RowTemplate.Height = 24;
-            this.dgvJCI.Size = new System.Drawing.Size(181, 261);
+            this.dgvJCI.Size = new System.Drawing.Size(205, 414);
             this.dgvJCI.TabIndex = 29;
             this.dgvJCI.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvJCI_RowHeaderMouseClick);
             // 
@@ -83,16 +83,16 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvJCIDetalji.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvJCIDetalji.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
             this.dgvJCIDetalji.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJCIDetalji.Location = new System.Drawing.Point(231, 71);
+            this.dgvJCIDetalji.Location = new System.Drawing.Point(256, 82);
             this.dgvJCIDetalji.Name = "dgvJCIDetalji";
             this.dgvJCIDetalji.RowHeadersWidth = 51;
             this.dgvJCIDetalji.RowTemplate.Height = 24;
-            this.dgvJCIDetalji.Size = new System.Drawing.Size(444, 261);
+            this.dgvJCIDetalji.Size = new System.Drawing.Size(529, 414);
             this.dgvJCIDetalji.TabIndex = 30;
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(65, 367);
+            this.btnDodaj.Location = new System.Drawing.Point(68, 529);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnDodaj.Size = new System.Drawing.Size(95, 46);
@@ -103,7 +103,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnIzmeni
             // 
-            this.btnIzmeni.Location = new System.Drawing.Point(305, 367);
+            this.btnIzmeni.Location = new System.Drawing.Point(357, 529);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnIzmeni.Size = new System.Drawing.Size(95, 46);
@@ -114,7 +114,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(538, 367);
+            this.btnObrisi.Location = new System.Drawing.Point(644, 529);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnObrisi.Size = new System.Drawing.Size(95, 46);
@@ -133,7 +133,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnResetuj
             // 
-            this.btnResetuj.Location = new System.Drawing.Point(580, 9);
+            this.btnResetuj.Location = new System.Drawing.Point(690, 9);
             this.btnResetuj.Name = "btnResetuj";
             this.btnResetuj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnResetuj.Size = new System.Drawing.Size(95, 46);
@@ -156,7 +156,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.Controls.Add(this.btnPretrazi);
             this.Controls.Add(this.lblNazivPrimaoca);
             this.Name = "UCPretragaJCI";
-            this.Size = new System.Drawing.Size(699, 449);
+            this.Size = new System.Drawing.Size(809, 599);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJCI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJCIDetalji)).EndInit();
             this.ResumeLayout(false);

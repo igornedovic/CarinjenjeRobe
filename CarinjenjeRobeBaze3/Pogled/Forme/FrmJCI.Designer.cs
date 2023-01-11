@@ -61,7 +61,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.txtDatumJCI.CustomFormat = "";
             this.txtDatumJCI.Location = new System.Drawing.Point(27, 51);
             this.txtDatumJCI.Name = "txtDatumJCI";
-            this.txtDatumJCI.Size = new System.Drawing.Size(196, 22);
+            this.txtDatumJCI.Size = new System.Drawing.Size(250, 22);
             this.txtDatumJCI.TabIndex = 16;
             // 
             // label1
@@ -79,7 +79,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbSazeta.FormattingEnabled = true;
             this.cbSazeta.Location = new System.Drawing.Point(304, 51);
             this.cbSazeta.Name = "cbSazeta";
-            this.cbSazeta.Size = new System.Drawing.Size(198, 24);
+            this.cbSazeta.Size = new System.Drawing.Size(243, 24);
             this.cbSazeta.TabIndex = 24;
             // 
             // label5
@@ -97,7 +97,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbPosiljalac.FormattingEnabled = true;
             this.cbPosiljalac.Location = new System.Drawing.Point(575, 51);
             this.cbPosiljalac.Name = "cbPosiljalac";
-            this.cbPosiljalac.Size = new System.Drawing.Size(198, 24);
+            this.cbPosiljalac.Size = new System.Drawing.Size(237, 24);
             this.cbPosiljalac.TabIndex = 26;
             // 
             // lblPosljalac
@@ -115,7 +115,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbPrimalac.FormattingEnabled = true;
             this.cbPrimalac.Location = new System.Drawing.Point(25, 123);
             this.cbPrimalac.Name = "cbPrimalac";
-            this.cbPrimalac.Size = new System.Drawing.Size(198, 24);
+            this.cbPrimalac.Size = new System.Drawing.Size(252, 24);
             this.cbPrimalac.TabIndex = 28;
             // 
             // label7
@@ -133,7 +133,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbRadnik.FormattingEnabled = true;
             this.cbRadnik.Location = new System.Drawing.Point(302, 123);
             this.cbRadnik.Name = "cbRadnik";
-            this.cbRadnik.Size = new System.Drawing.Size(198, 24);
+            this.cbRadnik.Size = new System.Drawing.Size(245, 24);
             this.cbRadnik.TabIndex = 30;
             // 
             // label6
@@ -151,7 +151,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbDrzavaOtpreme.FormattingEnabled = true;
             this.cbDrzavaOtpreme.Location = new System.Drawing.Point(575, 123);
             this.cbDrzavaOtpreme.Name = "cbDrzavaOtpreme";
-            this.cbDrzavaOtpreme.Size = new System.Drawing.Size(198, 24);
+            this.cbDrzavaOtpreme.Size = new System.Drawing.Size(237, 24);
             this.cbDrzavaOtpreme.TabIndex = 32;
             // 
             // label2
@@ -169,7 +169,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbDrzavaPorekla.FormattingEnabled = true;
             this.cbDrzavaPorekla.Location = new System.Drawing.Point(25, 196);
             this.cbDrzavaPorekla.Name = "cbDrzavaPorekla";
-            this.cbDrzavaPorekla.Size = new System.Drawing.Size(198, 24);
+            this.cbDrzavaPorekla.Size = new System.Drawing.Size(252, 24);
             this.cbDrzavaPorekla.TabIndex = 34;
             // 
             // label3
@@ -187,7 +187,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbMesto.FormattingEnabled = true;
             this.cbMesto.Location = new System.Drawing.Point(304, 196);
             this.cbMesto.Name = "cbMesto";
-            this.cbMesto.Size = new System.Drawing.Size(198, 24);
+            this.cbMesto.Size = new System.Drawing.Size(243, 24);
             this.cbMesto.TabIndex = 36;
             // 
             // label4
@@ -205,7 +205,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbBrojTablice.FormattingEnabled = true;
             this.cbBrojTablice.Location = new System.Drawing.Point(575, 196);
             this.cbBrojTablice.Name = "cbBrojTablice";
-            this.cbBrojTablice.Size = new System.Drawing.Size(198, 24);
+            this.cbBrojTablice.Size = new System.Drawing.Size(237, 24);
             this.cbBrojTablice.TabIndex = 38;
             // 
             // label8
@@ -223,7 +223,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbCarinarnica.FormattingEnabled = true;
             this.cbCarinarnica.Location = new System.Drawing.Point(25, 271);
             this.cbCarinarnica.Name = "cbCarinarnica";
-            this.cbCarinarnica.Size = new System.Drawing.Size(198, 24);
+            this.cbCarinarnica.Size = new System.Drawing.Size(252, 24);
             this.cbCarinarnica.TabIndex = 40;
             // 
             // label9
@@ -241,7 +241,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbUslov.FormattingEnabled = true;
             this.cbUslov.Location = new System.Drawing.Point(304, 271);
             this.cbUslov.Name = "cbUslov";
-            this.cbUslov.Size = new System.Drawing.Size(198, 24);
+            this.cbUslov.Size = new System.Drawing.Size(243, 24);
             this.cbUslov.TabIndex = 42;
             // 
             // label10
@@ -259,7 +259,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             this.cbSkladiste.FormattingEnabled = true;
             this.cbSkladiste.Location = new System.Drawing.Point(573, 271);
             this.cbSkladiste.Name = "cbSkladiste";
-            this.cbSkladiste.Size = new System.Drawing.Size(198, 24);
+            this.cbSkladiste.Size = new System.Drawing.Size(239, 24);
             this.cbSkladiste.TabIndex = 44;
             // 
             // label11
@@ -274,7 +274,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(304, 363);
+            this.btnSacuvaj.Location = new System.Drawing.Point(327, 351);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSacuvaj.Size = new System.Drawing.Size(196, 45);
@@ -287,7 +287,7 @@ namespace CarinjenjeRobeBaze3.Pogled.Forme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(837, 450);
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.cbSkladiste);
             this.Controls.Add(this.label11);

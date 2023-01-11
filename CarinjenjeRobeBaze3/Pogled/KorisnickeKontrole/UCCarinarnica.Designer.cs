@@ -45,7 +45,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             this.lblNaziv.AutoSize = true;
             this.lblNaziv.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblNaziv.Location = new System.Drawing.Point(31, 29);
+            this.lblNaziv.Location = new System.Drawing.Point(19, 29);
             this.lblNaziv.Name = "lblNaziv";
             this.lblNaziv.Size = new System.Drawing.Size(140, 20);
             this.lblNaziv.TabIndex = 3;
@@ -54,16 +54,16 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // txtNaziv
             // 
             this.txtNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.txtNaziv.Location = new System.Drawing.Point(191, 27);
+            this.txtNaziv.Location = new System.Drawing.Point(182, 27);
             this.txtNaziv.Name = "txtNaziv";
-            this.txtNaziv.Size = new System.Drawing.Size(145, 22);
+            this.txtNaziv.Size = new System.Drawing.Size(203, 22);
             this.txtNaziv.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(31, 69);
+            this.label1.Location = new System.Drawing.Point(19, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 20);
             this.label1.TabIndex = 8;
@@ -72,14 +72,14 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // txtTekuci
             // 
             this.txtTekuci.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.txtTekuci.Location = new System.Drawing.Point(191, 67);
+            this.txtTekuci.Location = new System.Drawing.Point(182, 67);
             this.txtTekuci.Name = "txtTekuci";
-            this.txtTekuci.Size = new System.Drawing.Size(145, 22);
+            this.txtTekuci.Size = new System.Drawing.Size(203, 22);
             this.txtTekuci.TabIndex = 9;
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(35, 113);
+            this.btnSacuvaj.Location = new System.Drawing.Point(23, 113);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSacuvaj.Size = new System.Drawing.Size(95, 46);
@@ -90,7 +90,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnIzmeni
             // 
-            this.btnIzmeni.Location = new System.Drawing.Point(299, 113);
+            this.btnIzmeni.Location = new System.Drawing.Point(356, 113);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnIzmeni.Size = new System.Drawing.Size(95, 46);
@@ -101,7 +101,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(579, 113);
+            this.btnObrisi.Location = new System.Drawing.Point(693, 113);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnObrisi.Size = new System.Drawing.Size(95, 46);
@@ -112,7 +112,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnCarinici
             // 
-            this.btnCarinici.Location = new System.Drawing.Point(447, 27);
+            this.btnCarinici.Location = new System.Drawing.Point(530, 29);
             this.btnCarinici.Name = "btnCarinici";
             this.btnCarinici.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnCarinici.Size = new System.Drawing.Size(95, 46);
@@ -127,11 +127,11 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvCarinarnice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvCarinarnice.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
             this.dgvCarinarnice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarinarnice.Location = new System.Drawing.Point(35, 181);
+            this.dgvCarinarnice.Location = new System.Drawing.Point(23, 198);
             this.dgvCarinarnice.Name = "dgvCarinarnice";
             this.dgvCarinarnice.RowHeadersWidth = 51;
             this.dgvCarinarnice.RowTemplate.Height = 24;
-            this.dgvCarinarnice.Size = new System.Drawing.Size(639, 255);
+            this.dgvCarinarnice.Size = new System.Drawing.Size(765, 381);
             this.dgvCarinarnice.TabIndex = 19;
             this.dgvCarinarnice.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCarinarnice_RowHeaderMouseClick);
             // 
@@ -149,7 +149,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.lblNaziv);
             this.Name = "UCCarinarnica";
-            this.Size = new System.Drawing.Size(699, 449);
+            this.Size = new System.Drawing.Size(809, 599);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarinarnice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

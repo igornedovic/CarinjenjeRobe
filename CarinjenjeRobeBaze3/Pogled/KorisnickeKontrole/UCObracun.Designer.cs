@@ -102,7 +102,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.txtNapomena.Location = new System.Drawing.Point(245, 47);
             this.txtNapomena.Multiline = true;
             this.txtNapomena.Name = "txtNapomena";
-            this.txtNapomena.Size = new System.Drawing.Size(426, 84);
+            this.txtNapomena.Size = new System.Drawing.Size(539, 84);
             this.txtNapomena.TabIndex = 14;
             // 
             // label4
@@ -127,7 +127,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(250, 148);
+            this.label5.Location = new System.Drawing.Point(305, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 20);
             this.label5.TabIndex = 17;
@@ -136,7 +136,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // cbCarinarnica
             // 
             this.cbCarinarnica.FormattingEnabled = true;
-            this.cbCarinarnica.Location = new System.Drawing.Point(254, 171);
+            this.cbCarinarnica.Location = new System.Drawing.Point(309, 171);
             this.cbCarinarnica.Name = "cbCarinarnica";
             this.cbCarinarnica.Size = new System.Drawing.Size(190, 24);
             this.cbCarinarnica.TabIndex = 18;
@@ -145,7 +145,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(477, 148);
+            this.label6.Location = new System.Drawing.Point(590, 148);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 19;
@@ -154,7 +154,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // cbJCI
             // 
             this.cbJCI.FormattingEnabled = true;
-            this.cbJCI.Location = new System.Drawing.Point(481, 171);
+            this.cbJCI.Location = new System.Drawing.Point(594, 171);
             this.cbJCI.Name = "cbJCI";
             this.cbJCI.Size = new System.Drawing.Size(190, 24);
             this.cbJCI.TabIndex = 20;
@@ -181,7 +181,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(250, 210);
+            this.label8.Location = new System.Drawing.Point(305, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 20);
             this.label8.TabIndex = 23;
@@ -190,14 +190,14 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // cbCarinskaTarifa
             // 
             this.cbCarinskaTarifa.FormattingEnabled = true;
-            this.cbCarinskaTarifa.Location = new System.Drawing.Point(254, 233);
+            this.cbCarinskaTarifa.Location = new System.Drawing.Point(309, 233);
             this.cbCarinskaTarifa.Name = "cbCarinskaTarifa";
             this.cbCarinskaTarifa.Size = new System.Drawing.Size(190, 24);
             this.cbCarinskaTarifa.TabIndex = 24;
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(576, 211);
+            this.btnSacuvaj.Location = new System.Drawing.Point(689, 221);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSacuvaj.Size = new System.Drawing.Size(95, 46);
@@ -212,17 +212,17 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvObracuni.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvObracuni.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
             this.dgvObracuni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvObracuni.Location = new System.Drawing.Point(29, 276);
+            this.dgvObracuni.Location = new System.Drawing.Point(29, 290);
             this.dgvObracuni.Name = "dgvObracuni";
             this.dgvObracuni.RowHeadersWidth = 51;
             this.dgvObracuni.RowTemplate.Height = 24;
-            this.dgvObracuni.Size = new System.Drawing.Size(509, 158);
+            this.dgvObracuni.Size = new System.Drawing.Size(612, 293);
             this.dgvObracuni.TabIndex = 27;
             this.dgvObracuni.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvObracuni_RowHeaderMouseClick);
             // 
             // btnIzmeni
             // 
-            this.btnIzmeni.Location = new System.Drawing.Point(576, 297);
+            this.btnIzmeni.Location = new System.Drawing.Point(689, 369);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnIzmeni.Size = new System.Drawing.Size(95, 46);
@@ -233,7 +233,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(576, 369);
+            this.btnObrisi.Location = new System.Drawing.Point(689, 453);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnObrisi.Size = new System.Drawing.Size(95, 46);
@@ -267,7 +267,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.Controls.Add(this.txtDatumObracuna);
             this.Controls.Add(this.label1);
             this.Name = "UCObracun";
-            this.Size = new System.Drawing.Size(699, 449);
+            this.Size = new System.Drawing.Size(809, 599);
             ((System.ComponentModel.ISupportInitialize)(this.dgvObracuni)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

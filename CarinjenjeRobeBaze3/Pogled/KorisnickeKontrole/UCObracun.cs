@@ -68,7 +68,6 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
 
         private void PrilagodiTabelu()
         {
-            dgvObracuni.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvObracuni.Columns["NazivTabele"].Visible = false;
             dgvObracuni.Columns["InsertKolone"].Visible = false;
             dgvObracuni.Columns["PrimarniKljuc"].Visible = false;
@@ -77,6 +76,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             dgvObracuni.Columns["InsertVrednosti"].Visible = false;
             dgvObracuni.Columns["UpdateVrednosti"].Visible = false;
             dgvObracuni.Columns["WhereUslov"].Visible = false;
+            dgvObracuni.Columns["OriginalnaSifraCarinarnice"].Visible = false;
 
             dgvObracuni.Columns["DatumObracuna"].DefaultCellStyle.Format = "dd-MM-yyyy";
             dgvObracuni.Columns["DatumObavestenja"].DefaultCellStyle.Format = "dd-MM-yyyy";

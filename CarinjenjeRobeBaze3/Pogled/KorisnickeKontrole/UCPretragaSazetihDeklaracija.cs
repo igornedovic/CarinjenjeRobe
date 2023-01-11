@@ -27,7 +27,6 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
 
         private void PrilagodiTabelu()
         {
-            dgvSazete.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSazete.Columns["NazivTabele"].Visible = false;
             dgvSazete.Columns["InsertKolone"].Visible = false;
             dgvSazete.Columns["PrimarniKljuc"].Visible = false;

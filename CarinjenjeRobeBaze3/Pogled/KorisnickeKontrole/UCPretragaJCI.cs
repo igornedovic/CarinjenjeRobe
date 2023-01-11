@@ -46,7 +46,6 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
 
         private void PrilagodiTabele()
         {
-            dgvJCI.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvJCI.Columns["NazivTabele"].Visible = false;
             dgvJCI.Columns["InsertKolone"].Visible = false;
             dgvJCI.Columns["PrimarniKljuc"].Visible = false;
@@ -68,7 +67,6 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             dgvJCI.Columns["SkladisteId"].Visible = false;
             dgvJCI.Columns["DatumJCI"].DefaultCellStyle.Format = "dd-MM-yyyy";
 
-            dgvJCIDetalji.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvJCIDetalji.Columns["NazivTabele"].Visible = false;
             dgvJCIDetalji.Columns["InsertKolone"].Visible = false;
             dgvJCIDetalji.Columns["PrimarniKljuc"].Visible = false;

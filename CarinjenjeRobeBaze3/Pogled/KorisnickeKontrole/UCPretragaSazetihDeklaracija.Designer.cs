@@ -30,6 +30,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
         private void InitializeComponent()
         {
             this.gbParticije = new System.Windows.Forms.GroupBox();
+            this.rb2023 = new System.Windows.Forms.RadioButton();
             this.rbSve = new System.Windows.Forms.RadioButton();
             this.rb2022 = new System.Windows.Forms.RadioButton();
             this.rb2021 = new System.Windows.Forms.RadioButton();
@@ -39,7 +40,6 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnIzmeni = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
-            this.rb2023 = new System.Windows.Forms.RadioButton();
             this.gbParticije.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSazete)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,18 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.gbParticije.TabIndex = 2;
             this.gbParticije.TabStop = false;
             this.gbParticije.Text = "Particije";
+            // 
+            // rb2023
+            // 
+            this.rb2023.AutoSize = true;
+            this.rb2023.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
+            this.rb2023.Location = new System.Drawing.Point(348, 29);
+            this.rb2023.Name = "rb2023";
+            this.rb2023.Size = new System.Drawing.Size(66, 24);
+            this.rb2023.TabIndex = 32;
+            this.rb2023.TabStop = true;
+            this.rb2023.Text = "2023";
+            this.rb2023.UseVisualStyleBackColor = true;
             // 
             // rbSve
             // 
@@ -108,7 +120,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnPretrazi
             // 
-            this.btnPretrazi.Location = new System.Drawing.Point(578, 32);
+            this.btnPretrazi.Location = new System.Drawing.Point(576, 32);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPretrazi.Size = new System.Drawing.Size(95, 46);
@@ -123,17 +135,17 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvSazete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvSazete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
             this.dgvSazete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSazete.Location = new System.Drawing.Point(24, 102);
+            this.dgvSazete.Location = new System.Drawing.Point(24, 114);
             this.dgvSazete.Name = "dgvSazete";
             this.dgvSazete.RowHeadersWidth = 51;
             this.dgvSazete.RowTemplate.Height = 24;
-            this.dgvSazete.Size = new System.Drawing.Size(522, 333);
+            this.dgvSazete.Size = new System.Drawing.Size(647, 463);
             this.dgvSazete.TabIndex = 28;
             this.dgvSazete.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSazete_RowHeaderMouseClick);
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(578, 154);
+            this.btnDodaj.Location = new System.Drawing.Point(695, 207);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnDodaj.Size = new System.Drawing.Size(95, 46);
@@ -144,7 +156,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnIzmeni
             // 
-            this.btnIzmeni.Location = new System.Drawing.Point(578, 243);
+            this.btnIzmeni.Location = new System.Drawing.Point(695, 328);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnIzmeni.Size = new System.Drawing.Size(95, 46);
@@ -155,7 +167,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(578, 339);
+            this.btnObrisi.Location = new System.Drawing.Point(695, 452);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnObrisi.Size = new System.Drawing.Size(95, 46);
@@ -163,18 +175,6 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.btnObrisi.Text = "Obrisi";
             this.btnObrisi.UseVisualStyleBackColor = true;
             this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
-            // 
-            // rb2023
-            // 
-            this.rb2023.AutoSize = true;
-            this.rb2023.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
-            this.rb2023.Location = new System.Drawing.Point(348, 29);
-            this.rb2023.Name = "rb2023";
-            this.rb2023.Size = new System.Drawing.Size(66, 24);
-            this.rb2023.TabIndex = 32;
-            this.rb2023.TabStop = true;
-            this.rb2023.Text = "2023";
-            this.rb2023.UseVisualStyleBackColor = true;
             // 
             // UCPretragaSazetihDeklaracija
             // 
@@ -187,7 +187,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.Controls.Add(this.btnPretrazi);
             this.Controls.Add(this.gbParticije);
             this.Name = "UCPretragaSazetihDeklaracija";
-            this.Size = new System.Drawing.Size(699, 449);
+            this.Size = new System.Drawing.Size(809, 599);
             this.gbParticije.ResumeLayout(false);
             this.gbParticije.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSazete)).EndInit();

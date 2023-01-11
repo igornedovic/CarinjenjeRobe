@@ -118,7 +118,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(385, 57);
+            this.btnSacuvaj.Location = new System.Drawing.Point(353, 59);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSacuvaj.Size = new System.Drawing.Size(95, 46);
@@ -129,7 +129,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnIzmeni
             // 
-            this.btnIzmeni.Location = new System.Drawing.Point(582, 209);
+            this.btnIzmeni.Location = new System.Drawing.Point(523, 59);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnIzmeni.Size = new System.Drawing.Size(95, 46);
@@ -140,7 +140,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(582, 304);
+            this.btnObrisi.Location = new System.Drawing.Point(691, 59);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnObrisi.Size = new System.Drawing.Size(95, 46);
@@ -155,11 +155,11 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.dgvVozila.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvVozila.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(135)))), ((int)(((byte)(245)))));
             this.dgvVozila.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVozila.Location = new System.Drawing.Point(22, 186);
+            this.dgvVozila.Location = new System.Drawing.Point(25, 183);
             this.dgvVozila.Name = "dgvVozila";
             this.dgvVozila.RowHeadersWidth = 51;
             this.dgvVozila.RowTemplate.Height = 24;
-            this.dgvVozila.Size = new System.Drawing.Size(531, 215);
+            this.dgvVozila.Size = new System.Drawing.Size(761, 395);
             this.dgvVozila.TabIndex = 18;
             this.dgvVozila.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvVozila_RowHeaderMouseClick);
             // 
@@ -180,7 +180,7 @@ namespace CarinjenjeRobeBaze3.Pogled.KorisnickeKontrole
             this.Controls.Add(this.txtBrojTablice);
             this.Controls.Add(this.lblNaziv);
             this.Name = "UCVozilo";
-            this.Size = new System.Drawing.Size(699, 449);
+            this.Size = new System.Drawing.Size(809, 599);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVozila)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
