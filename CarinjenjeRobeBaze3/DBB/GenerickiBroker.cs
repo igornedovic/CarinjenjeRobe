@@ -164,11 +164,12 @@ namespace CarinjenjeRobeBaze3.DBB
             cmd.ExecuteNonQuery();
         }
 
+        #region Primalac
         public List<Primalac> VratiPrimaoce(Primalac primalac)
         {
             List<Primalac> rezultat = new List<Primalac>();
             cmd = connection.CreateCommand();
-            cmd.CommandText = $"SELECT * FROM {primalac.NazivTabele}";
+            cmd.CommandText = $@"SELECT p.PRIMALACID, p.NAZIVPRIMAOCA, p.PIB.get_poreski_id_broj() ""PIB"", p.MESTOID, P.ADRESAID FROM {primalac.NazivTabele} p";
             OracleParameter parameter = new OracleParameter();
             parameter.OracleDbType = OracleDbType.Object;
             parameter.Direction = ParameterDirection.ReturnValue;
@@ -180,8 +181,14 @@ namespace CarinjenjeRobeBaze3.DBB
                 while (reader.Read())
                 {
                     Primalac p = new Primalac();
+                    p.PrimalacId = (int)reader["PRIMALACID"];
                     p.NazivPrimaoca = (string)reader["NAZIVPRIMAOCA"];
-                    p.PIB = (PIBObjekat)cmd.Parameters[0].Value;
+                    p.PIB = new PIBObjekat
+                    {
+                        PIB = (string)reader["PIB"]
+                    };
+                    p.MestoId = (int)reader["MESTOID"];
+                    p.AdresaId = (int)reader["ADRESAID"];
 
                     rezultat.Add(p);
                 }
@@ -189,13 +196,14 @@ namespace CarinjenjeRobeBaze3.DBB
 
             return rezultat;
         }
+        #endregion
 
         #region Adresa
         public List<Adresa> VratiAdrese(Adresa adresa)
         {
             List<Adresa> rezultat = new List<Adresa>();
             cmd = connection.CreateCommand();
-            cmd.CommandText = $@"SELECT a.MestoID, a.AdresaID, a.UlicaBroj.get_naziv_ulice() ""NAZIVULICE"", a.UlicaBroj.get_broj() ""BROJ"" FROM {adresa.NazivTabele} a";
+            cmd.CommandText = $@"SELECT a.MESTOID, a.ADRESAID, a.ULICABROJ.get_naziv_ulice() ""NAZIVULICE"", a.ULICABROJ.get_broj() ""BROJ"" FROM {adresa.NazivTabele} a";
             OracleParameter parameter = new OracleParameter();
             parameter.OracleDbType = OracleDbType.Object;
             parameter.Direction = ParameterDirection.ReturnValue;

@@ -15,6 +15,7 @@ namespace CarinjenjeRobeBaze3.Model
         public PIBObjekat PIB { get; set; }
         public int MestoId { get; set; }
         public int AdresaId { get; set; }
+        public int OriginalanPrimalacId { get; set; }
         public string NazivTabele => "PRIMALAC";
 
         public string InsertKolone => "NAZIVPRIMAOCA, PIB, MESTOID, ADRESAID";
@@ -25,7 +26,7 @@ namespace CarinjenjeRobeBaze3.Model
 
         public string UslovSpajanja { get; set; }
 
-        public string InsertVrednosti => $"'{NazivPrimaoca}', '{PIB.PIB}', {MestoId}, {AdresaId}";
+        public string InsertVrednosti => $"'{NazivPrimaoca}', PIB('{PIB.PIB}'), {MestoId}, {AdresaId}";
 
         public string UpdateVrednosti { get; set; }
         public string WhereUslov { get; set; }

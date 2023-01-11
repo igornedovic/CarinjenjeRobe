@@ -200,6 +200,9 @@
     <Compile Include="SistemskeOperacije\ObracunSO\SacuvajObracunSO.cs" />
     <Compile Include="SistemskeOperacije\ObracunSO\UcitajObracuneSO.cs" />
     <Compile Include="SistemskeOperacije\OpstaSO.cs" />
+    <Compile Include="SistemskeOperacije\PrimalacSO\IzmeniPrimaocaSO.cs" />
+    <Compile Include="SistemskeOperacije\PrimalacSO\ObrisiPrimaocaSO.cs" />
+    <Compile Include="SistemskeOperacije\PrimalacSO\SacuvajPrimaocaSO.cs" />
     <Compile Include="SistemskeOperacije\PrimalacSO\UcitajPrimaoceSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\IzmeniProizvodSO.cs" />
     <Compile Include="SistemskeOperacije\ProizvodSO\ObrisiProizvodSO.cs" />

@@ -202,6 +202,23 @@ namespace CarinjenjeRobeBaze3.Kontroler
             return ((UcitajPrimaoceSO)oso).Rezultat;
         }
 
+        public void SacuvajPrimaoca(Primalac primalac)
+        {
+            OpstaSO oso = new SacuvajPrimaocaSO();
+            oso.Izvrsi(primalac);
+        }
+
+        public void IzmeniPrimaoca(Primalac primalac)
+        {
+            OpstaSO oso = new IzmeniPrimaocaSO();
+            oso.Izvrsi(primalac);
+        }
+
+        public void ObrisiPrimaoca(Primalac primalac)
+        {
+            OpstaSO oso = new ObrisiPrimaocaSO();
+            oso.Izvrsi(primalac);
+        }
         #endregion
 
         #region Drzava
